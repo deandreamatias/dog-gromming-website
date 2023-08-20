@@ -1,0 +1,6 @@
+{
+  "URL_REST_SERVICE": "https://google.es",
+  "PACKAGE_NAME": "com.peluqueriacaninamimos",
+  "APP_NAME": "Peluquería Canina Mimos",
+  "ENVIRONMENT": "prod"
+}
