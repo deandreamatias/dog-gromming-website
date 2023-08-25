@@ -1,7 +1,5 @@
 import 'package:dog_gromming_website/domain/models/errors.dart';
-import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
-import 'package:dog_gromming_website/ui/styles/text_styles.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +12,6 @@ class ErrorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.errorBackground,
       margin: Insets.a16,
       child: Padding(
         padding: Insets.a16,
@@ -23,10 +20,7 @@ class ErrorCard extends StatelessWidget {
           children: [
             const Icon(Icons.error, size: 48),
             BoxSpacer.v8(),
-            Text(
-              error.message,
-              style: TextStyles.errorMessage,
-            ),
+            Text(error.message),
           ],
         ),
       ),
