@@ -8,11 +8,6 @@
     ],
     "redirects": [
       {
-        "source": "https://www.peluqueriacaninamimos.com/",
-        "destination": "https://peluqueriacaninamimos.com/",
-        "type": 301
-      },
-      {
         "source": "http://www.peluqueriacaninamimos.com/",
         "destination": "https://peluqueriacaninamimos.com/",
         "type": 301
@@ -49,7 +44,7 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
         "destination": "/index.html"
       }
     ]

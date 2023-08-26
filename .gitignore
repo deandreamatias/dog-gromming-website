@@ -10,6 +10,7 @@
 .svn/
 migrate_working_dir/
 .fvm/flutter_sdk
+.firebase/
 
 # IntelliJ related
 *.iml
