@@ -27,8 +27,8 @@ The application has three environments and each one has its own configuration fi
 
 You can use the following commands to setup the project fast:
 
-- Flutter (recommended): `sh tools/setup.sh`
-- FVM: `sh tools/setup.sh fvm`
+- Flutter (recommended): `sh setup.sh`
+- FVM: `sh setup.sh fvm`
 
 ### Generate code
 

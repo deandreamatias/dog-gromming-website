@@ -5,8 +5,7 @@ on:
 jobs:
   build:
     name: Build and test
-    runs-on: macos-latest
-
+    runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
       uses: actions/checkout@v3
@@ -19,7 +18,7 @@ jobs:
         cache-key: 'flutter-:os:-:version:'
         cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
     - name: Setup project
-      run: sh tools/setup.sh
+      run: sh setup.sh
     - name: Verify formated files
       run: dart format . --set-exit-if-changed
     - name: Analyze code
