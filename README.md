@@ -23,16 +23,11 @@ The application has three environments and each one has its own configuration fi
 - dev: `.env/dev.dart`
 - prod: `.env/prod.dart`
 
-## Run and build
+## Setup
 
-To run the application in each environment, you can use the following commands:
+You can use the following commands to setup the project fast: `sh tools/setup.sh`
 
-- dev: `flutter run --flavor dev --dart-define-from-file=.env/dev.json`
-- prod: `flutter run --flavor prod --dart-define-from-file=.env/prod.json`
-
-Also, you can configure your IDE to run the application in each environment.
-
-## Generate code
+### Generate code
 
 If you implement a new injectable file, you have to run the following command to generate the necessary code:
 
@@ -49,3 +44,12 @@ Also, you can configure Android Studio to run this command automatically:
    5. Working directory: $ProjectFileDir$
 
 Is important to note that you have to configure the command for the three flavors.
+
+## Run and build
+
+To run the application in each environment, you can use the following commands:
+
+- dev: `flutter run --flavor dev --dart-define-from-file=.env/dev.json`
+- prod: `flutter run --flavor prod --dart-define-from-file=.env/prod.json`
+
+Also, you can configure your IDE to run the application in each environment.
