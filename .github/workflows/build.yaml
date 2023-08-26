@@ -40,17 +40,14 @@ jobs:
     steps:
     - name: Configure enviroment
       uses: actions/checkout@v3
-    - uses: kuhnroyal/flutter-fvm-config-action@v1
-    - name: Download flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: ${{ env.FLUTTER_VERSION }}
-        cache: true
-        cache-key: 'flutter-:os:-:version:'
-        cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
     - uses: actions/download-artifact@v3
       with:
         name: web-app
+    - name: HTML/CSS/JS Minifier
+      uses: docker://devatherock/minify-js:2.0.0
+      with:
+        directory: 'build/web'
+        add_suffix: false
     - uses: FirebaseExtended/action-hosting-deploy@v0
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -65,20 +62,19 @@ jobs:
     steps:
     - name: Configure enviroment
       uses: actions/checkout@v3
-    - uses: kuhnroyal/flutter-fvm-config-action@v1
-    - name: Download flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: ${{ env.FLUTTER_VERSION }}
-        cache: true
-        cache-key: 'flutter-:os:-:version:'
-        cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
     - uses: actions/download-artifact@v3
       with:
         name: web-app
+    - name: HTML/CSS/JS Minifier
+      uses: docker://devatherock/minify-js:2.0.0
+      with:
+        directory: 'build/web'
+        add_suffix: false
     - uses: FirebaseExtended/action-hosting-deploy@v0
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
         firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PELUQUERIA_MIMOS }}'
         projectId: peluqueria-mimos
         channelId: live
+    - name: Release
+      uses: softprops/action-gh-release@v1
