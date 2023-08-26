@@ -11,7 +11,10 @@ class AnnouncementScreen extends StatelessWidget {
       body: ColoredBox(
         color: AppColors.primary,
         child: Center(
-          child: Text('coming_soon'.tr()),
+          child: Text(
+            'coming_soon'.tr(),
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
         ),
       ),
     );
