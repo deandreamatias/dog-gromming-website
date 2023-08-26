@@ -25,13 +25,16 @@ The application has three environments and each one has its own configuration fi
 
 ## Setup
 
-You can use the following commands to setup the project fast: `sh tools/setup.sh`
+You can use the following commands to setup the project fast:
+
+- Flutter (recommended): `sh tools/setup.sh`
+- FVM: `sh tools/setup.sh fvm`
 
 ### Generate code
 
 If you implement a new injectable file, you have to run the following command to generate the necessary code:
 
-`fvm flutter packages pub run build_runner build` or `sh ./tools/generate_code.sh`
+`fvm flutter packages pub run build_runner build`
 
 Also, you can configure Android Studio to run this command automatically:
 

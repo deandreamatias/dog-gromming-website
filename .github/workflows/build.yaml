@@ -18,14 +18,14 @@ jobs:
         cache: true
         cache-key: 'flutter-:os:-:version:'
         cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
-    - name: Install dependencies
-      run: sh tools/get_deps.sh
+    - name: Setup project
+      run: sh tools/setup.sh
     - name: Verify formated files
-      run: sh tools/format.sh
+      run: dart format . --set-exit-if-changed
     - name: Analyze code
-      run: sh tools/analyze.sh
+      run: flutter analyze
     - name: Build web
-      run: sh tools/build.sh
+      run: flutter build web --dart-define-from-file=.env/prod.json
     - uses: actions/upload-artifact@v3
       with:
         name: web-app
