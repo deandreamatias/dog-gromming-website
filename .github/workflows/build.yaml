@@ -42,6 +42,7 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: web-app
+        path: build/web
     - name: HTML/CSS/JS Minifier
       uses: docker://devatherock/minify-js:2.0.0
       with:
@@ -65,6 +66,7 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: web-app
+        path: build/web
     - name: HTML/CSS/JS Minifier
       uses: docker://devatherock/minify-js:2.0.0
       with:
