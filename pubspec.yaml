@@ -36,3 +36,18 @@ flutter:
     - assets/
     - assets/translations/
     - assets/images/
+    - assets/licenses/
+
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/Fredoka-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Fredoka-SemiBold.ttf
+          weight: 600
+    - family: Comfortaa
+      fonts:
+        - asset: assets/fonts/Comfortaa-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Comfortaa-SemiBold.ttf
+          weight: 600

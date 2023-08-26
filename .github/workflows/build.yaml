@@ -5,8 +5,7 @@ on:
 jobs:
   build:
     name: Build and test
-    runs-on: macos-latest
-
+    runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
       uses: actions/checkout@v3
@@ -18,9 +17,63 @@ jobs:
         cache: true
         cache-key: 'flutter-:os:-:version:'
         cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
-    - name: Install dependencies
-      run: flutter pub get
+    - name: Setup project
+      run: sh setup.sh
     - name: Verify formated files
       run: dart format . --set-exit-if-changed
     - name: Analyze code
       run: flutter analyze
+    - name: Build web
+      run: flutter build web --dart-define-from-file=.env/prod.json
+    - uses: actions/upload-artifact@v3
+      with:
+        name: web-app
+        path: build/web/
+        retention-days: 1
+
+  preview:
+    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    needs: build
+    name: Deploy preview web
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v3
+    - uses: actions/download-artifact@v3
+      with:
+        name: web-app
+    - name: HTML/CSS/JS Minifier
+      uses: docker://devatherock/minify-js:2.0.0
+      with:
+        directory: 'build/web'
+        add_suffix: false
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PELUQUERIA_MIMOS }}'
+        projectId: peluqueria-mimos
+  
+  deployment:
+    if: ${{ github.ref_type == 'tag' }}
+    needs: build
+    name: Deploy web
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v3
+    - uses: actions/download-artifact@v3
+      with:
+        name: web-app
+    - name: HTML/CSS/JS Minifier
+      uses: docker://devatherock/minify-js:2.0.0
+      with:
+        directory: 'build/web'
+        add_suffix: false
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PELUQUERIA_MIMOS }}'
+        projectId: peluqueria-mimos
+        channelId: live
+    - name: Release
+      uses: softprops/action-gh-release@v1

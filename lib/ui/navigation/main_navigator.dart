@@ -1,4 +1,5 @@
 import 'package:dog_gromming_website/ui/navigation/routes.dart';
+import 'package:dog_gromming_website/ui/widgets/screens/announcement/announcement_screen.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/home_screen.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/splash/splash_screen.dart';
 import 'package:flutter/widgets.dart';
@@ -21,6 +22,11 @@ class MainNavigator {
         path: Routes.home,
         builder: (BuildContext context, GoRouterState state) => HomeScreen(),
       ),
+      GoRoute(
+        path: Routes.announcement,
+        builder: (BuildContext context, GoRouterState state) =>
+            const AnnouncementScreen(),
+      ),
     ],
   );
 
@@ -30,6 +36,10 @@ class MainNavigator {
 
   Future<void> navigateToHome() {
     return router.push(Routes.home);
+  }
+
+  Future<void> navigateToAnnouncement() {
+    return router.push(Routes.announcement);
   }
 
   void pop() {

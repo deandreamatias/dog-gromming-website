@@ -30,7 +30,7 @@ class SplashViewModel extends RootViewModel<SplashViewState> {
   }
 
   void redirect() {
-    navigator.navigateToHome();
+    navigator.navigateToAnnouncement();
   }
 }
 
