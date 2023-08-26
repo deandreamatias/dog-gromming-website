@@ -1,4 +1,6 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
+import 'package:dog_gromming_website/ui/styles/insets.dart';
+import 'package:dog_gromming_website/ui/widgets/components/texts/display_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +12,10 @@ class AnnouncementScreen extends StatelessWidget {
     return Scaffold(
       body: ColoredBox(
         color: AppColors.primary,
-        child: Center(
-          child: Text(
-            'coming_soon'.tr(),
-            style: Theme.of(context).textTheme.displayLarge,
+        child: Padding(
+          padding: Insets.a16,
+          child: Center(
+            child: DisplayText('coming_soon'.tr()),
           ),
         ),
       ),
