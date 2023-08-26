@@ -19,8 +19,66 @@ jobs:
         cache-key: 'flutter-:os:-:version:'
         cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
     - name: Install dependencies
-      run: flutter pub get
+      run: sh tools/get_deps.sh
     - name: Verify formated files
-      run: dart format . --set-exit-if-changed
+      run: sh tools/format.sh
     - name: Analyze code
-      run: flutter analyze
+      run: sh tools/analyze.sh
+    - name: Build web
+      run: sh tools/build.sh
+    - uses: actions/upload-artifact@v3
+      with:
+        name: web-app
+        path: build/web/
+        retention-days: 1
+
+  preview:
+    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    needs: build
+    name: Deploy preview web
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v3
+    - uses: kuhnroyal/flutter-fvm-config-action@v1
+    - name: Download flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        cache: true
+        cache-key: 'flutter-:os:-:version:'
+        cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
+    - uses: actions/download-artifact@v3
+      with:
+        name: web-app
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PELUQUERIA_MIMOS }}'
+        projectId: peluqueria-mimos
+  
+  deployment:
+    if: ${{ github.ref_type == 'tag' }}
+    needs: build
+    name: Deploy web
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v3
+    - uses: kuhnroyal/flutter-fvm-config-action@v1
+    - name: Download flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        cache: true
+        cache-key: 'flutter-:os:-:version:'
+        cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
+    - uses: actions/download-artifact@v3
+      with:
+        name: web-app
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PELUQUERIA_MIMOS }}'
+        projectId: peluqueria-mimos
+        channelId: live
