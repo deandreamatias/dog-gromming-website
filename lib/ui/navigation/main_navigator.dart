@@ -20,7 +20,8 @@ class MainNavigator {
       ),
       GoRoute(
         path: Routes.home,
-        builder: (BuildContext context, GoRouterState state) => HomeScreen(),
+        builder: (BuildContext context, GoRouterState state) =>
+            const HomeScreen(),
       ),
       GoRoute(
         path: Routes.announcement,
