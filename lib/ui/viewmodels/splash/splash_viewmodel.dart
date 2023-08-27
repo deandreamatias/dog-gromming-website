@@ -25,12 +25,8 @@ class SplashViewModel extends RootViewModel<SplashViewState> {
     FlutterNativeSplash.remove();
 
     if (response.isRight) {
-      redirect();
+      navigator.navigateToHome();
     }
-  }
-
-  void redirect() {
-    navigator.navigateToAnnouncement();
   }
 }
 

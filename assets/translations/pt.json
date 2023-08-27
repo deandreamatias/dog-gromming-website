@@ -1,5 +1,12 @@
 {
   "coming_soon": "Em breve",
+  "menu": {
+    "home": "inicio",
+    "about": "sobre",
+    "contact": "contato",
+    "services": "serviços",
+    "gallery": "galeria"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",
