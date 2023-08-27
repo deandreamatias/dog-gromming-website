@@ -35,48 +35,26 @@ class _AppNavigationBottomBarState extends State<AppNavigationBottomBar> {
         padding: Insets.a4,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ...widget.items.getRange(0, 2).toList().asMap().entries.map(
-              (entry) {
-                final item = entry.value;
-                final itemIndex = entry.key;
-                return ValueListenableBuilder(
-                  valueListenable: _selectedIndex,
-                  builder: (context, value, child) {
-                    return AppNavigationItemButton(
-                      key: Key('bottom-bar-item-$itemIndex'),
-                      selected: itemIndex == value,
-                      item: item,
-                      onTap: () {
-                        _selectedIndex.value = itemIndex;
-                        widget.onItemTapped?.call(itemIndex);
-                      },
-                    );
-                  },
-                );
-              },
-            ).toList(),
-            ...widget.items.getRange(2, 4).toList().asMap().entries.map(
-              (entry) {
-                final item = entry.value;
-                final itemIndex = entry.key + 2;
-                return ValueListenableBuilder(
-                  valueListenable: _selectedIndex,
-                  builder: (context, value, child) {
-                    return AppNavigationItemButton(
-                      key: Key('bottom-bar-item-$itemIndex'),
-                      selected: itemIndex == value,
-                      item: item,
-                      onTap: () {
-                        _selectedIndex.value = itemIndex;
-                        widget.onItemTapped?.call(itemIndex);
-                      },
-                    );
-                  },
-                );
-              },
-            ).toList(),
-          ],
+          children: widget.items.asMap().entries.map(
+            (entry) {
+              final item = entry.value;
+              final itemIndex = entry.key;
+              return ValueListenableBuilder(
+                valueListenable: _selectedIndex,
+                builder: (context, value, child) {
+                  return AppNavigationItemButton(
+                    key: Key('bottom-bar-item-$itemIndex'),
+                    selected: itemIndex == value,
+                    item: item,
+                    onTap: () {
+                      _selectedIndex.value = itemIndex;
+                      widget.onItemTapped?.call(itemIndex);
+                    },
+                  );
+                },
+              );
+            },
+          ).toList(),
         ),
       ),
     );
