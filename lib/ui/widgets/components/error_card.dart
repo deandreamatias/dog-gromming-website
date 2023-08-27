@@ -32,22 +32,22 @@ extension ErrorMessage on MainError {
   String get message {
     switch (runtimeType) {
       case NoInternet:
-        return "errors.no_internet".tr();
+        return 'errors.no_internet'.tr();
       case ServerError:
-        return "errors.server".tr();
+        return 'errors.server'.tr();
       case BadRequestError:
-        return "errors.bad_request".tr();
+        return 'errors.bad_request'.tr();
       case ForbiddenError:
-        return "errors.forbidden".tr();
+        return 'errors.forbidden'.tr();
       case NotFoundError:
-        return "errors.not_found".tr();
+        return 'errors.not_found'.tr();
       case UnauthError:
-        return "errors.unauthorized".tr();
+        return 'errors.unauthorized'.tr();
       case ExpiredSessionError:
-        return "errors.expired_session".tr();
+        return 'errors.expired_session'.tr();
       case UnknownError:
       default:
-        return "errors.unknown".tr();
+        return 'errors.unknown'.tr();
     }
   }
 }

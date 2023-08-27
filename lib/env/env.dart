@@ -12,11 +12,11 @@ abstract class Env {
 
 class EnvConfig implements Env {
   @override
-  String get packageName => const String.fromEnvironment("PACKAGE_NAME");
+  String get packageName => const String.fromEnvironment('PACKAGE_NAME');
 
   @override
-  String get urlRestService => const String.fromEnvironment("URL_REST_SERVICE");
+  String get urlRestService => const String.fromEnvironment('URL_REST_SERVICE');
 
   @override
-  String get appName => const String.fromEnvironment("APP_NAME");
+  String get appName => const String.fromEnvironment('APP_NAME');
 }
