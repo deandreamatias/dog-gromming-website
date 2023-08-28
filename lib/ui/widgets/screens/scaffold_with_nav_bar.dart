@@ -1,29 +1,53 @@
 import 'package:dog_gromming_website/ui/navigation/menu_navigation.dart';
 import 'package:dog_gromming_website/ui/navigation/routes.dart';
+import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/widgets/components/navigation/app_navigation_bottom_bar.dart';
 import 'package:dog_gromming_website/ui/widgets/components/navigation/app_navigation_item.dart';
+import 'package:dog_gromming_website/ui/widgets/components/navigation/app_navigation_top_bar.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ScaffoldWithBottomBar extends StatelessWidget {
+class ScaffoldWithNavBar extends StatelessWidget {
   final Widget child;
 
-  const ScaffoldWithBottomBar({
+  const ScaffoldWithNavBar({
     super.key,
     required this.child,
   });
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: AppNavigationBottomBar(
-        items: MenuNavigation.values
-            .map((e) => AppNavigationItem(label: e.label.tr()))
-            .toList(),
-        selectedIndex: _calculateSelectedIndex(context),
-        onItemTapped: (idx) => _onItemTapped(idx, context),
-      ),
-      body: SafeArea(child: child),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isMedium = constraints.maxWidth < Sizes.medium.width;
+        return Scaffold(
+          bottomNavigationBar: isMedium
+              ? AppNavigationBottomBar(
+                  items: MenuNavigation.values
+                      .map((e) => AppNavigationItem(label: e.label.tr()))
+                      .toList(),
+                  selectedIndex: _calculateSelectedIndex(context),
+                  onItemTapped: (idx) => _onItemTapped(idx, context),
+                )
+              : null,
+          body: SafeArea(
+            child: isMedium
+                ? child
+                : Column(
+                    children: [
+                      AppNavigationTopBar(
+                        items: MenuNavigation.values
+                            .map((e) => AppNavigationItem(label: e.label.tr()))
+                            .toList(),
+                        selectedIndex: _calculateSelectedIndex(context),
+                        onItemTapped: (idx) => _onItemTapped(idx, context),
+                      ),
+                      Expanded(child: child),
+                    ],
+                  ),
+          ),
+        );
+      },
     );
   }
 
@@ -53,7 +77,7 @@ class ScaffoldWithBottomBar extends StatelessWidget {
       return 2;
     }
     if (location.startsWith(Routes.about)) {
-      return 2;
+      return 3;
     }
     return 0;
   }

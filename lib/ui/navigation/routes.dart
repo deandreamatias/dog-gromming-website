@@ -1,7 +1,7 @@
 import 'package:dog_gromming_website/ui/navigation/menu_navigation.dart';
 
 class Routes {
-  static const String home = '/';
+  static const String home = '/home';
   static const String announcement = '/announcement';
   static const String services = '/services';
   static const String about = '/about';

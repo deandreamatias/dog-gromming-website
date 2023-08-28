@@ -1,6 +1,6 @@
 import 'package:dog_gromming_website/ui/navigation/routes.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/home_screen.dart';
-import 'package:dog_gromming_website/ui/widgets/screens/scaffold_with_bottom_bar.dart';
+import 'package:dog_gromming_website/ui/widgets/screens/scaffold_with_nav_bar.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,7 +10,7 @@ final GlobalKey<NavigatorState> _menuNavigatorKey =
 final menuNavigation = ShellRoute(
   navigatorKey: _menuNavigatorKey,
   builder: (BuildContext context, GoRouterState state, Widget child) {
-    return ScaffoldWithBottomBar(child: child);
+    return ScaffoldWithNavBar(child: child);
   },
   routes: <RouteBase>[
     GoRoute(
