@@ -60,8 +60,6 @@ extension MenuNavigationExtension on MenuNavigation {
         return 'menu.services';
       case MenuNavigation.gallery:
         return 'menu.gallery';
-      case MenuNavigation.contact:
-        return 'menu.contact';
       case MenuNavigation.about:
         return 'menu.about';
     }

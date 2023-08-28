@@ -7,7 +7,6 @@ class Routes {
   static const String services = '/services';
   static const String about = '/about';
   static const String gallery = '/gallery';
-  static const String contact = '/contact';
 }
 
 extension MenuRoutes on MenuNavigation {
@@ -19,8 +18,6 @@ extension MenuRoutes on MenuNavigation {
         return Routes.services;
       case MenuNavigation.gallery:
         return Routes.gallery;
-      case MenuNavigation.contact:
-        return Routes.contact;
       case MenuNavigation.about:
         return Routes.about;
     }
