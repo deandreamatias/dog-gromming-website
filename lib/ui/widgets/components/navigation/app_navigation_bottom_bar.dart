@@ -5,7 +5,7 @@ import 'package:dog_gromming_website/ui/widgets/components/navigation/app_naviga
 import 'package:dog_gromming_website/ui/widgets/components/navigation/app_navigation_item_button.dart';
 import 'package:flutter/material.dart';
 
-class AppNavigationBottomBar extends StatefulWidget {
+class AppNavigationBottomBar extends StatelessWidget {
   final List<AppNavigationItem> items;
   final int selectedIndex;
   final Function(int idx)? onItemTapped;
@@ -18,13 +18,6 @@ class AppNavigationBottomBar extends StatefulWidget {
   });
 
   @override
-  State<AppNavigationBottomBar> createState() => _AppNavigationBottomBarState();
-}
-
-class _AppNavigationBottomBarState extends State<AppNavigationBottomBar> {
-  final ValueNotifier<int> _selectedIndex = ValueNotifier<int>(0);
-
-  @override
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -35,22 +28,16 @@ class _AppNavigationBottomBarState extends State<AppNavigationBottomBar> {
         padding: Insets.a4,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: widget.items.asMap().entries.map(
+          children: items.asMap().entries.map(
             (entry) {
               final item = entry.value;
               final itemIndex = entry.key;
-              return ValueListenableBuilder(
-                valueListenable: _selectedIndex,
-                builder: (context, value, child) {
-                  return AppNavigationItemButton(
-                    key: Key('bottom-bar-item-$itemIndex'),
-                    selected: itemIndex == value,
-                    item: item,
-                    onTap: () {
-                      _selectedIndex.value = itemIndex;
-                      widget.onItemTapped?.call(itemIndex);
-                    },
-                  );
+              return AppNavigationItemButton(
+                key: Key('bottom-bar-item-$itemIndex'),
+                selected: itemIndex == selectedIndex,
+                item: item,
+                onTap: () {
+                  onItemTapped?.call(itemIndex);
                 },
               );
             },

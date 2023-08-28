@@ -2,8 +2,8 @@ import 'package:dog_gromming_website/ui/viewmodels/root_viewmodel.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-abstract class RootScreen<S extends ViewState> extends StatelessWidget {
-  const RootScreen({super.key});
+abstract class BaseScreen<S extends ViewState> extends StatelessWidget {
+  const BaseScreen({super.key});
 
   abstract final RootViewModel<S> viewModel;
 

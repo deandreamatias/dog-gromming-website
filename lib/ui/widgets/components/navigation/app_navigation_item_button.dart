@@ -29,17 +29,11 @@ class AppNavigationItemButton extends StatelessWidget {
             color: _bgColor,
             borderRadius: BorderRadius.circular(Spacing.sp32),
           ),
-          child: LabelLText(
-            item.label,
-            color: _color,
-          ),
+          child: LabelLText(item.label),
         ),
       ),
     );
   }
 
   Color? get _bgColor => selected ? AppColors.primary : null;
-
-  Color get _color =>
-      selected ? AppColors.font : AppColors.font.withOpacity(0.87);
 }
