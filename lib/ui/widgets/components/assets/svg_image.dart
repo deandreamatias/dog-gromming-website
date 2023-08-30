@@ -23,7 +23,6 @@ class SvgImage extends StatelessWidget {
       height: height,
       colorFilter:
           color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
-      fit: BoxFit.cover,
     );
   }
 }
