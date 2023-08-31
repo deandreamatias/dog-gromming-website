@@ -5,6 +5,17 @@ import 'package:flutter/material.dart';
 final themeData = ThemeData(
   colorSchemeSeed: AppColors.primary,
   scaffoldBackgroundColor: AppColors.white,
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(AppColors.secondary),
+      textStyle: MaterialStateProperty.all(TextStyles.labelLarge),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(36),
+        ),
+      ),
+    ),
+  ),
   textTheme: const TextTheme(
     labelLarge: TextStyles.labelLarge,
     labelMedium: TextStyles.labelMedium,
