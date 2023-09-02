@@ -6,6 +6,14 @@
     "services": "services",
     "gallery": "gallery"
   },
+  "home": {
+    "slogan": "We take care of your pet\nas if it were ours",
+    "appointment": "Make an appointment",
+    "semantic_logo": "Logo of pet grooming salon Mimos",
+    "contact_number": "123456798",
+    "contact_number_tooltip": "Open dialer and call to {}",
+    "whatsapp_tooltip": "Open whatsapp and send a message to {}"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

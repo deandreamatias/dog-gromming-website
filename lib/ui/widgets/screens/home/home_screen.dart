@@ -1,10 +1,13 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
+import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/widgets/components/assets/svg_image.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/buttons/primary_button.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_l_text.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
+import 'package:dog_gromming_website/ui/widgets/components/texts/headline_m_text.dart';
+import 'package:dog_gromming_website/ui/widgets/components/texts/headline_s_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -13,23 +16,46 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _ResponsiveWelcome(
+    return const _WelcomeBoard(
       child: Padding(
         padding: Insets.a16,
-        child: Column(
+        child: _WelcomeBody(),
+      ),
+    );
+  }
+}
+
+class _WelcomeBody extends StatelessWidget {
+  const _WelcomeBody();
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isMedium = constraints.maxWidth < Sizes.medium.width;
+
+        return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(child: BodyLText('home.slogan'.tr())),
+            Expanded(
+              child: isMedium
+                  ? HeadlineSText('home.slogan'.tr())
+                  : HeadlineMText('home.slogan'.tr()),
+            ),
             BoxSpacer.v16(),
             Expanded(
+              flex: 3,
               child: Column(
                 children: [
-                  BodyMText('home.appointment'.tr()),
+                  isMedium
+                      ? BodyMText('home.appointment'.tr())
+                      : BodyLText('home.appointment'.tr()),
                   BoxSpacer.v16(),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       PrimaryButton(
+                        isBigButton: !isMedium,
                         onPressed: () {},
                         label: 'home.contact_number'.tr(),
                       ),
@@ -40,16 +66,16 @@ class HomeScreen extends StatelessWidget {
             ),
             BoxSpacer.v16(),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
 }
 
-class _ResponsiveWelcome extends StatelessWidget {
+class _WelcomeBoard extends StatelessWidget {
   final Widget child;
 
-  const _ResponsiveWelcome({required this.child});
+  const _WelcomeBoard({required this.child});
 
   @override
   Widget build(BuildContext context) {

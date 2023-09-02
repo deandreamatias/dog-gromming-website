@@ -6,6 +6,14 @@
     "services": "serviços",
     "gallery": "galeria"
   },
+  "home": {
+    "slogan": "La peluquería que mima a tus mascotas\nDonde cuidamos a tu peludet",
+    "appointment": "Marque um horário",
+    "semantic_logo": "Logo da peluquería canina Mimos",
+    "contact_number": "123456798",
+    "contact_number_tooltip": "Abrir discador e ligar a {}",
+    "whatsapp_tooltip": "Abrir WhatsApp e enviar mensagem a {}"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

@@ -11,7 +11,7 @@ final themeData = ThemeData(
       textStyle: MaterialStateProperty.all(TextStyles.labelLarge),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(36),
+          borderRadius: BorderRadius.circular(56),
         ),
       ),
     ),
