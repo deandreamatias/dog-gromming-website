@@ -66,7 +66,7 @@ class _AppNavigationItemButton extends StatelessWidget {
       child: InkWell(
         onTap: Feedback.wrapForTap(onTap, context),
         child: Container(
-          padding: Insets.h8 + Insets.a4,
+          padding: Insets.h4 + Insets.a4,
           decoration: BoxDecoration(
             color: _bgColor,
             borderRadius: BorderRadius.circular(Spacing.sp32),

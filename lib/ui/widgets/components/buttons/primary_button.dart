@@ -1,6 +1,7 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/display_s_text.dart';
+import 'package:dog_gromming_website/ui/widgets/components/texts/label_l_text.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -29,7 +30,10 @@ class PrimaryButton extends StatelessWidget {
               label,
               color: AppColors.white,
             )
-          : Text(label),
+          : LabelLText(
+              label,
+              color: AppColors.white,
+            ),
     );
   }
 }

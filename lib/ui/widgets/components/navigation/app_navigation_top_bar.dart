@@ -1,6 +1,5 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
-import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
 import 'package:dog_gromming_website/ui/widgets/components/navigation/app_navigation_item.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/display_s_text.dart';
@@ -65,7 +64,7 @@ class _AppNavigationItemButton extends StatelessWidget {
       child: InkWell(
         onTap: Feedback.wrapForTap(onTap, context),
         child: Container(
-          padding: Insets.h8 + Insets.a4,
+          padding: Insets.h12 + Insets.a4,
           decoration: BoxDecoration(
             color: _bgColor,
             borderRadius: BorderRadius.circular(Spacing.sp32),

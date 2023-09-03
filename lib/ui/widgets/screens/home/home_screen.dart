@@ -3,6 +3,7 @@ import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/widgets/components/assets/svg_image.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
+import 'package:dog_gromming_website/ui/widgets/components/buttons/icon_primary_button.dart';
 import 'package:dog_gromming_website/ui/widgets/components/buttons/primary_button.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_l_text.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
@@ -10,6 +11,7 @@ import 'package:dog_gromming_website/ui/widgets/components/texts/headline_m_text
 import 'package:dog_gromming_website/ui/widgets/components/texts/headline_s_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:unicons/unicons.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -42,15 +44,15 @@ class _WelcomeBody extends StatelessWidget {
                   ? HeadlineSText('home.slogan'.tr())
                   : HeadlineMText('home.slogan'.tr()),
             ),
-            BoxSpacer.v16(),
+            BoxSpacer.vSmall(isMedium: isMedium),
             Expanded(
-              flex: 3,
+              flex: isMedium ? 1 : 3,
               child: Column(
                 children: [
                   isMedium
                       ? BodyMText('home.appointment'.tr())
                       : BodyLText('home.appointment'.tr()),
-                  BoxSpacer.v16(),
+                  BoxSpacer.vSmall(isMedium: isMedium),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -59,12 +61,20 @@ class _WelcomeBody extends StatelessWidget {
                         onPressed: () {},
                         label: 'home.contact_number'.tr(),
                       ),
+                      BoxSpacer.hSmall(isMedium: isMedium),
+                      IconPrimaryButton(
+                        tooltip: 'home.whatsapp_tooltip'
+                            .tr(args: ['home.contact_number'.tr()]),
+                        isBigButton: !isMedium,
+                        onPressed: () {},
+                        icon: UniconsLine.whatsapp_alt,
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
-            BoxSpacer.v16(),
+            if (!isMedium) BoxSpacer.v16(),
           ],
         );
       },
@@ -117,13 +127,17 @@ class _WelcomeBoard extends StatelessWidget {
             Positioned(
               bottom: rectHeight - circleRadius * 0.66,
               left: (screenWidth - circleRadius * 2) / 2,
-              child: SizedBox(
-                width: circleRadius * 2,
-                height: circleRadius * 2,
-                child: const SvgImage(
-                  imageName: 'logo',
-                  width: double.infinity,
-                  height: double.infinity,
+              child: Semantics(
+                image: true,
+                label: 'home.semantic_logo'.tr(),
+                child: SizedBox(
+                  width: circleRadius * 2,
+                  height: circleRadius * 2,
+                  child: const SvgImage(
+                    imageName: 'logo',
+                    width: double.infinity,
+                    height: double.infinity,
+                  ),
                 ),
               ),
             ),
