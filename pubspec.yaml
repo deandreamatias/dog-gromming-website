@@ -22,7 +22,7 @@ dependencies:
   go_router: ^10.0.0
   injectable: ^2.2.0
   unicons: ^2.1.1
-  url_launcher: ^6.1.12
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   build_runner: ^2.4.6

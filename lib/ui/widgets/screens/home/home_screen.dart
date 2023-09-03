@@ -1,6 +1,8 @@
+import 'package:dog_gromming_website/env/constants.dart';
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/styles/sizes.dart';
+import 'package:dog_gromming_website/ui/utils/url_launcher_util.dart';
 import 'package:dog_gromming_website/ui/widgets/components/assets/svg_image.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/buttons/icon_primary_button.dart';
@@ -56,17 +58,23 @@ class _WelcomeBody extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      PrimaryButton(
-                        isBigButton: !isMedium,
-                        onPressed: () {},
-                        label: 'home.contact_number'.tr(),
+                      SelectionArea(
+                        child: PrimaryButton(
+                          isBigButton: !isMedium,
+                          onPressed: () {
+                            UrlLauncherUtil.openTelephone(Constants.phone);
+                          },
+                          label: 'home.contact_number'.tr(),
+                        ),
                       ),
                       BoxSpacer.hSmall(isMedium: isMedium),
                       IconPrimaryButton(
-                        tooltip: 'home.whatsapp_tooltip'
-                            .tr(args: ['home.contact_number'.tr()]),
+                        tooltip:
+                            'home.whatsapp_tooltip'.tr(args: [Constants.phone]),
                         isBigButton: !isMedium,
-                        onPressed: () {},
+                        onPressed: () {
+                          UrlLauncherUtil.openWhatsapp(Constants.phone);
+                        },
                         icon: UniconsLine.whatsapp_alt,
                       ),
                     ],
