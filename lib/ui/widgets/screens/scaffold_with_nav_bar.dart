@@ -30,22 +30,20 @@ class ScaffoldWithNavBar extends StatelessWidget {
                   onItemTapped: (idx) => _onItemTapped(idx, context),
                 )
               : null,
-          body: SafeArea(
-            child: isMedium
-                ? child
-                : Column(
-                    children: [
-                      AppNavigationTopBar(
-                        items: MenuNavigation.values
-                            .map((e) => AppNavigationItem(label: e.label.tr()))
-                            .toList(),
-                        selectedIndex: _calculateSelectedIndex(context),
-                        onItemTapped: (idx) => _onItemTapped(idx, context),
-                      ),
-                      Expanded(child: child),
-                    ],
-                  ),
-          ),
+          body: isMedium
+              ? child
+              : Column(
+                  children: [
+                    AppNavigationTopBar(
+                      items: MenuNavigation.values
+                          .map((e) => AppNavigationItem(label: e.label.tr()))
+                          .toList(),
+                      selectedIndex: _calculateSelectedIndex(context),
+                      onItemTapped: (idx) => _onItemTapped(idx, context),
+                    ),
+                    Expanded(child: child),
+                  ],
+                ),
         );
       },
     );
