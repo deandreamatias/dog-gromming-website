@@ -30,7 +30,6 @@ class IconPrimaryButton extends StatelessWidget {
         child: Icon(
           icon,
           size: isBigButton ? 56 : 20,
-          // color: AppColors.white,
         ),
       ),
     );
