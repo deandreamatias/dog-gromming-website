@@ -23,9 +23,7 @@ class BigWelcomeBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: HeadlineMText('home.slogan'.tr()),
-          ),
+          HeadlineMText('home.slogan'.tr()),
           BoxSpacer.v16(),
           Expanded(
             flex: 3,
@@ -82,8 +80,7 @@ class SmallWelcomeBody extends StatelessWidget {
         ),
         padding: Insets.a16,
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             HeadlineSText('home.slogan'.tr()),
             BoxSpacer.v8(),

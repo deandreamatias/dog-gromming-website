@@ -19,7 +19,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isMedium = constraints.maxWidth < Sizes.medium.width;
+        final isMedium = constraints.maxWidth < Sizes.s.width;
         return Scaffold(
           bottomNavigationBar: isMedium
               ? AppNavigationBottomBar(

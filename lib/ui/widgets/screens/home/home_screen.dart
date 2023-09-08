@@ -12,33 +12,26 @@ class HomeScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final double maxWidth = constraints.maxWidth;
-        final double maxHeight = constraints.maxHeight;
 
-        if (maxWidth > Sizes.medium.width) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxHeight: maxHeight,
-              ),
-              child: BigWelcomeBoard(
-                maxWidth: maxWidth,
-                maxHeight: maxHeight,
-                child: const BigWelcomeBody(),
-              ),
-            ),
-          );
-        }
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: Insets.a16,
             child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxHeight: maxHeight,
-              ),
-              child: SmallWelcomeBoard(
-                maxWidth: maxWidth - Insets.a16.horizontal,
-                child: const SmallWelcomeBody(),
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  maxWidth > Sizes.m.width
+                      ? BigWelcomeBoard(
+                          maxWidth: maxWidth - Insets.a16.horizontal,
+                          child: const BigWelcomeBody(),
+                        )
+                      : SmallWelcomeBoard(
+                          maxWidth: maxWidth - Insets.a16.horizontal,
+                          child: const SmallWelcomeBody(),
+                        ),
+                ],
               ),
             ),
           ),
