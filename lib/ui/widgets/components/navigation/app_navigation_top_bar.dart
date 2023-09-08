@@ -1,4 +1,5 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
+import 'package:dog_gromming_website/ui/styles/box_shadows.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
 import 'package:dog_gromming_website/ui/widgets/components/navigation/app_navigation_item.dart';
@@ -20,8 +21,9 @@ class AppNavigationTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: AppColors.white,
+        boxShadow: BoxShadows.bs1,
       ),
       child: Padding(
         padding: Insets.a12,
