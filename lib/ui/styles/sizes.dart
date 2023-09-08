@@ -1,21 +1,24 @@
 enum Sizes {
-  small,
-  medium,
-  large,
-  extraLarge,
+  xs,
+  s,
+  m,
+  l,
+  xl,
 }
 
 extension ResponsiveSizes on Sizes {
   double get width {
     switch (this) {
-      case Sizes.small:
+      case Sizes.xs:
         return 320;
-      case Sizes.medium:
+      case Sizes.s:
         return 768;
-      case Sizes.large:
+      case Sizes.m:
         return 1024;
-      case Sizes.extraLarge:
+      case Sizes.l:
         return 1440;
+      case Sizes.xl:
+        return 1920;
       default:
         return 0;
     }

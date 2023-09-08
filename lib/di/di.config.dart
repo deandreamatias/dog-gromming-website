@@ -18,17 +18,15 @@ import 'package:dog_gromming_website/data/datasources/remote/default_remote_data
 import 'package:dog_gromming_website/data/datasources/remote/remote_datasource.dart'
     as _i9;
 import 'package:dog_gromming_website/data/repositories/system/system_repository.dart'
-    as _i13;
-import 'package:dog_gromming_website/data/services/api_service.dart' as _i3;
-import 'package:dog_gromming_website/di/di.dart' as _i14;
-import 'package:dog_gromming_website/domain/repositories/system/system_respository.dart'
     as _i12;
+import 'package:dog_gromming_website/data/services/api_service.dart' as _i3;
+import 'package:dog_gromming_website/di/di.dart' as _i13;
+import 'package:dog_gromming_website/domain/repositories/system/system_respository.dart'
+    as _i11;
 import 'package:dog_gromming_website/env/env.dart' as _i4;
 import 'package:dog_gromming_website/ui/navigation/main_navigator.dart' as _i8;
 import 'package:dog_gromming_website/ui/viewmodels/home/home_viewmodel.dart'
     as _i5;
-import 'package:dog_gromming_website/ui/viewmodels/splash/splash_viewmodel.dart'
-    as _i11;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -52,13 +50,12 @@ extension GetItInjectableX on _i1.GetIt {
     gh.singleton<_i8.MainNavigator>(diModule.navigator);
     gh.factory<_i9.RemoteDatasource>(
         () => _i10.DefaultRemoteDatasource(gh<_i3.ApiService>()));
-    gh.factory<_i11.SplashViewModel>(() => _i11.SplashViewModel());
-    gh.factory<_i12.SystemRepository>(
-        () => _i13.SystemRepositoryImpl(gh<_i6.LocalDataSource>()));
+    gh.factory<_i11.SystemRepository>(
+        () => _i12.SystemRepositoryImpl(gh<_i6.LocalDataSource>()));
     return this;
   }
 }
 
 class _$ApiServiceModule extends _i3.ApiServiceModule {}
 
-class _$DiModule extends _i14.DiModule {}
+class _$DiModule extends _i13.DiModule {}

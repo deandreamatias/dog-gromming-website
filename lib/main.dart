@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {
-  const String env = String.fromEnvironment("ENVIRONMENT");
+  const String env = String.fromEnvironment('ENVIRONMENT');
   configureDependencies(env: env);
 
   final widgetBindings = WidgetsFlutterBinding.ensureInitialized();

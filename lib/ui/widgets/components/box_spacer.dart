@@ -19,6 +19,25 @@ class BoxSpacer extends StatelessWidget {
     );
   }
 
+  // Responsive spacers
+  factory BoxSpacer.vSmall({bool isMedium = false}) =>
+      isMedium ? BoxSpacer.v8() : BoxSpacer.v16();
+
+  factory BoxSpacer.vMedium({bool isMedium = false}) =>
+      isMedium ? BoxSpacer.v16() : BoxSpacer.v32();
+
+  factory BoxSpacer.vLarge({bool isMedium = false}) =>
+      isMedium ? BoxSpacer.v32() : BoxSpacer.v64();
+
+  factory BoxSpacer.hSmall({bool isMedium = false}) =>
+      isMedium ? BoxSpacer.h8() : BoxSpacer.h16();
+
+  factory BoxSpacer.hMedium({bool isMedium = false}) =>
+      isMedium ? BoxSpacer.h16() : BoxSpacer.h32();
+
+  factory BoxSpacer.hLarge({bool isMedium = false}) =>
+      isMedium ? BoxSpacer.h32() : BoxSpacer.h64();
+
   // Horizontal spacers
   factory BoxSpacer.h4() {
     return const BoxSpacer(horizontalSpacing: Spacing.sp4);

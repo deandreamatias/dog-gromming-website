@@ -1,27 +1,42 @@
-import 'package:dog_gromming_website/di/di.dart';
-import 'package:dog_gromming_website/ui/viewmodels/home/home_viewmodel.dart';
-import 'package:dog_gromming_website/ui/widgets/components/error_card.dart';
-import 'package:dog_gromming_website/ui/widgets/components/iframe.dart';
-import 'package:dog_gromming_website/ui/widgets/components/loading_circle.dart';
-import 'package:dog_gromming_website/ui/widgets/screens/root_screen.dart';
+import 'package:dog_gromming_website/ui/styles/insets.dart';
+import 'package:dog_gromming_website/ui/styles/sizes.dart';
+import 'package:dog_gromming_website/ui/widgets/screens/home/components/welcome_board.dart';
+import 'package:dog_gromming_website/ui/widgets/screens/home/components/welcome_body.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends RootScreen<HomeViewState> {
-  HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
-  final HomeViewModel viewModel = getIt<HomeViewModel>();
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double maxWidth = constraints.maxWidth;
 
-  @override
-  Widget buildView(BuildContext context, HomeViewState state) {
-    return Scaffold(
-      body: SafeArea(
-        child: switch (state) {
-          Loading _ => const LoadingCircle(),
-          Success _ => const Iframe(url: ''),
-          Error _ => ErrorCard(error: state.error),
-        },
-      ),
+        return SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Padding(
+            padding: Insets.a16,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  maxWidth > Sizes.m.width
+                      ? BigWelcomeBoard(
+                          maxWidth: maxWidth - Insets.a16.horizontal,
+                          child: const BigWelcomeBody(),
+                        )
+                      : SmallWelcomeBoard(
+                          maxWidth: maxWidth - Insets.a16.horizontal,
+                          child: const SmallWelcomeBody(),
+                        ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

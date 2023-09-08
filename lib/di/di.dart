@@ -10,8 +10,8 @@ final getIt = GetIt.instance;
 void configureDependencies({required String env}) =>
     getIt.init(environment: env);
 
-const dev = Environment("dev");
-const prod = Environment("prod");
+const dev = Environment('dev');
+const prod = Environment('prod');
 
 @module
 abstract class DiModule {
