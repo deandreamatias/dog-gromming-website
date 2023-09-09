@@ -1,6 +1,7 @@
 import 'package:dog_gromming_website/env/constants.dart';
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
+import 'package:dog_gromming_website/ui/styles/theme.dart';
 import 'package:dog_gromming_website/ui/utils/url_launcher_util.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/buttons/icon_primary_button.dart';
@@ -76,7 +77,7 @@ class SmallWelcomeBody extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           color: AppColors.primary,
-          borderRadius: BorderRadius.all(Radius.circular(8)),
+          borderRadius: BorderTypes.borderRadius8,
         ),
         padding: Insets.a16,
         child: Column(
