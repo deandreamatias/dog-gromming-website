@@ -9,12 +9,17 @@ import 'package:flutter/material.dart';
 class OutlinedCard extends StatelessWidget {
   final String title;
   final String description;
+  final Widget? titleWidget;
 
   const OutlinedCard({
     super.key,
-    required this.title,
+    this.title = '',
     required this.description,
-  });
+    this.titleWidget,
+  }) : assert(
+          titleWidget == null || title.length == 0,
+          'title and titleWidget cannot be used at the same time',
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class OutlinedCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TitleLText(title),
+            titleWidget ?? TitleLText(title),
             BoxSpacer.v8(),
             Expanded(child: BodyMText(description)),
           ],

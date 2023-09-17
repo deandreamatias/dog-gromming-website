@@ -37,6 +37,16 @@
       "description": "Limpieza de oídos."
     }
   },
+  "about": {
+    "company": {
+      "semantic_label": "Logo en texto de la peluquería canina Mimos",
+      "description": "La peluquería canina Mimos es una peluquería canina ubicada en el centro de Barcelona. En ella, cuidamos a tu mascota como si fuera nuestra. Por eso, utilizamos productos de calidad y adaptados a cada tipo de pelo. Además, contamos con un equipo de profesionales que mimarán a tu mascota y la dejarán guapísima."
+    },
+    "owner": {
+      "title": "Ana Júlia",
+      "description": "La dueña de la peluquería canina Mimos es una amante de los animales. Desde pequeña, ha tenido mascotas y siempre ha querido dedicarse a ellas. Por eso, decidió estudiar peluquería canina y abrir su propia peluquería. En ella, cuida a las mascotas como si fueran suyas y las deja guapísimas."
+    }
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

@@ -37,6 +37,17 @@
       "description": "Limpeza de dentes para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
     }
   },
+  "about": {
+    "company": {
+      "semantic_label": "Logo em texto da peluquería canina Mimos",
+      "description": "Somos uma empresa familiar com mais de 10 anos de experiência no setor. Nossa missão é cuidar de seu peludet como se fosse nosso. Nossos profissionais são especialistas em cuidar de seu peludet."
+    
+    },
+    "owner": {
+      "title": "Ana Júlia",
+      "description": "Somos uma empresa familiar com mais de 10 anos de experiência no setor. Nossa missão é cuidar de seu peludet como se fosse nosso. Nossos profissionais são especialistas em cuidar de seu peludet."
+    }
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

@@ -37,6 +37,16 @@
       "description": "We offer a wide range of services for your pet"
     }
   },
+  "about": {
+    "company": {
+      "semantic_label": "Logo text of pet grooming salon Mimos",
+      "description": "We are a company dedicated to the care of pets. We have a team of professionals with extensive experience in the sector. We offer a wide range of services for your pet. We are located in the center of the city of Madrid."
+    },
+    "owner": {
+      "title": "Ana Júlia",
+      "description": "I am a lover of animals, especially dogs. I have been working in the sector for more than 10 years. I have a degree in veterinary medicine and I am a professional dog groomer. I have worked in several pet grooming salons in Madrid. I have also worked in a veterinary clinic. I have a dog named Toby, he is a Yorkshire Terrier. I love my job and I love animals."
+    }
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",
