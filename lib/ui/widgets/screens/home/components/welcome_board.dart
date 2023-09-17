@@ -1,7 +1,8 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/theme.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
-import 'package:dog_gromming_website/ui/widgets/components/circle_logo.dart';
+import 'package:dog_gromming_website/ui/widgets/components/logo.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 
 class BigWelcomeBoard extends StatelessWidget {
@@ -45,7 +46,10 @@ class BigWelcomeBoard extends StatelessWidget {
           Positioned(
             bottom: rectHeight - circleRadius * 0.66,
             left: (maxWidth - circleRadius * 2) / 2,
-            child: const CircleLogo(circleRadius: circleRadius),
+            child: Logo.circle(
+              radius: circleRadius,
+              semanticLabel: 'home.semantic_label'.tr(),
+            ),
           ),
         ],
       ),
@@ -93,7 +97,10 @@ class SmallWelcomeBoard extends StatelessWidget {
           Positioned(
             top: 0,
             left: (maxWidth - circleRadius * 2) / 2,
-            child: CircleLogo(circleRadius: circleRadius),
+            child: Logo.circle(
+              radius: circleRadius,
+              semanticLabel: 'home.semantic_label'.tr(),
+            ),
           ),
         ],
       ),
