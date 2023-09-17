@@ -14,6 +14,25 @@
     "contact_number_tooltip": "Open dialer and call to {}",
     "whatsapp_tooltip": "Open whatsapp and send a message to {}"
   },
+  "services": {
+    "footer": "We offer a wide range of services for your pet",
+    "first": {
+      "title": "Bath",
+      "description": "We offer a wide range of services for your pet"
+    },
+    "second": {
+      "title": "Haircut",
+      "description": "We offer a wide range of services for your pet"
+    },
+    "third": {
+      "title": "Nails",
+      "description": "We offer a wide range of services for your pet"
+    },
+    "fourth": {
+      "title": "Teeth",
+      "description": "We offer a wide range of services for your pet"
+    }
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

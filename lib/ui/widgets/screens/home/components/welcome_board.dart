@@ -1,4 +1,5 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
+import 'package:dog_gromming_website/ui/styles/theme.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/circle_logo.dart';
 import 'package:flutter/widgets.dart';
@@ -31,7 +32,7 @@ class BigWelcomeBoard extends StatelessWidget {
               height: rectHeight,
               decoration: const BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+                borderRadius: BorderTypes.borderRadius8,
               ),
               child: Column(
                 children: [
@@ -79,7 +80,7 @@ class SmallWelcomeBoard extends StatelessWidget {
               height: circleRadius * 0.66 + fixedChildHeight,
               decoration: const BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+                borderRadius: BorderTypes.borderRadius8,
               ),
               child: Column(
                 children: [

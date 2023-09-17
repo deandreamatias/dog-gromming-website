@@ -1,7 +1,7 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/box_shadows.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
-import 'package:dog_gromming_website/ui/styles/spacing.dart';
+import 'package:dog_gromming_website/ui/styles/theme.dart';
 import 'package:dog_gromming_website/ui/widgets/components/navigation/app_navigation_item.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/label_l_text.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +69,7 @@ class _AppNavigationItemButton extends StatelessWidget {
           padding: Insets.h4 + Insets.a4,
           decoration: BoxDecoration(
             color: _bgColor,
-            borderRadius: BorderRadius.circular(Spacing.sp32),
+            borderRadius: BorderTypes.borderRadius32,
           ),
           child: LabelLText(item.label),
         ),
