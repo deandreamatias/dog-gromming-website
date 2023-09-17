@@ -47,6 +47,20 @@
       "description": "La dueña de la peluquería canina Mimos es una amante de los animales. Desde pequeña, ha tenido mascotas y siempre ha querido dedicarse a ellas. Por eso, decidió estudiar peluquería canina y abrir su propia peluquería. En ella, cuida a las mascotas como si fueran suyas y las deja guapísimas."
     }
   },
+  "footer": {
+    "logo_semantic": "Logo de la peluquería canina Mimos",
+    "home": "Inicio",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "about": "Sobre",
+    "privacy_policy": "Política de privacidad",
+    "trademark": "{} Peluquería Canina Mimos",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "tik_tok": "Tik Tok",
+    "social_networks_tooltip": "Ir al perfil de Mimos en {}"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

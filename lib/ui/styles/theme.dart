@@ -42,4 +42,6 @@ class BorderTypes {
       BorderRadius.all(Radius.circular(16));
   static const BorderRadius borderRadius32 =
       BorderRadius.all(Radius.circular(32));
+  static const BorderRadius borderRadiusTop32 =
+      BorderRadius.vertical(top: Radius.circular(32));
 }

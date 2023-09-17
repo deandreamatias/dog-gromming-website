@@ -81,7 +81,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
   }
 }
 
-extension MenuNavigationExtension on MenuNavigation {
+extension _MenuNavigationExtension on MenuNavigation {
   String get label {
     switch (this) {
       case MenuNavigation.home:

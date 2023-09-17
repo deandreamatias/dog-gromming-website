@@ -48,6 +48,20 @@
       "description": "Somos uma empresa familiar com mais de 10 anos de experiência no setor. Nossa missão é cuidar de seu peludet como se fosse nosso. Nossos profissionais são especialistas em cuidar de seu peludet."
     }
   },
+  "footer": {
+    "logo_semantic": "Logo da peluquería canina Mimos",
+    "home": "Início",
+    "services": "Serviços",
+    "gallery": "Galeria",
+    "about": "Sobre",
+    "privacy_policy": "Política de privacidade",
+    "trademark": "{} Peluquería Canina Mimos",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "tik_tok": "Tik Tok",
+    "social_networks_tooltip": "Ir ao perfil de Mimos em {}"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",
