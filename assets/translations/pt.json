@@ -14,6 +14,10 @@
     "contact_number_tooltip": "Abrir discador e ligar a {}",
     "whatsapp_tooltip": "Abrir WhatsApp e enviar mensagem a {}"
   },
+  "privacy_policy": {
+    "title": "Politica de privacidade",
+    "modify_date": "Última data de modificação: {}"
+  },
   "services": {
     "footer": "Tudo o que seu peludet precisa",
     "first": {

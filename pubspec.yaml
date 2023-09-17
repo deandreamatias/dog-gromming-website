@@ -18,6 +18,7 @@ dependencies:
   flutter_bloc: ^8.1.3
   flutter_native_splash: ^2.3.1
   flutter_svg: ^2.0.7
+  flutter_widget_from_html: ^0.10.5+3
   get_it: ^7.6.0
   go_router: ^10.0.0
   injectable: ^2.2.0
@@ -38,6 +39,7 @@ flutter:
     - assets/translations/
     - assets/images/
     - assets/licenses/
+    - assets/html/
 
   fonts:
     - family: Fredoka

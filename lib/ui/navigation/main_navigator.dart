@@ -1,6 +1,7 @@
 import 'package:dog_gromming_website/ui/navigation/menu_navigation.dart';
 import 'package:dog_gromming_website/ui/navigation/routes.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/announcement/announcement_screen.dart';
+import 'package:dog_gromming_website/ui/widgets/screens/privacy-plicy/privacy_policy.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,10 @@ class MainNavigator {
         path: Routes.announcement,
         builder: (BuildContext context, GoRouterState state) =>
             const AnnouncementScreen(),
+      ),
+      GoRoute(
+        path: Routes.privacyPolicy,
+        builder: (context, state) => const PrivacyPolicy(),
       ),
       menuNavigation,
     ],
