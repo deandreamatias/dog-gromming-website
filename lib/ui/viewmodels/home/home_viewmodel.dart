@@ -1,33 +1,33 @@
-import 'package:dog_gromming_website/di/di.dart';
 import 'package:dog_gromming_website/domain/models/errors.dart';
-import 'package:dog_gromming_website/ui/navigation/main_navigator.dart';
 import 'package:dog_gromming_website/ui/viewmodels/base_viewmodel.dart';
 import 'package:injectable/injectable.dart';
 
-@Injectable()
+@injectable
 class HomeViewModel extends BaseViewModel<HomeViewState> {
-  MainNavigator get navigator => getIt<MainNavigator>();
-
-  HomeViewModel() : super(Loading());
+  HomeViewModel() : super(const Loading());
 
   @override
   void onAttach() async {
-    emitValue(Success(list: []));
+    emitValue(const Success(list: []));
   }
 }
 
-sealed class HomeViewState extends ViewState {}
+sealed class HomeViewState extends ViewState {
+  const HomeViewState();
+}
 
-class Loading extends HomeViewState {}
+class Loading extends HomeViewState {
+  const Loading();
+}
 
 class Success extends HomeViewState {
   final List<String> list;
 
-  Success({required this.list});
+  const Success({required this.list});
 }
 
 class Error extends HomeViewState {
   final MainError error;
 
-  Error(this.error);
+  const Error(this.error);
 }
