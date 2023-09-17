@@ -14,6 +14,10 @@
     "contact_number_tooltip": "Open dialer and call to {}",
     "whatsapp_tooltip": "Open whatsapp and send a message to {}"
   },
+  "privacy_policy": {
+    "title": "Privacy policy",
+    "modify_date": "Last modification date: {}"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

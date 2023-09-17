@@ -14,6 +14,10 @@
     "contact_number_tooltip": "Abrir marcador y llamar a {}",
     "whatsapp_tooltip": "Abrir WhatsApp y enviar mensaje a {}"
   },
+  "privacy_policy": {
+    "title": "Política de privacidad",
+    "modify_date": "Última fecha de modificación: {}"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",
