@@ -1,8 +1,10 @@
 import 'package:dog_gromming_website/env/constants.dart';
+import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/loading_circle.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
+import 'package:dog_gromming_website/ui/widgets/components/texts/title_l_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -17,7 +19,8 @@ class PrivacyPolicy extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('privacy_policy.title'.tr()),
+        backgroundColor: AppColors.primary,
+        title: TitleLText('privacy_policy.title'.tr()),
       ),
       body: Padding(
         padding: Insets.a20,
@@ -26,28 +29,31 @@ class PrivacyPolicy extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return SelectionArea(
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      HtmlWidget(
-                        snapshot.requireData,
-                        onLoadingBuilder: (context, element, loadingProgress) =>
-                            const LoadingCircle(),
-                      ),
-                      BoxSpacer.v16(),
-                      BodyMText(
-                        'privacy_policy.modify_date'.tr(
-                          args: [
-                            _modifiedPrivacy
-                                .toLocal()
-                                .toString()
-                                .replaceAll('00:00:00.000', ''),
-                          ],
+                child: ScrollConfiguration(
+                  behavior: const ScrollBehavior().copyWith(overscroll: false),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        HtmlWidget(
+                          snapshot.requireData,
+                          onLoadingBuilder:
+                              (context, element, loadingProgress) =>
+                                  const LoadingCircle(),
                         ),
-                      ),
-                    ],
+                        BoxSpacer.v16(),
+                        BodyMText(
+                          'privacy_policy.modify_date'.tr(
+                            args: [
+                              _modifiedPrivacy
+                                  .toLocal()
+                                  .toString()
+                                  .replaceAll('00:00:00.000', ''),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );

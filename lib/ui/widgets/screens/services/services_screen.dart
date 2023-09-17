@@ -4,6 +4,8 @@ import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/cards/outlined_card.dart';
+import 'package:dog_gromming_website/ui/widgets/components/footer.dart';
+import 'package:dog_gromming_website/ui/widgets/components/sliver_footer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/headline_s_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +63,7 @@ class ServicesScreen extends StatelessWidget {
             },
           ),
         ),
-        SliverToBoxAdapter(child: BoxSpacer.v16()),
+        SliverToBoxAdapter(child: BoxSpacer.v24()),
         SliverPadding(
           padding: Insets.h16,
           sliver: SliverToBoxAdapter(
@@ -79,7 +81,16 @@ class ServicesScreen extends StatelessWidget {
             ),
           ),
         ),
-        SliverToBoxAdapter(child: BoxSpacer.v16()),
+        SliverToBoxAdapter(child: BoxSpacer.v32()),
+        SliverLayoutBuilder(
+          builder: (context, constraints) => Sizes.s.width <
+                  constraints.crossAxisExtent
+              ? const SliverFooter(
+                  child:
+                      Align(alignment: Alignment.bottomCenter, child: Footer()),
+                )
+              : const SliverToBoxAdapter(child: SizedBox()),
+        ),
       ],
     );
   }

@@ -47,6 +47,20 @@
       "description": "I am a lover of animals, especially dogs. I have been working in the sector for more than 10 years. I have a degree in veterinary medicine and I am a professional dog groomer. I have worked in several pet grooming salons in Madrid. I have also worked in a veterinary clinic. I have a dog named Toby, he is a Yorkshire Terrier. I love my job and I love animals."
     }
   },
+  "footer": {
+    "logo_semantic": "Logo of pet grooming salon Mimos",
+    "home": "Home",
+    "services": "Services",
+    "gallery": "Gallery",
+    "about": "About",
+    "privacy_policy": "Privacy policy",
+    "trademark": "{} Peluquería Canina Mimos",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "tik_tok": "Tik Tok",
+    "social_networks_tooltip": "Go to Mimos profile on {}"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",
