@@ -34,3 +34,12 @@ final themeData = ThemeData(
     titleSmall: TextStyles.titleSmall,
   ),
 );
+
+class BorderTypes {
+  static const BorderRadius borderRadius8 =
+      BorderRadius.all(Radius.circular(8));
+  static const BorderRadius borderRadius16 =
+      BorderRadius.all(Radius.circular(16));
+  static const BorderRadius borderRadius32 =
+      BorderRadius.all(Radius.circular(32));
+}

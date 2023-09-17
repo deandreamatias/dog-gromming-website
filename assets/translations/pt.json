@@ -18,6 +18,25 @@
     "title": "Politica de privacidade",
     "modify_date": "Última data de modificação: {}"
   },
+  "services": {
+    "footer": "Tudo o que seu peludet precisa",
+    "first": {
+      "title": "Banho e tosa",
+      "description": "Banho e tosa para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+    },
+    "second": {
+      "title": "Corte de unhas",
+      "description": "Corte de unhas para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+    },
+    "third": {
+      "title": "Limpeza de ouvidos",
+      "description": "Limpeza de ouvidos para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+    },
+    "fourth": {
+      "title": "Limpeza de dentes",
+      "description": "Limpeza de dentes para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+    }
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

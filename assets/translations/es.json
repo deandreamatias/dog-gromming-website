@@ -18,6 +18,25 @@
     "title": "Política de privacidad",
     "modify_date": "Última fecha de modificación: {}"
   },
+  "services": {
+    "footer": "Todo esto hecho con amor para mimar a tu mascota",
+    "first": {
+      "title": "Baño",
+      "description": "Baño con champú especial para cada tipo de pelo, secado y cepillado."
+    },
+    "second": {
+      "title": "Corte",
+      "description": "Corte de pelo con tijera y máquina, baño, secado y cepillado."
+    },
+    "third": {
+      "title": "Uñas",
+      "description": "Corte de uñas y limado."
+    },
+    "fourth": {
+      "title": "Orejas",
+      "description": "Limpieza de oídos."
+    }
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",
