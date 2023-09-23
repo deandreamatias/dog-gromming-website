@@ -17,19 +17,19 @@ class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> cards = <Widget>[
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.first.title'.tr(),
         description: 'services.first.description'.tr(),
       ),
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.second.title'.tr(),
         description: 'services.second.description'.tr(),
       ),
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.third.title'.tr(),
         description: 'services.third.description'.tr(),
       ),
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.fourth.title'.tr(),
         description: 'services.fourth.description'.tr(),
       ),
