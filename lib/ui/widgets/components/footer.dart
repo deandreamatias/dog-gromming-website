@@ -1,17 +1,15 @@
-import 'package:dog_gromming_website/env/constants.dart';
 import 'package:dog_gromming_website/ui/navigation/menu_navigation.dart';
 import 'package:dog_gromming_website/ui/navigation/routes.dart';
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/styles/theme.dart';
-import 'package:dog_gromming_website/ui/utils/url_launcher_util.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
+import 'package:dog_gromming_website/ui/widgets/components/buttons/social_networks.dart';
 import 'package:dog_gromming_website/ui/widgets/components/logo.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:unicons/unicons.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -79,55 +77,7 @@ class Footer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Row(
-                children: [
-                  IconButton(
-                    tooltip: 'footer.social_networks_tooltip'
-                        .tr(args: ['footer.facebook'.tr()]),
-                    onPressed: () {
-                      UrlLauncherUtil.openLink(
-                        Uri.parse(Constants.facebookProfile),
-                      );
-                    },
-                    icon: const Icon(UniconsLine.facebook_f),
-                    color: AppColors.secondary,
-                  ),
-                  BoxSpacer.h4(),
-                  IconButton(
-                    tooltip: 'footer.social_networks_tooltip'
-                        .tr(args: ['footer.instagram'.tr()]),
-                    onPressed: () {
-                      UrlLauncherUtil.openLink(
-                        Uri.parse(Constants.instagramProfile),
-                      );
-                    },
-                    icon: const Icon(UniconsLine.instagram),
-                    color: AppColors.secondary,
-                  ),
-                  BoxSpacer.h4(),
-                  IconButton(
-                    tooltip: 'footer.social_networks_tooltip'
-                        .tr(args: ['footer.whatsapp'.tr()]),
-                    onPressed: () {
-                      UrlLauncherUtil.openWhatsapp(Constants.phone);
-                    },
-                    icon: const Icon(UniconsLine.whatsapp_alt),
-                    color: AppColors.secondary,
-                  ),
-                  BoxSpacer.h4(),
-                  IconButton(
-                    tooltip: 'footer.social_networks_tooltip'
-                        .tr(args: ['footer.tik_tok'.tr()]),
-                    onPressed: () {
-                      UrlLauncherUtil.openLink(
-                        Uri.parse(Constants.tikTokProfile),
-                      );
-                    },
-                    icon: const Icon(UniconsLine.ticket),
-                    color: AppColors.secondary,
-                  ),
-                ],
-              ),
+              const SocialNetworks(),
               BoxSpacer.v8(),
               Padding(
                 padding: Insets.a8,
