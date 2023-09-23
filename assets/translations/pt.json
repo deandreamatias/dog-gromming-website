@@ -10,9 +10,21 @@
     "slogan": "La peluquería que mima a tus mascotas. Donde cuidamos a tu peludet",
     "appointment": "Marque um horário",
     "semantic_logo": "Logo da peluquería canina Mimos",
-    "contact_number": "123456798",
     "contact_number_tooltip": "Abrir discador e ligar a {}",
-    "whatsapp_tooltip": "Abrir WhatsApp e enviar mensagem a {}"
+    "whatsapp_tooltip": "Abrir WhatsApp e enviar mensagem a {}",
+    "where": {
+      "title": "Localizaçao",
+      "semantic_description": "Mapa da localizaçao da peluquería canina Mimos: Rua Isaac Peral nº5, terreo direita, 4930, Quart de Poblet, Valência"
+    },
+    "when": {
+      "title": "Horário"
+    },
+    "contact": {
+      "title": "Contato",
+      "phone": "Telefone: {}",
+      "email": "Email: {}",
+      "social_networks": "Redes sociais: "
+    }
   },
   "privacy_policy": {
     "title": "Politica de privacidade",

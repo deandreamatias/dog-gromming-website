@@ -19,7 +19,9 @@ class IframeState extends State<Iframe> {
   void initState() {
     super.initState();
     iframeElement.height = '100%';
+    iframeElement.style.height = '100%';
     iframeElement.width = '100%';
+    iframeElement.style.width = '100%';
     iframeElement.src = widget.url;
     iframeElement.style.border = 'none';
     ui.platformViewRegistry.registerViewFactory(

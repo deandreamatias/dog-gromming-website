@@ -25,7 +25,7 @@ class ContactButtons extends StatelessWidget {
             onPressed: () {
               UrlLauncherUtil.openTelephone(Constants.phone);
             },
-            label: 'home.contact_number'.tr(),
+            label: Constants.shortPhone,
           ),
         ),
         BoxSpacer.h8(),

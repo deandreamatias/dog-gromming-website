@@ -10,9 +10,21 @@
     "slogan": "We take care of your pet. As if it were ours",
     "appointment": "Make an appointment",
     "semantic_logo": "Logo of pet grooming salon Mimos",
-    "contact_number": "123456798",
     "contact_number_tooltip": "Open dialer and call to {}",
-    "whatsapp_tooltip": "Open whatsapp and send a message to {}"
+    "whatsapp_tooltip": "Open whatsapp and send a message to {}",
+    "where": {
+      "title": "Localization",
+      "semantic_description": "Map of localization of pet grooming salon Mimos: Street Isaac Peral nº5, floor right, 4930, Quart de Poblet, Valencia"
+    },
+    "when": {
+      "title": "Opening hours"
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "Phone: {}",
+      "email": "Email: {}",
+      "social_networks": "Social networks: "
+    }
   },
   "privacy_policy": {
     "title": "Privacy policy",
