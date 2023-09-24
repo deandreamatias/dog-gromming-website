@@ -14,7 +14,7 @@ class DefaultLocalDataSource implements LocalDataSource {
     try {
       return Future.value(Right(env));
     } catch (e) {
-      return Future.value(Left(UnknownError()));
+      return Future.value(const Left(UnknownError()));
     }
   }
 }

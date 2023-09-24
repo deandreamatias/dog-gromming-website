@@ -38,7 +38,7 @@ If you want fork this repository, you have to create your own configuration file
 
 You can use the following commands to setup the project fast:
 
-- Flutter (recommended): `sh setup.sh`
+- Flutter: `sh setup.sh`
 - FVM: `sh setup.sh fvm`
 
 ### Generate code

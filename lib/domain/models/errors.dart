@@ -1,35 +1,41 @@
-sealed class MainError {}
+sealed class MainError {
+  const MainError();
+}
 
-class NoInternet extends MainError {}
+class NoInternet extends MainError {
+  const NoInternet();
+}
 
-class UnknownError extends MainError {}
+class UnknownError extends MainError {
+  const UnknownError();
+}
 
 sealed class ApiError extends MainError {
   final String message;
 
-  ApiError({this.message = ''});
+  const ApiError({this.message = ''});
 }
 
 class BadRequestError extends ApiError {
-  BadRequestError({super.message = ''});
+  const BadRequestError({super.message = ''});
 }
 
 class ForbiddenError extends ApiError {
-  ForbiddenError({super.message = ''});
+  const ForbiddenError({super.message = ''});
 }
 
 class NotFoundError extends ApiError {
-  NotFoundError({super.message = ''});
+  const NotFoundError({super.message = ''});
 }
 
 class UnauthError extends ApiError {
-  UnauthError({super.message = ''});
+  const UnauthError({super.message = ''});
 }
 
 class ExpiredSessionError extends ApiError {
-  ExpiredSessionError({super.message = ''});
+  const ExpiredSessionError({super.message = ''});
 }
 
 class ServerError extends ApiError {
-  ServerError({super.message = ''});
+  const ServerError({super.message = ''});
 }
