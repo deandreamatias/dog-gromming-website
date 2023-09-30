@@ -1,10 +1,11 @@
 import 'package:dog_gromming_website/env/constants.dart';
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
+import 'package:dog_gromming_website/ui/styles/icons_name.dart';
 import 'package:dog_gromming_website/ui/utils/url_launcher_util.dart';
+import 'package:dog_gromming_website/ui/widgets/components/assets/svg_icon.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:unicons/unicons.dart';
 
 class SocialNetworks extends StatelessWidget {
   final bool isCenter;
@@ -28,7 +29,7 @@ class SocialNetworks extends StatelessWidget {
               Uri.parse(Constants.facebookProfile),
             );
           },
-          icon: const Icon(UniconsLine.facebook_f),
+          icon: const SvgIcon(iconName: IconsName.facebook),
           color: AppColors.secondary,
         ),
         BoxSpacer.h4(),
@@ -40,7 +41,7 @@ class SocialNetworks extends StatelessWidget {
               Uri.parse(Constants.instagramProfile),
             );
           },
-          icon: const Icon(UniconsLine.instagram),
+          icon: const SvgIcon(iconName: IconsName.instagram),
           color: AppColors.secondary,
         ),
         BoxSpacer.h4(),
@@ -50,7 +51,7 @@ class SocialNetworks extends StatelessWidget {
           onPressed: () {
             UrlLauncherUtil.openWhatsapp(Constants.phone);
           },
-          icon: const Icon(UniconsLine.whatsapp_alt),
+          icon: const SvgIcon(iconName: IconsName.whatsapp),
           color: AppColors.secondary,
         ),
         BoxSpacer.h4(),
@@ -62,7 +63,10 @@ class SocialNetworks extends StatelessWidget {
               Uri.parse(Constants.tikTokProfile),
             );
           },
-          icon: const Icon(UniconsLine.ticket),
+          icon: const SvgIcon(
+            iconName: IconsName.tiktok,
+            color: AppColors.secondary,
+          ),
           color: AppColors.secondary,
         ),
       ],
