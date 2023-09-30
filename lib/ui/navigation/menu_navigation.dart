@@ -1,6 +1,5 @@
 import 'package:dog_gromming_website/ui/navigation/routes.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/about/about_screen.dart';
-import 'package:dog_gromming_website/ui/widgets/screens/gallery/gallery_screen.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/home_screen.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/scaffold_with_nav_bar.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/services/services_screen.dart';
@@ -28,12 +27,12 @@ final menuNavigation = ShellRoute(
         return const ServicesScreen();
       },
     ),
-    GoRoute(
-      path: Routes.gallery,
-      builder: (BuildContext context, GoRouterState state) {
-        return const GalleryScreen();
-      },
-    ),
+    // GoRoute(
+    //   path: Routes.gallery,
+    //   builder: (BuildContext context, GoRouterState state) {
+    //     return const GalleryScreen();
+    //   },
+    // ),
     GoRoute(
       path: Routes.about,
       builder: (BuildContext context, GoRouterState state) {
@@ -46,6 +45,6 @@ final menuNavigation = ShellRoute(
 enum MenuNavigation {
   home,
   services,
-  gallery,
+  // gallery,
   about,
 }

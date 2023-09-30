@@ -44,11 +44,11 @@ class Footer extends StatelessWidget {
                 onPressed: () => context.go(MenuNavigation.services.route),
                 child: BodyMText(MenuNavigation.services.label.tr()),
               ),
-              BoxSpacer.v4(),
-              TextButton(
-                onPressed: () => context.go(MenuNavigation.gallery.route),
-                child: BodyMText(MenuNavigation.gallery.label.tr()),
-              ),
+              // BoxSpacer.v4(),
+              // TextButton(
+              //   onPressed: () => context.go(MenuNavigation.gallery.route),
+              //   child: BodyMText(MenuNavigation.gallery.label.tr()),
+              // ),
               BoxSpacer.v4(),
               TextButton(
                 onPressed: () => context.go(MenuNavigation.about.route),
@@ -102,8 +102,8 @@ extension _FooterNavigationExtension on MenuNavigation {
         return 'footer.home';
       case MenuNavigation.services:
         return 'footer.services';
-      case MenuNavigation.gallery:
-        return 'footer.gallery';
+      // case MenuNavigation.gallery:
+      //   return 'footer.gallery';
       case MenuNavigation.about:
         return 'footer.about';
     }
