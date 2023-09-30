@@ -48,8 +48,10 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i5.HomeViewModel>(() => _i5.HomeViewModel());
     gh.factory<_i6.LocalDataSource>(() => _i7.DefaultLocalDataSource());
     gh.singleton<_i8.MainNavigator>(diModule.navigator);
-    gh.factory<_i9.RemoteDatasource>(
-        () => _i10.DefaultRemoteDatasource(gh<_i3.ApiService>()));
+    gh.factory<_i9.RemoteDatasource>(() => _i10.DefaultRemoteDatasource(
+          gh<_i3.ApiService>(),
+          gh<_i4.Env>(),
+        ));
     gh.factory<_i11.SystemRepository>(
         () => _i12.SystemRepositoryImpl(gh<_i6.LocalDataSource>()));
     return this;

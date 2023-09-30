@@ -32,7 +32,7 @@ class Footer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Logo.circle(
               radius: 55,
-              semanticLabel: 'logo_semantic'.tr(),
+              semanticLabel: 'footer.logo_semantic'.tr(),
             ),
           ),
           BoxSpacer.h16(),
