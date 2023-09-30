@@ -82,6 +82,7 @@
     "unauthorized": "No autorizado",
     "forbidden": "No permitido",
     "expired_session": "Sesión expirada",
-    "unknown": "Error desconocido"
+    "unknown": "Error desconocido",
+    "no_navigation": "A página que você está tentando acessar não existe. Volte para a página inicial."
   }
 }
