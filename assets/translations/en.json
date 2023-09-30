@@ -17,7 +17,8 @@
       "semantic_description": "Map of localization of pet grooming salon Mimos: Street Isaac Peral nº5, floor right, 4930, Quart de Poblet, Valencia"
     },
     "when": {
-      "title": "Opening hours"
+      "title": "Opening hours",
+      "schedule": "Monday to Friday from 9:30 AM to 2:30 PM"
     },
     "contact": {
       "title": "Contact",

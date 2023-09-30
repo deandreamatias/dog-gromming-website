@@ -43,9 +43,7 @@ class HomeScreen extends StatelessWidget {
                   BoxSpacer.v8(),
                   Padding(
                     padding: Insets.a16,
-                    child: _WhereWhenSection(
-                      isSmall: maxWidth < Sizes.m.width,
-                    ),
+                    child: _WhereWhenSection(maxWidth: maxWidth),
                   ),
                   BoxSpacer.v8(),
                   if (Sizes.s.width < maxWidth) const Footer(),
@@ -60,18 +58,18 @@ class HomeScreen extends StatelessWidget {
 }
 
 class _WhereWhenSection extends StatelessWidget {
-  final bool isSmall;
-  const _WhereWhenSection({this.isSmall = false});
+  final double maxWidth;
+  const _WhereWhenSection({required this.maxWidth});
 
   @override
   Widget build(BuildContext context) {
-    return isSmall
+    return maxWidth < Sizes.m.width
         ? GridView.extent(
             shrinkWrap: true,
             crossAxisSpacing: Spacing.sp16,
             mainAxisSpacing: Spacing.sp16,
             maxCrossAxisExtent: 700,
-            childAspectRatio: 1.5,
+            childAspectRatio: _getAspecRatio(maxWidth),
             children: const [WhereCard(), WhenCard()],
           )
         : Row(
@@ -92,5 +90,20 @@ class _WhereWhenSection extends StatelessWidget {
               ),
             ],
           );
+  }
+
+  double _getAspecRatio(double maxWidth) {
+    if (maxWidth < 360) {
+      return 0.75;
+    } else if (maxWidth < 500) {
+      return 1;
+    } else if (maxWidth < 750) {
+      return 1.6;
+    } else if (maxWidth < Sizes.m.width) {
+      return 1.1;
+    } else if (maxWidth < Sizes.l.width) {
+      return 1.3;
+    }
+    return 1;
   }
 }

@@ -1,5 +1,6 @@
 import 'package:dog_gromming_website/env/constants.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
+import 'package:dog_gromming_website/ui/widgets/components/buttons/social_networks.dart';
 import 'package:dog_gromming_website/ui/widgets/components/cards/outlined_card.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/title_l_text.dart';
@@ -12,38 +13,50 @@ class WhenCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedCard(
-      child: SelectionArea(
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            children: [
-              Expanded(
+      child: SizedBox(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: SelectionArea(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TitleLText('home.when.title'.tr()),
-                    BoxSpacer.v8(),
-                    Expanded(child: BodyMText('home.when.description'.tr())),
+                    const BoxSpacer(
+                      horizontalSpacing: double.infinity,
+                      verticalSpacing: 8,
+                    ),
+                    BodyMText('home.when.schedule'.tr()),
                   ],
                 ),
               ),
-              BoxSpacer.v8(),
-              Expanded(
+            ),
+            BoxSpacer.v8(),
+            Expanded(
+              flex: 2,
+              child: SelectionArea(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TitleLText('home.contact.title'.tr()),
                     BoxSpacer.v8(),
                     BodyMText('home.contact.phone'.tr(args: [Constants.phone])),
-                    BoxSpacer.v8(),
+                    BoxSpacer.v12(),
                     BodyMText('home.contact.email'.tr(args: [Constants.email])),
-                    BoxSpacer.v8(),
-                    BodyMText('home.social_networks.title'.tr()),
+                    BoxSpacer.v12(),
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        BodyMText('home.contact.social_networks'.tr()),
+                        const SocialNetworks(isCenter: true),
+                      ],
+                    ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

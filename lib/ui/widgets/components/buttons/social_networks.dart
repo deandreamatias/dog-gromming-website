@@ -7,13 +7,18 @@ import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
 class SocialNetworks extends StatelessWidget {
+  final bool isCenter;
+
   const SocialNetworks({
     super.key,
+    this.isCenter = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment:
+          isCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
       children: [
         IconButton(
           tooltip: 'footer.social_networks_tooltip'

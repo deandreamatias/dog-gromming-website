@@ -17,7 +17,8 @@
       "semantic_description": "Mapa de la localización de la peluquería canina Mimos: Calle Isaac Peral nº5, bajo derecha, 4930, Quart de Poblet, Valencia"
     },
     "when": {
-      "title": "Horario"
+      "title": "Horario",
+      "schedule": "De lunes a viernes de 9:30 a 14:30"
     },
     "contact": {
       "title": "Contacto",
