@@ -17,6 +17,10 @@ jobs:
         cache: true
         cache-key: 'flutter-:os:-:version:'
         cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
+    - name: Retrieve the secret and decode it to a file
+      env:
+        ENV_PROD_BASE64: ${{ secrets.ENV_PROD_BASE64 }}
+      run: echo $ENV_PROD_BASE64 | base64 --decode > .env/prod.json
     - name: Setup project
       run: sh setup.sh
     - name: Verify formated files
