@@ -3,6 +3,7 @@ import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/footer.dart';
+import 'package:dog_gromming_website/ui/widgets/components/sliver_footer.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/components/welcome_board.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/components/welcome_body.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/components/when_card.dart';
@@ -14,45 +15,53 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final double maxWidth = constraints.maxWidth;
-
-        return ScrollConfiguration(
-          behavior: const ScrollBehavior().copyWith(overscroll: false),
-          child: SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: Column(
-                children: [
-                  maxWidth > Sizes.m.width
-                      ? Padding(
-                          padding: Insets.a16,
-                          child: BigWelcomeBoard(
-                            maxWidth: maxWidth - Insets.a16.horizontal,
-                            child: const BigWelcomeBody(),
-                          ),
-                        )
-                      : Padding(
-                          padding: Insets.a16,
-                          child: SmallWelcomeBoard(
-                            maxWidth: maxWidth - Insets.a16.horizontal,
-                            child: const SmallWelcomeBody(),
-                          ),
-                        ),
-                  BoxSpacer.v8(),
-                  Padding(
-                    padding: Insets.a16,
-                    child: _WhereWhenSection(maxWidth: maxWidth),
-                  ),
-                  BoxSpacer.v8(),
-                  if (Sizes.s.width < maxWidth) const Footer(),
-                ],
-              ),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
+      slivers: <Widget>[
+        SliverToBoxAdapter(child: BoxSpacer.v16()),
+        SliverPadding(
+          padding: Insets.a16,
+          sliver: SliverLayoutBuilder(
+            builder: (context, constraints) {
+              return constraints.crossAxisExtent > Sizes.m.width
+                  ? SliverToBoxAdapter(
+                      child: BigWelcomeBoard(
+                        maxWidth: constraints.crossAxisExtent,
+                        child: const BigWelcomeBody(),
+                      ),
+                    )
+                  : SliverToBoxAdapter(
+                      child: SmallWelcomeBoard(
+                        maxWidth: constraints.crossAxisExtent,
+                        child: const SmallWelcomeBody(),
+                      ),
+                    );
+            },
+          ),
+        ),
+        SliverToBoxAdapter(child: BoxSpacer.v8()),
+        SliverPadding(
+          padding: Insets.h16,
+          sliver: SliverLayoutBuilder(
+            builder: (context, constraints) => SliverToBoxAdapter(
+              child: _WhereWhenSection(maxWidth: constraints.crossAxisExtent),
             ),
           ),
-        );
-      },
+        ),
+        SliverToBoxAdapter(child: BoxSpacer.v8()),
+        SliverLayoutBuilder(
+          builder: (context, constraints) =>
+              Sizes.s.width < constraints.crossAxisExtent
+                  ? const SliverFooter(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Footer(),
+                      ),
+                    )
+                  : const SliverToBoxAdapter(child: SizedBox()),
+        ),
+      ],
     );
   }
 }
