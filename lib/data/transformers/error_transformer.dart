@@ -36,7 +36,7 @@ MainError errorsHandler(DioException error) {
         message: apiErrorMessage,
       );
     default:
-      return UnknownError();
+      return const UnknownError();
   }
 }
 

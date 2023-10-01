@@ -18,7 +18,7 @@ class BigWelcomeBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double circleRadius = 200;
-    const double rectHeight = 370;
+    const double rectHeight = 400;
     final double rectWidth = maxWidth * 0.8;
 
     return SizedBox(
@@ -48,7 +48,7 @@ class BigWelcomeBoard extends StatelessWidget {
             left: (maxWidth - circleRadius * 2) / 2,
             child: Logo.circle(
               radius: circleRadius,
-              semanticLabel: 'home.semantic_label'.tr(),
+              semanticLabel: 'home.semantic_logo'.tr(),
             ),
           ),
         ],
@@ -77,7 +77,7 @@ class SmallWelcomeBoard extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            top: circleRadius * 1.33,
+            top: circleRadius * 1.34,
             left: 0,
             child: Container(
               width: maxWidth,
@@ -99,7 +99,7 @@ class SmallWelcomeBoard extends StatelessWidget {
             left: (maxWidth - circleRadius * 2) / 2,
             child: Logo.circle(
               radius: circleRadius,
-              semanticLabel: 'home.semantic_label'.tr(),
+              semanticLabel: 'home.semantic_logo'.tr(),
             ),
           ),
         ],

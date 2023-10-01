@@ -7,19 +7,12 @@ import 'package:dog_gromming_website/ui/widgets/components/texts/title_l_text.da
 import 'package:flutter/material.dart';
 
 class OutlinedCard extends StatelessWidget {
-  final String title;
-  final String description;
-  final Widget? titleWidget;
+  final Widget child;
 
   const OutlinedCard({
     super.key,
-    this.title = '',
-    required this.description,
-    this.titleWidget,
-  }) : assert(
-          titleWidget == null || title.length == 0,
-          'title and titleWidget cannot be used at the same time',
-        );
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +23,40 @@ class OutlinedCard extends StatelessWidget {
       ),
       child: Padding(
         padding: Insets.v24 + Insets.h16,
+        child: child,
+      ),
+    );
+  }
+
+  factory OutlinedCard.text({
+    required String title,
+    required String description,
+  }) =>
+      OutlinedCard(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            titleWidget ?? TitleLText(title),
+            TitleLText(title),
             BoxSpacer.v8(),
             Expanded(child: BodyMText(description)),
           ],
         ),
-      ),
-    );
-  }
+      );
+
+  factory OutlinedCard.logo({
+    required Widget title,
+    required String description,
+  }) =>
+      OutlinedCard(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            title,
+            BoxSpacer.v8(),
+            Expanded(child: BodyMText(description)),
+          ],
+        ),
+      );
 }

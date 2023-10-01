@@ -1,16 +1,18 @@
+import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
+import 'package:dog_gromming_website/ui/widgets/components/assets/svg_icon.dart';
 import 'package:flutter/material.dart';
 
 class IconPrimaryButton extends StatelessWidget {
   final VoidCallback onPressed;
-  final IconData icon;
+  final String iconName;
   final bool isBigButton;
   final String tooltip;
 
   const IconPrimaryButton({
     super.key,
     required this.onPressed,
-    required this.icon,
+    required this.iconName,
     this.isBigButton = false,
     required this.tooltip,
   });
@@ -27,9 +29,11 @@ class IconPrimaryButton extends StatelessWidget {
             vertical: isBigButton ? Spacing.sp16 : Spacing.sp8,
           ),
         ),
-        child: Icon(
-          icon,
-          size: isBigButton ? 56 : 20,
+        child: SvgIcon(
+          iconName: iconName,
+          width: isBigButton ? 56 : 20,
+          height: isBigButton ? 56 : 20,
+          color: AppColors.white,
         ),
       ),
     );

@@ -20,14 +20,25 @@ A dog grooming website created for Peluquería canina Mimos.
 
 The application has three environments and each one has its own configuration file:
 
-- dev: `.env/dev.dart`
-- prod: `.env/prod.dart`
+- dev: `.env/dev.json`
+- prod: `.env/prod.json`
+
+If you want fork this repository, you have to create your own configuration files and replace the values with your own. Example
+
+```json
+{
+   "PACKAGE_NAME": "com.example.dev",
+   "APP_NAME": "App name Dev",
+   "ENVIRONMENT": "dev",
+   "GOOGLE_MAPS_API_KEY": "YOUR_API_KEY"
+}
+```
 
 ## Setup
 
 You can use the following commands to setup the project fast:
 
-- Flutter (recommended): `sh setup.sh`
+- Flutter: `sh setup.sh`
 - FVM: `sh setup.sh fvm`
 
 ### Generate code

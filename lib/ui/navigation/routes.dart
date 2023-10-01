@@ -16,8 +16,8 @@ extension MenuRoutes on MenuNavigation {
         return Routes.home;
       case MenuNavigation.services:
         return Routes.services;
-      case MenuNavigation.gallery:
-        return Routes.gallery;
+      // case MenuNavigation.gallery:
+      //   return Routes.gallery;
       case MenuNavigation.about:
         return Routes.about;
     }

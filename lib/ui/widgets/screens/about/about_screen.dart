@@ -15,14 +15,14 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cards = <Widget>[
-      OutlinedCard(
+      OutlinedCard.logo(
         description: 'about.company.description'.tr(),
-        titleWidget: Logo.text(
+        title: Logo.text(
           semanticLabel: 'about.company.semantic_label'.tr(),
           height: 24,
         ),
       ),
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'about.owner.title'.tr(),
         description: 'about.owner.description'.tr(),
       ),

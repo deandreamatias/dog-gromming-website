@@ -11,6 +11,7 @@
 migrate_working_dir/
 .fvm/flutter_sdk
 .firebase/
+.env/
 
 # IntelliJ related
 *.iml

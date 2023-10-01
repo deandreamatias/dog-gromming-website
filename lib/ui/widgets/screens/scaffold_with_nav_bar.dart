@@ -55,9 +55,9 @@ class ScaffoldWithNavBar extends StatelessWidget {
         GoRouter.of(context).go(Routes.home);
       case 1:
         GoRouter.of(context).go(Routes.services);
+      // case 2:
+      //   GoRouter.of(context).go(Routes.gallery);
       case 2:
-        GoRouter.of(context).go(Routes.gallery);
-      case 3:
         GoRouter.of(context).go(Routes.about);
     }
   }
@@ -88,8 +88,8 @@ extension _MenuNavigationExtension on MenuNavigation {
         return 'menu.home';
       case MenuNavigation.services:
         return 'menu.services';
-      case MenuNavigation.gallery:
-        return 'menu.gallery';
+      // case MenuNavigation.gallery:
+      //   return 'menu.gallery';
       case MenuNavigation.about:
         return 'menu.about';
     }

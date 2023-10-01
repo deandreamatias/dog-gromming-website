@@ -1,7 +1,9 @@
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
+import 'package:dog_gromming_website/ui/styles/icons_name.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
+import 'package:dog_gromming_website/ui/widgets/components/assets/svg_icon.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/cards/outlined_card.dart';
 import 'package:dog_gromming_website/ui/widgets/components/footer.dart';
@@ -9,7 +11,6 @@ import 'package:dog_gromming_website/ui/widgets/components/sliver_footer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/headline_s_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:unicons/unicons.dart';
 
 class ServicesScreen extends StatelessWidget {
   const ServicesScreen({super.key});
@@ -17,19 +18,19 @@ class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> cards = <Widget>[
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.first.title'.tr(),
         description: 'services.first.description'.tr(),
       ),
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.second.title'.tr(),
         description: 'services.second.description'.tr(),
       ),
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.third.title'.tr(),
         description: 'services.third.description'.tr(),
       ),
-      OutlinedCard(
+      OutlinedCard.text(
         title: 'services.fourth.title'.tr(),
         description: 'services.fourth.description'.tr(),
       ),
@@ -101,10 +102,11 @@ class _LoveIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Icon(
-      UniconsLine.heart,
+    return const SvgIcon(
+      iconName: IconsName.heart,
       color: AppColors.primary,
-      size: 48,
+      width: 48,
+      height: 48,
     );
   }
 }

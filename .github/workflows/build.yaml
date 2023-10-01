@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - uses: kuhnroyal/flutter-fvm-config-action@v1
     - name: Download flutter
       uses: subosito/flutter-action@v2
@@ -17,6 +17,12 @@ jobs:
         cache: true
         cache-key: 'flutter-:os:-:version:'
         cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
+    - name: Retrieve the secret and decode it to a file
+      env:
+        ENV_PROD_BASE64: ${{ secrets.ENV_PROD_BASE64 }}
+      run: |
+        mkdir .env
+        echo $ENV_PROD_BASE64 | base64 -di > .env/prod.json
     - name: Setup project
       run: sh setup.sh
     - name: Verify formated files
@@ -38,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - uses: actions/download-artifact@v3
       with:
         name: web-app
@@ -62,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - uses: actions/download-artifact@v3
       with:
         name: web-app
