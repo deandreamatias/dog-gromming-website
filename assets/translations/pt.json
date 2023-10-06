@@ -25,6 +25,26 @@
       "phone": "Telefone: {}",
       "email": "Email: {}",
       "social_networks": "Redes sociais: "
+    },
+    "contact_form": {
+      "title": "Solicitar agendamento",
+      "contact_method": "Telefone ou email*",
+      "contact_method_error": "Deve inserir um telefone ou email válido",
+      "name": "Nome e sobrenome*",
+      "name_error": "Deve inserir um nome e sobrenome",
+      "pet_name": "Nome do pet",
+      "pet_size": "Tamanho do pet",
+      "pet_size_small": "Pequeno",
+      "pet_size_medium": "Médio",
+      "pet_size_big": "Grande",
+      "pet_size_giant": "Gigante",
+      "whatsapp_checkbox": "Prefiro contato por WhatsApp",
+      "message": "Outras informações",
+      "privacy_policy_checkbox": "Li e aceito a política de privacidade*",
+      "privacy_policy_error": "Deve aceitar a política de privacidade",
+      "submit": "enviar mensagem",
+      "success": "Mensagem enviada com sucesso",
+      "error": "Erro ao enviar a mensagem"
     }
   },
   "privacy_policy": {
