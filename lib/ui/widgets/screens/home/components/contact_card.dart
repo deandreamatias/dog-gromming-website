@@ -6,6 +6,7 @@ import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/buttons/primary_button.dart';
 import 'package:dog_gromming_website/ui/widgets/components/cards/outlined_card.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
+import 'package:dog_gromming_website/ui/widgets/components/texts/title_l_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -150,56 +151,62 @@ class _ContactCardState extends State<ContactCard> {
     ];
 
     return OutlinedCard(
-      child: Form(
-        key: _formKey,
-        autovalidateMode: _autovalidateMode,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            if (constraints.maxWidth > Sizes.m.width) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Flexible(child: SizedBox.shrink()),
-                  Expanded(
-                    child: constraints.maxWidth > Sizes.xl.width
-                        ? Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  children: firstFormPart,
-                                ),
+      child: Column(
+        children: [
+          TitleLText('home.contact_form.title'.tr()),
+          BoxSpacer.v16(),
+          Form(
+            key: _formKey,
+            autovalidateMode: _autovalidateMode,
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                if (constraints.maxWidth > Sizes.m.width) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Flexible(child: SizedBox.shrink()),
+                      Expanded(
+                        child: constraints.maxWidth > Sizes.xl.width
+                            ? Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: firstFormPart,
+                                    ),
+                                  ),
+                                  BoxSpacer.h16(),
+                                  Expanded(
+                                    child: Column(
+                                      children: secondFormPart,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            : Column(
+                                children: [
+                                  ...firstFormPart,
+                                  BoxSpacer.v16(),
+                                  ...secondFormPart,
+                                ],
                               ),
-                              BoxSpacer.h16(),
-                              Expanded(
-                                child: Column(
-                                  children: secondFormPart,
-                                ),
-                              ),
-                            ],
-                          )
-                        : Column(
-                            children: [
-                              ...firstFormPart,
-                              BoxSpacer.v16(),
-                              ...secondFormPart,
-                            ],
-                          ),
-                  ),
-                  const Flexible(child: SizedBox.shrink()),
-                ],
-              );
-            }
-            return Column(
-              children: [
-                ...firstFormPart,
-                BoxSpacer.v16(),
-                ...secondFormPart,
-              ],
-            );
-          },
-        ),
+                      ),
+                      const Flexible(child: SizedBox.shrink()),
+                    ],
+                  );
+                }
+                return Column(
+                  children: [
+                    ...firstFormPart,
+                    BoxSpacer.v16(),
+                    ...secondFormPart,
+                  ],
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
