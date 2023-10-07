@@ -139,7 +139,6 @@ class _ContactCardState extends State<ContactCard> {
                 message: message,
                 privacyPolicyCheckbox: privacyPolicyCheckbox,
               );
-              debugPrint(contactClient.toString());
               final useCase = getIt<SendEmailUseCase>();
               useCase(contactClient: contactClient).then((value) {
                 if (value.isLeft) {
@@ -158,6 +157,7 @@ class _ContactCardState extends State<ContactCard> {
                     duration: const Duration(seconds: 6),
                   ),
                 );
+                _formKey.currentState!.reset();
               });
               return;
             }
