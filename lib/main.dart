@@ -1,5 +1,4 @@
 import 'package:dog_gromming_website/app.dart';
-import 'package:dog_gromming_website/data/services/certificates_http_overrides.dart';
 import 'package:dog_gromming_website/di/di.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
@@ -24,7 +23,6 @@ void main() async {
     yield LicenseEntryWithLineBreaks(['google_fonts'], comfortaaLicense);
   });
 
-  if (dev.name == env) overrideHttpCertificate();
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
