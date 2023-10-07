@@ -1,11 +1,12 @@
+import 'package:dog_gromming_website/di/di.dart';
 import 'package:dog_gromming_website/domain/models/contact_client.dart';
-import 'package:dog_gromming_website/ui/styles/insets.dart';
+import 'package:dog_gromming_website/domain/use_cases/send_email_use_case.dart';
 import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/utils/validators_util.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/buttons/primary_button.dart';
 import 'package:dog_gromming_website/ui/widgets/components/cards/outlined_card.dart';
-import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
+import 'package:dog_gromming_website/ui/widgets/components/form/checkbox_form.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/title_l_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class _ContactCardState extends State<ContactCard> {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> firstFormPart = [
+    final List<Widget> leftFormPart = [
       TextFormField(
         decoration: InputDecoration(
           hintText: 'home.contact_form.contact_method'.tr(),
@@ -84,8 +85,8 @@ class _ContactCardState extends State<ContactCard> {
         },
       ),
     ];
-    final List<Widget> secondFormPart = [
-      _CheckboxForm(
+    final List<Widget> rightFormPart = [
+      CheckboxForm(
         title: 'home.contact_form.whatsapp_checkbox'.tr(),
         initialValue: whatsappCheckbox,
         onSaved: (newValue) {
@@ -107,7 +108,7 @@ class _ContactCardState extends State<ContactCard> {
         },
       ),
       BoxSpacer.v16(),
-      _CheckboxForm(
+      CheckboxForm(
         title: 'home.contact_form.privacy_policy_checkbox'.tr(),
         initialValue: privacyPolicyCheckbox,
         onSaved: (newValue) {
@@ -126,7 +127,7 @@ class _ContactCardState extends State<ContactCard> {
       Align(
         alignment: Alignment.centerRight,
         child: PrimaryButton(
-          onPressed: () {
+          onPressed: () async {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
               final contactClient = ContactClient(
@@ -139,6 +140,25 @@ class _ContactCardState extends State<ContactCard> {
                 privacyPolicyCheckbox: privacyPolicyCheckbox,
               );
               debugPrint(contactClient.toString());
+              final useCase = getIt<SendEmailUseCase>();
+              useCase(contactClient: contactClient).then((value) {
+                if (value.isLeft) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('home.contact_form.error'.tr()),
+                      backgroundColor: Theme.of(context).colorScheme.error,
+                      duration: const Duration(seconds: 6),
+                    ),
+                  );
+                  return;
+                }
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('home.contact_form.success'.tr()),
+                    duration: const Duration(seconds: 6),
+                  ),
+                );
+              });
               return;
             }
             setState(() {
@@ -173,22 +193,22 @@ class _ContactCardState extends State<ContactCard> {
                                 children: [
                                   Expanded(
                                     child: Column(
-                                      children: firstFormPart,
+                                      children: leftFormPart,
                                     ),
                                   ),
                                   BoxSpacer.h16(),
                                   Expanded(
                                     child: Column(
-                                      children: secondFormPart,
+                                      children: rightFormPart,
                                     ),
                                   ),
                                 ],
                               )
                             : Column(
                                 children: [
-                                  ...firstFormPart,
+                                  ...leftFormPart,
                                   BoxSpacer.v16(),
-                                  ...secondFormPart,
+                                  ...rightFormPart,
                                 ],
                               ),
                       ),
@@ -198,9 +218,9 @@ class _ContactCardState extends State<ContactCard> {
                 }
                 return Column(
                   children: [
-                    ...firstFormPart,
+                    ...leftFormPart,
                     BoxSpacer.v16(),
-                    ...secondFormPart,
+                    ...rightFormPart,
                   ],
                 );
               },
@@ -273,59 +293,4 @@ class _DropdownPetSizeFormState extends State<_DropdownPetSizeForm> {
         return '';
     }
   }
-}
-
-class _CheckboxForm extends FormField<bool> {
-  _CheckboxForm({
-    required String title,
-    super.onSaved,
-    super.validator,
-    super.initialValue,
-  }) : super(
-          builder: (FormFieldState<bool> state) {
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Builder(
-                      builder: (context) {
-                        return Checkbox(
-                          value: state.value,
-                          onChanged: state.didChange,
-                          side: state.hasError
-                              ? BorderSide(
-                                  color: Theme.of(context).colorScheme.error,
-                                  width: 2,
-                                )
-                              : null,
-                        );
-                      },
-                    ),
-                    BoxSpacer.h8(),
-                    Expanded(
-                      child: BodyMText(title, textAlign: TextAlign.start),
-                    ),
-                  ],
-                ),
-                if (state.hasError)
-                  Builder(
-                    builder: (context) {
-                      return Padding(
-                        padding: Insets.h8,
-                        child: Text(
-                          state.errorText ?? '',
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    color: Theme.of(context).colorScheme.error,
-                                  ),
-                        ),
-                      );
-                    },
-                  ),
-              ],
-            );
-          },
-        );
 }

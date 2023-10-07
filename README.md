@@ -30,7 +30,9 @@ If you want fork this repository, you have to create your own configuration file
    "PACKAGE_NAME": "com.example.dev",
    "APP_NAME": "App name Dev",
    "ENVIRONMENT": "dev",
-   "GOOGLE_MAPS_API_KEY": "YOUR_API_KEY"
+   "GOOGLE_MAPS_API_KEY": "YOUR_API_KEY",
+   "SENDGRID_API_KEY": "YOUR_API_KEY",
+   "SENDGRID_TEMPLATE_ID": "YOUR_TEMPLATE_ID"
 }
 ```
 

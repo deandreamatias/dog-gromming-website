@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class ContactClient {
   final String contactMethod;
   final String name;
@@ -17,6 +16,9 @@ class ContactClient {
     this.message = '',
     required this.privacyPolicyCheckbox,
   });
+
+  bool get isValid =>
+      contactMethod.isNotEmpty && name.isNotEmpty && privacyPolicyCheckbox;
 
   @override
   String toString() {

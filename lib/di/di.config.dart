@@ -17,11 +17,9 @@ import 'package:dog_gromming_website/data/datasources/remote/default_remote_data
     as _i9;
 import 'package:dog_gromming_website/data/datasources/remote/remote_datasource.dart'
     as _i8;
-import 'package:dog_gromming_website/data/repositories/system/system_repository.dart'
-    as _i11;
 import 'package:dog_gromming_website/data/services/api_service.dart' as _i3;
-import 'package:dog_gromming_website/di/di.dart' as _i12;
-import 'package:dog_gromming_website/domain/repositories/system/system_respository.dart'
+import 'package:dog_gromming_website/di/di.dart' as _i11;
+import 'package:dog_gromming_website/domain/use_cases/send_email_use_case.dart'
     as _i10;
 import 'package:dog_gromming_website/env/env.dart' as _i4;
 import 'package:dog_gromming_website/ui/navigation/main_navigator.dart' as _i7;
@@ -49,12 +47,12 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i3.ApiService>(),
           gh<_i4.Env>(),
         ));
-    gh.factory<_i10.SystemRepository>(
-        () => _i11.SystemRepositoryImpl(gh<_i5.LocalDataSource>()));
+    gh.factory<_i10.SendEmailUseCase>(
+        () => _i10.SendEmailUseCase(gh<_i8.RemoteDatasource>()));
     return this;
   }
 }
 
 class _$ApiServiceModule extends _i3.ApiServiceModule {}
 
-class _$DiModule extends _i12.DiModule {}
+class _$DiModule extends _i11.DiModule {}
