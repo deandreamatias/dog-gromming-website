@@ -10,6 +10,14 @@ class UnknownError extends MainError {
   const UnknownError();
 }
 
+sealed class FormError extends MainError {
+  const FormError();
+}
+
+class InvalidDataForm extends FormError {
+  const InvalidDataForm();
+}
+
 sealed class ApiError extends MainError {
   final String message;
 

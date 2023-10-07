@@ -16,6 +16,31 @@ final themeData = ThemeData(
       ),
     ),
   ),
+  checkboxTheme: CheckboxThemeData(
+    fillColor: MaterialStateProperty.resolveWith((states) {
+      if (states.contains(MaterialState.selected)) {
+        return AppColors.secondary;
+      }
+      return AppColors.white;
+    }),
+    checkColor: MaterialStateProperty.all(AppColors.white),
+    side: const BorderSide(color: AppColors.secondary, width: 2),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderTypes.borderRadius4,
+    ),
+  ),
+  inputDecorationTheme: const InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderRadius: BorderTypes.borderRadius8,
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderTypes.borderRadius8,
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderTypes.borderRadius8,
+      borderSide: BorderSide(color: AppColors.secondary, width: 2),
+    ),
+  ),
   textTheme: const TextTheme(
     labelLarge: TextStyles.labelLarge,
     labelMedium: TextStyles.labelMedium,
@@ -36,6 +61,8 @@ final themeData = ThemeData(
 );
 
 class BorderTypes {
+  static const BorderRadius borderRadius4 =
+      BorderRadius.all(Radius.circular(4));
   static const BorderRadius borderRadius8 =
       BorderRadius.all(Radius.circular(8));
   static const BorderRadius borderRadius16 =

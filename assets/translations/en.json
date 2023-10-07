@@ -25,7 +25,28 @@
       "phone": "Phone: {}",
       "email": "Email: {}",
       "social_networks": "Social networks: "
+    },
+    "contact_form": {
+      "title": "Request schedule",
+      "contact_method": "Phone or email*",
+      "contact_method_error": "You must add a phone or email valid",
+      "name": "First name and last name*",
+      "name_error": "Enter your first name and last name",
+      "pet_name": "Pet name",
+      "pet_size": "Pet size",
+      "pet_size_small": "Small",
+      "pet_size_medium": "Medium",
+      "pet_size_big": "Big",
+      "pet_size_giant": "Giant",
+      "whatsapp_checkbox": "I want to be contacted by WhatsApp",
+      "message": "Other information",
+      "privacy_policy_checkbox": "I have read and accept the privacy policy*",
+      "privacy_policy_checkbox_error": "You must accept the privacy policy",
+      "submit": "send message",
+      "success": "Message sent successfully",
+      "error": "Error sending message"
     }
+
   },
   "privacy_policy": {
     "title": "Privacy policy",

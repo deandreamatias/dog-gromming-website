@@ -25,6 +25,26 @@
       "phone": "Teléfono: {}",
       "email": "Correo electrónico: {}",
       "social_networks": "Redes sociales: "
+    },
+    "contact_form": {
+      "title": "Solicitar cita",
+      "contact_method": "Teléfono o correo electrónico*",
+      "contact_method_error": "Debe ser un teléfono o correo electrónico válido",
+      "name": "Nombre y apellidos*",
+      "name_error": "Debe introducir su nombre y apellidos",
+      "pet_name": "Nombre de la mascota",
+      "pet_size": "Tamaño de la mascota",
+      "pet_size_small": "Pequeña",
+      "pet_size_medium": "Mediana",
+      "pet_size_big": "Grande",
+      "pet_size_giant": "Gigante",
+      "whatsapp_checkbox": "Prefiero contacto por WhatsApp",
+      "message": "Otras informaciones",
+      "privacy_policy_checkbox": "He leído y acepto la política de privacidad*",
+      "privacy_policy_checkbox_error": "Debe aceptar la política de privacidad",
+      "submit": "enviar mensaje",
+      "success": "Mensaje enviado correctamente",
+      "error": "Error al enviar el mensaje"
     }
   },
   "privacy_policy": {

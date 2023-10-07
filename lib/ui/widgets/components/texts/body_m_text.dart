@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class BodyMText extends StatelessWidget {
   final String label;
   final Color? color;
+  final TextAlign? textAlign;
 
   const BodyMText(
     this.label, {
     super.key,
     this.color,
+    this.textAlign,
   });
 
   @override
@@ -15,7 +17,7 @@ class BodyMText extends StatelessWidget {
     return Text(
       label,
       style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: color),
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
     );
   }
 }
