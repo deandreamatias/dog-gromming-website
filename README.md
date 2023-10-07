@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A dog grooming website created for Peluquería canina Mimos.
+A dog grooming website created for [Peluquería canina Mimos](https://maps.app.goo.gl/yRpdAmdiYiBv6Pqc9).
 
 ## Features
 
@@ -13,7 +13,6 @@ A dog grooming website created for Peluquería canina Mimos.
 - App icons configured
 - Internationalization translations ([Easy localization](https://pub.dev/packages/easy_localization))
 - Routing ([Go Router](https://pub.dev/packages/go_router))
-- MVVM pattern with [Cubit](https://pub.dev/packages/flutter_bloc) for state management
 - Dependency injection ([Get it](https://pub.dev/packages/get_it) and [Injectable](https://pub.dev/packages/injectable)).
 
 ## Environment
