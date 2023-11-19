@@ -26,7 +26,7 @@ class IconPrimaryButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(
             horizontal: isBigButton ? Spacing.sp24 : Spacing.sp12,
-            vertical: isBigButton ? Spacing.sp16 : Spacing.sp8,
+            vertical: isBigButton ? Spacing.sp12 : Spacing.sp8,
           ),
         ),
         child: SvgIcon(

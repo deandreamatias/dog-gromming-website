@@ -31,21 +31,21 @@ class ErrorCard extends StatelessWidget {
 extension ErrorMessage on MainError {
   String get message {
     switch (runtimeType) {
-      case NoInternet:
+      case NoInternet _:
         return 'errors.no_internet'.tr();
-      case ServerError:
+      case ServerError _:
         return 'errors.server'.tr();
-      case BadRequestError:
+      case BadRequestError _:
         return 'errors.bad_request'.tr();
-      case ForbiddenError:
+      case ForbiddenError _:
         return 'errors.forbidden'.tr();
-      case NotFoundError:
+      case NotFoundError _:
         return 'errors.not_found'.tr();
-      case UnauthError:
+      case UnauthError _:
         return 'errors.unauthorized'.tr();
-      case ExpiredSessionError:
+      case ExpiredSessionError _:
         return 'errors.expired_session'.tr();
-      case UnknownError:
+      case UnknownError _:
       default:
         return 'errors.unknown'.tr();
     }
