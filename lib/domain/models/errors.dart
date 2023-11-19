@@ -47,3 +47,7 @@ class ExpiredSessionError extends ApiError {
 class ServerError extends ApiError {
   const ServerError({super.message = ''});
 }
+
+class UnknowApiError extends ApiError {
+  const UnknowApiError({super.message = ''});
+}

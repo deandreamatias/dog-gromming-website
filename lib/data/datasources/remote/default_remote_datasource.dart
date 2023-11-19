@@ -52,13 +52,18 @@ class DefaultRemoteDatasource implements RemoteDatasource {
       templateId: _env.sendgridTemplateId,
     );
 
-    return _apiService.post(
-      uri,
-      data: data.toJson(),
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${_env.sendgridApiKey}',
-      },
-    );
+    try {
+      _apiService.post(
+        uri,
+        data: data.toJson(),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ${_env.sendgridApiKey}',
+        },
+      );
+      return const Right(true);
+    } catch (e) {
+      return const Left(UnknowApiError());
+    }
   }
 }

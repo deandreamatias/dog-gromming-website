@@ -157,7 +157,7 @@ class _ContactCardState extends State<ContactCard> {
                     duration: const Duration(seconds: 6),
                   ),
                 );
-                _formKey.currentState!.reset();
+                _formKey.currentState?.reset();
               });
               return;
             }
