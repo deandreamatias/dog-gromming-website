@@ -55,29 +55,37 @@
     "footer": "Todo esto hecho con amor para mimar a tu mascota",
     "first": {
       "title": "Baño",
-      "description": "Baño con champú especial para cada tipo de pelo, secado y cepillado."
+      "description": "Bañamos a todos los perros con Ozono, sin coste adicional. El ozono ayuda a eliminar los olores, cuida del pelo y de la piel, alivia alergias y activa la circulación.\nUtilizamos los mejores productos para el cuidado e higiene de su mascota, adaptando el mejor tratamiento según sus necesidades particulares.\nTodos los baños incluyen corte de uñas, limpieza de oídos y glándulas anales."
     },
     "second": {
-      "title": "Corte",
-      "description": "Corte de pelo con tijera y máquina, baño, secado y cepillado."
+      "title": "Corte comercial",
+      "description": "La mayoría de las razas caninas tienen un arreglo o corte estándar. Siempre trabajamos la técnica adecuada a cada pelo y nos amoldamos a las preferencias de nuestros clientes.\nEl servicio de baño y corte de pelo para perros consiste en un baño y corte a máquina, corte de uñas, limpieza de oidos y glándulas anales."
     },
     "third": {
-      "title": "Uñas",
-      "description": "Corte de uñas y limado."
+      "title": "Corte tijeras",
+      "description": "El servicio de baño y corte de pelo para perros consiste en un baño y peinado, corte a tijeras, corte de uñas, limpieza de oidos y glándulas anales."
     },
     "fourth": {
-      "title": "Orejas",
-      "description": "Limpieza de oídos."
+      "title": "Stripping",
+      "description": "El stripping es una técnica de cuidado esencial para perros de pelo duro y es de gran importancia para el mantenimiento del pelaje. Los perros de pelo duro, como terriers y schnauzers, tienen pelajes que continúan creciendo y pueden volverse ásperos y desaliñados si no se les da el mantenimiento adecuado. El stripping ayuda a eliminar el pelo muerto y mantener un pelaje saludable y en buen estado."
+    },
+    "fifth": {
+      "title": "Baño y arreglo",
+      "description": "El servicio de baño y arreglo consiste en un baño y mantenimiento del corte del perro, con peinado, limpieza de oídos y glándulas anales."
+    },
+    "sixth": {
+      "title": "Ozonoterapia",
+      "description": "El baño con ozono ayuda a la recuperación de pieles enfermas o con problemas. Al mismo tiempo potencia la absorción de los nutrientes de los productos cosméticos empleados para mejorar el manto del animal. Las sesiones de ozonoterapia y la forma de administrar el ozono varían dependiendo de las necesidades de tu mascota."
     }
   },
   "about": {
     "company": {
       "semantic_label": "Logo en texto de la peluquería canina Mimos",
-      "description": "La peluquería canina Mimos es una peluquería canina ubicada en el centro de Barcelona. En ella, cuidamos a tu mascota como si fuera nuestra. Por eso, utilizamos productos de calidad y adaptados a cada tipo de pelo. Además, contamos con un equipo de profesionales que mimarán a tu mascota y la dejarán guapísima."
+      "description": "En Peluquería Canina Mimos, entendemos que las mascotas son parte de tu familia. Nuestro compromiso es brindarles un cuidado excepcional y hacerlos sentirse cómodos y tranquilos durante toda su visita.  Sabemos que la importancia de la peluquería canina no es solo estética, el que ama a su mascota también busca lo mejor para su salud y el baño está en la agenda.\nNuestro objetivo es aplicar a cada perro un servicio adaptado a sus necesidades particulares, por eso siempre trabajamos la técnica adecuada a cada pelo.\nPrograma una cita o contáctanos si tienes preguntas o inquietudes. En Peluquería Canina Mimos, creemos que cada perro merece ser mimado y cuidado de la mejor manera posible. ¡Te esperamos!"
     },
     "owner": {
       "title": "Ana Júlia",
-      "description": "La dueña de la peluquería canina Mimos es una amante de los animales. Desde pequeña, ha tenido mascotas y siempre ha querido dedicarse a ellas. Por eso, decidió estudiar peluquería canina y abrir su propia peluquería. En ella, cuida a las mascotas como si fueran suyas y las deja guapísimas."
+      "description": "Hola! Soy Ana, la mente y las manos detrás de la belleza y el bienestar de nuestros queridos amigos peludos en Peluquería canina Mimos. Siempre he tenido amor por los animales y hoy me engrandece poder vivir el sueño de tener mi propia peluquería donde pueda seguir evolucionando en mi carrera. La seguridad y el bienestar de tus mascotas son mi máxima prioridad, no solo quiero que se vean hermosos, sino que se sientan mimados y atendidos.\nSiempre estoy emocionada de conocer a nuevos amigos peludos y a sus dueños. No dudes en ponerse en contacto conmigo para programar una cita o para cualquier pregunta que puedas tener. ¡Espero verte pronto!\nGracias por confiar en mí para el cuidado de tus mascotas."
     }
   },
   "footer": {

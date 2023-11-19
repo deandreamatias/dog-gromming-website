@@ -39,7 +39,9 @@ class OutlinedCard extends StatelessWidget {
           children: [
             TitleLText(title),
             BoxSpacer.v8(),
-            Expanded(child: BodyMText(description)),
+            Expanded(
+              child: SingleChildScrollView(child: BodyMText(description)),
+            ),
           ],
         ),
       );
@@ -55,7 +57,9 @@ class OutlinedCard extends StatelessWidget {
           children: [
             title,
             BoxSpacer.v8(),
-            Expanded(child: BodyMText(description)),
+            Expanded(
+              child: SingleChildScrollView(child: BodyMText(description)),
+            ),
           ],
         ),
       );

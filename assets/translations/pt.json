@@ -52,33 +52,40 @@
     "modify_date": "Última data de modificação: {}"
   },
   "services": {
-    "footer": "Tudo o que seu peludet precisa",
+    "footer": "Tudo isso feito com amor para mimar o seu animal de estimação",
     "first": {
-      "title": "Banho e tosa",
-      "description": "Banho e tosa para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+      "title": "Banho",
+      "description": "Banhamos todos os cães com Ozônio, sem custo adicional. O ozônio ajuda a eliminar odores, cuida do pelo e da pele, alivia alergias e ativa a circulação.\nUtilizamos os melhores produtos para o cuidado e higiene do seu animal de estimação, adaptando o melhor tratamento de acordo com suas necessidades particulares.\nTodos os banhos incluem corte de unhas, limpeza de ouvidos e glândulas anais."
     },
     "second": {
-      "title": "Corte de unhas",
-      "description": "Corte de unhas para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+      "title": "Corte Comercial",
+      "description": "A maioria das raças caninas tem um corte ou arranjo padrão. Sempre trabalhamos com a técnica adequada para cada tipo de pelo e nos adaptamos às preferências de nossos clientes.\nO serviço de banho e corte de pelo para cães consiste em um banho e corte à máquina, corte de unhas, limpeza de ouvidos e glândulas anais."
     },
     "third": {
-      "title": "Limpeza de ouvidos",
-      "description": "Limpeza de ouvidos para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+      "title": "Corte com Tesoura",
+      "description": "O serviço de banho e corte de pelo para cães consiste em um banho e penteado, corte com tesoura, corte de unhas, limpeza de ouvidos e glândulas anais."
     },
     "fourth": {
-      "title": "Limpeza de dentes",
-      "description": "Limpeza de dentes para todas as raças e tamanhos. Nossos profissionais são especialistas em cuidar de seu peludet."
+      "title": "Stripping",
+      "description": "O stripping é uma técnica essencial para cuidar de cães com pelos duros e é de grande importância para a manutenção da pelagem. Cães com pelos duros, como terriers e schnauzers, têm pelos que continuam a crescer e podem ficar ásperos e desalinhados sem a devida manutenção. O stripping ajuda a remover os pelos mortos e manter uma pelagem saudável e em bom estado."
+    },
+    "fifth": {
+      "title": "Banho e Manutenção",
+      "description": "O serviço de banho e manutenção consiste em um banho e manutenção do corte do cão, com penteado, limpeza de ouvidos e glândulas anais."
+    },
+    "sixth": {
+      "title": "Ozonioterapia",
+      "description": "O banho com ozônio ajuda na recuperação de peles doentes ou com problemas. Ao mesmo tempo, potencializa a absorção de nutrientes dos produtos cosméticos usados para melhorar o manto do animal. As sessões de ozonioterapia e a forma como o ozônio é administrado variam dependendo das necessidades do seu animal de estimação."
     }
   },
   "about": {
     "company": {
-      "semantic_label": "Logo em texto da peluquería canina Mimos",
-      "description": "Somos uma empresa familiar com mais de 10 anos de experiência no setor. Nossa missão é cuidar de seu peludet como se fosse nosso. Nossos profissionais são especialistas em cuidar de seu peludet."
-    
+      "semantic_label": "Logotipo em texto da Pet Shop Mimos",
+      "description": "Na Pet Shop Mimos, entendemos que os animais de estimação são parte da sua família. Nosso compromisso é fornecer cuidados excepcionais e fazê-los sentir-se confortáveis e calmos durante toda a visita. Sabemos que a importância da pet shop não é apenas estética; quem ama seu animal de estimação também busca o melhor para sua saúde, e o banho está na agenda.\nNosso objetivo é aplicar a cada cão um serviço adaptado às suas necessidades particulares, por isso sempre trabalhamos com a técnica adequada para cada tipo de pelo.\nAgende uma consulta ou entre em contato se tiver alguma dúvida ou preocupação. Na Pet Shop Mimos, acreditamos que cada cão merece ser mimado e cuidado da melhor maneira possível. Estamos te esperando!"
     },
     "owner": {
       "title": "Ana Júlia",
-      "description": "Somos uma empresa familiar com mais de 10 anos de experiência no setor. Nossa missão é cuidar de seu peludet como se fosse nosso. Nossos profissionais são especialistas em cuidar de seu peludet."
+      "description": "Oi! Eu sou Ana, a mente e as mãos por trás da beleza e bem-estar de nossos queridos amigos peludos na Pet Shop Mimos. Sempre tive amor pelos animais e hoje estou emocionada por poder viver o sonho de ter minha própria pet shop, onde posso continuar evoluindo em minha carreira. A segurança e o bem-estar dos seus animais de estimação são minhas principais prioridades; não quero apenas que eles fiquem bonitos, mas também que se sintam mimados e bem cuidados.\nEstou sempre animada para conhecer novos amigos peludos e seus donos. Não hesite em entrar em contato comigo para agendar uma consulta ou para qualquer pergunta que você possa ter. Espero te ver em breve!\nObrigada por confiar em mim para o cuidado dos seus animais de estimação"
     }
   },
   "footer": {

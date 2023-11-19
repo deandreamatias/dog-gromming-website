@@ -53,32 +53,40 @@
     "modify_date": "Last modification date: {}"
   },
   "services": {
-    "footer": "We offer a wide range of services for your pet",
+    "footer": "All of this made with love to pamper your pet",
     "first": {
       "title": "Bath",
-      "description": "We offer a wide range of services for your pet"
+      "description": "We bathe all dogs with Ozone, at no additional cost. Ozone helps eliminate odors, takes care of the fur and skin, relieves allergies, and activates circulation.\nWe use the best products for the care and hygiene of your pet, adapting the best treatment according to their particular needs.\nAll baths include nail trimming, ear cleaning, and anal gland cleaning."
     },
     "second": {
-      "title": "Haircut",
-      "description": "We offer a wide range of services for your pet"
+      "title": "Commercial Cut",
+      "description": "Most canine breeds have a standard cut. We always work with the appropriate technique for each coat and adapt to the preferences of our clients.\nThe service of bathing and cutting hair for dogs consists of a bath and machine cut, nail trimming, ear cleaning, and anal gland cleaning."
     },
     "third": {
-      "title": "Nails",
-      "description": "We offer a wide range of services for your pet"
+      "title": "Scissor Cut",
+      "description": "The service of bathing and hair cutting for dogs consists of a bath and combing, scissor cut, nail trimming, ear cleaning, and anal gland cleaning."
     },
     "fourth": {
-      "title": "Teeth",
-      "description": "We offer a wide range of services for your pet"
+      "title": "Stripping",
+      "description": "Stripping is an essential care technique for dogs with hard hair and is of great importance for coat maintenance. Dogs with hard hair, such as terriers and schnauzers, have hair that continues to grow and can become rough and unkempt without proper maintenance. Stripping helps remove dead hair and maintain a healthy and well-kept coat."
+    },
+    "fifth": {
+      "title": "Bath and Grooming",
+      "description": "The service of bathing and grooming consists of a bath and maintenance of the dog's cut, with combing, ear cleaning, and anal gland cleaning."
+    },
+    "sixth": {
+      "title": "Ozone Therapy",
+      "description": "Bathing with ozone helps in the recovery of sick or problematic skins. At the same time, it enhances the absorption of nutrients from cosmetic products used to improve the animal's coat. Ozone therapy sessions and the way ozone is administered vary depending on the needs of your pet."
     }
   },
   "about": {
     "company": {
-      "semantic_label": "Logo text of pet grooming salon Mimos",
-      "description": "We are a company dedicated to the care of pets. We have a team of professionals with extensive experience in the sector. We offer a wide range of services for your pet. We are located in the center of the city of Madrid."
+      "semantic_label": "Text logo of Mimos dog grooming",
+      "description": "At Mimos Dog Grooming, we understand that pets are part of your family. Our commitment is to provide them with exceptional care and make them feel comfortable and calm throughout their visit. We know that the importance of dog grooming is not just aesthetic; those who love their pets also seek the best for their health, and grooming is on the agenda.\nOur goal is to apply to each dog a service adapted to their particular needs, so we always work with the appropriate technique for each coat.\nSchedule an appointment or contact us if you have any questions or concerns. At Mimos Dog Grooming, we believe that every dog deserves to be pampered and cared for in the best possible way. We're waiting for you!"
     },
     "owner": {
-      "title": "Ana Júlia",
-      "description": "I am a lover of animals, especially dogs. I have been working in the sector for more than 10 years. I have a degree in veterinary medicine and I am a professional dog groomer. I have worked in several pet grooming salons in Madrid. I have also worked in a veterinary clinic. I have a dog named Toby, he is a Yorkshire Terrier. I love my job and I love animals."
+      "title": "Ana Julia",
+      "description": "Hello! I'm Ana, the mind and hands behind the beauty and well-being of our beloved furry friends at Mimos Dog Grooming. I have always had a love for animals, and today I am thrilled to live the dream of having my own grooming salon where I can continue to evolve in my career. The safety and well-being of your pets are my top priorities; I not only want them to look beautiful but also to feel pampered and attended to.\nI'm always excited to meet new furry friends and their owners. Feel free to contact me to schedule an appointment or for any questions you may have. Hope to see you soon!\nThank you for trusting me with the care of your pets."
     }
   },
   "footer": {

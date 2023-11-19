@@ -34,6 +34,14 @@ class ServicesScreen extends StatelessWidget {
         title: 'services.fourth.title'.tr(),
         description: 'services.fourth.description'.tr(),
       ),
+      OutlinedCard.text(
+        title: 'services.fifth.title'.tr(),
+        description: 'services.fifth.description'.tr(),
+      ),
+      OutlinedCard.text(
+        title: 'services.sixth.title'.tr(),
+        description: 'services.sixth.description'.tr(),
+      ),
     ];
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
@@ -44,23 +52,12 @@ class ServicesScreen extends StatelessWidget {
           padding: Insets.h16,
           sliver: SliverLayoutBuilder(
             builder: (context, constraints) {
-              // Hack to center the cards when the screen is large
-              return Sizes.l.width > constraints.crossAxisExtent
-                  ? SliverGrid.extent(
-                      crossAxisSpacing: Spacing.sp16,
-                      mainAxisSpacing: Spacing.sp16,
-                      maxCrossAxisExtent: 380,
-                      children: cards,
-                    )
-                  : SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: 380,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: cards,
-                        ),
-                      ),
-                    );
+              return SliverGrid.extent(
+                crossAxisSpacing: Spacing.sp16,
+                mainAxisSpacing: Spacing.sp16,
+                maxCrossAxisExtent: 450,
+                children: cards,
+              );
             },
           ),
         ),
