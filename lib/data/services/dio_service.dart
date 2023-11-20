@@ -75,13 +75,13 @@ class DioRestService<V> {
     _dio = initDio;
   }
 
-  Future<Either<V, T>> get<T>(
+  Future<Either<V, T?>> get<T>(
     Uri uri, {
     Map<String, dynamic>? headers,
   }) async {
     return _tryCatch(
       () async {
-        final response = await _dio.getUri<T>(
+        final response = await _dio.getUri<T?>(
           uri,
           options: Options(headers: headers),
         );
@@ -90,14 +90,14 @@ class DioRestService<V> {
     );
   }
 
-  Future<Either<V, T>> post<T>(
+  Future<Either<V, T?>> post<T>(
     Uri uri, {
     Object? data,
     Map<String, dynamic>? headers,
   }) async {
     return _tryCatch(
       () async {
-        final response = await _dio.postUri<T>(
+        final response = await _dio.postUri<T?>(
           uri,
           data: data,
           options: Options(headers: headers),
@@ -107,7 +107,7 @@ class DioRestService<V> {
     );
   }
 
-  Future<Either<V, T>> _tryCatch<T>(Future<T> Function() function) async {
+  Future<Either<V, T?>> _tryCatch<T>(Future<T?> Function() function) async {
     try {
       final result = await function();
       return Right(result);
