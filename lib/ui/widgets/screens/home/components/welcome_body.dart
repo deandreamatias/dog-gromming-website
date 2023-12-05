@@ -5,10 +5,8 @@ import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/buttons/contact_buttons.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_l_text.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
-import 'package:dog_gromming_website/ui/widgets/components/texts/headline_m_text.dart';
-import 'package:dog_gromming_website/ui/widgets/components/texts/headline_s_text.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BigWelcomeBody extends StatelessWidget {
   const BigWelcomeBody({super.key});
@@ -18,21 +16,10 @@ class BigWelcomeBody extends StatelessWidget {
     return Padding(
       padding: Insets.a16,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          HeadlineMText('home.slogan'.tr()),
+          BodyLText('home.appointment'.tr()),
           BoxSpacer.v16(),
-          Expanded(
-            flex: 3,
-            child: Column(
-              children: [
-                BodyLText('home.appointment'.tr()),
-                BoxSpacer.v16(),
-                const ContactButtons(isBigButtons: true),
-              ],
-            ),
-          ),
-          BoxSpacer.v16(),
+          const ContactButtons(isBigButtons: true),
         ],
       ),
     );
@@ -54,17 +41,10 @@ class SmallWelcomeBody extends StatelessWidget {
         ),
         padding: Insets.a16,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            HeadlineSText('home.slogan'.tr()),
+            BodyMText('home.appointment'.tr()),
             BoxSpacer.v8(),
-            Column(
-              children: [
-                BodyMText('home.appointment'.tr()),
-                BoxSpacer.v8(),
-                const ContactButtons(),
-              ],
-            ),
+            const ContactButtons(),
           ],
         ),
       ),

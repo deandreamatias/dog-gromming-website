@@ -18,7 +18,7 @@ class BigWelcomeBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double circleRadius = 200;
-    const double rectHeight = 400;
+    const double rectHeight = 300;
     final double rectWidth = maxWidth * 0.8;
 
     return SizedBox(
@@ -70,7 +70,7 @@ class SmallWelcomeBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double circleRadius = maxWidth * 0.2;
-    const double fixedChildHeight = 200;
+    const double fixedChildHeight = 100;
 
     return SizedBox(
       height: circleRadius * 2 + fixedChildHeight,
