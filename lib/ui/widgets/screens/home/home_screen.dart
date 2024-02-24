@@ -50,11 +50,12 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        SliverToBoxAdapter(child: BoxSpacer.v8()),
-        const SliverPadding(
-          padding: Insets.h16,
-          sliver: SliverToBoxAdapter(child: ContactCard()),
-        ),
+        // TODO: Temporal disable until implement new send email
+        // SliverToBoxAdapter(child: BoxSpacer.v8()),
+        // const SliverPadding(
+        //   padding: Insets.h16,
+        //   sliver: SliverToBoxAdapter(child: ContactCard()),
+        // ),
         SliverToBoxAdapter(child: BoxSpacer.v8()),
         SliverLayoutBuilder(
           builder: (context, constraints) =>
