@@ -4,7 +4,6 @@ import 'package:dog_gromming_website/ui/styles/spacing.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/footer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/sliver_footer.dart';
-import 'package:dog_gromming_website/ui/widgets/screens/home/components/contact_card.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/components/welcome_board.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/components/welcome_body.dart';
 import 'package:dog_gromming_website/ui/widgets/screens/home/components/when_card.dart';
