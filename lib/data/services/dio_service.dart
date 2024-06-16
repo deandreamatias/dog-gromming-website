@@ -116,7 +116,7 @@ class DioRestService<V> {
       if (_catchErrors == null) {
         rethrow;
       }
-      return Left(_catchErrors!(e));
+      return Left(_catchErrors(e));
     } catch (e) {
       rethrow;
     }
