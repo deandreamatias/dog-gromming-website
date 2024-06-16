@@ -7,9 +7,9 @@ final themeData = ThemeData(
   scaffoldBackgroundColor: AppColors.white,
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(AppColors.secondary),
-      textStyle: MaterialStateProperty.all(TextStyles.labelLarge),
-      shape: MaterialStateProperty.all(
+      backgroundColor: WidgetStateProperty.all(AppColors.secondary),
+      textStyle: WidgetStateProperty.all(TextStyles.labelLarge),
+      shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(56),
         ),
@@ -17,13 +17,13 @@ final themeData = ThemeData(
     ),
   ),
   checkboxTheme: CheckboxThemeData(
-    fillColor: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    fillColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return AppColors.secondary;
       }
       return AppColors.white;
     }),
-    checkColor: MaterialStateProperty.all(AppColors.white),
+    checkColor: WidgetStateProperty.all(AppColors.white),
     side: const BorderSide(color: AppColors.secondary, width: 2),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderTypes.borderRadius4,
