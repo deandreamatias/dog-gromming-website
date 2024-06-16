@@ -9,7 +9,6 @@
 .history
 .svn/
 migrate_working_dir/
-.fvm/flutter_sdk
 .firebase/
 .env/
 
@@ -46,3 +45,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# FVM Version Cache
+.fvm/
