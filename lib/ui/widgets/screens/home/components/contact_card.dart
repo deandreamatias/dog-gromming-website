@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:dog_gromming_website/di/di.dart';
 import 'package:dog_gromming_website/domain/models/contact_client.dart';
 import 'package:dog_gromming_website/domain/use_cases/send_email_use_case.dart';
