@@ -89,6 +89,7 @@ class _WhereWhenSection extends StatelessWidget {
           )
         : Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 24,
             children: [
               Expanded(
                 child: ConstrainedBox(
@@ -96,7 +97,6 @@ class _WhereWhenSection extends StatelessWidget {
                   child: const WhereCard(),
                 ),
               ),
-              BoxSpacer.h24(),
               Expanded(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxHeight: 400),
