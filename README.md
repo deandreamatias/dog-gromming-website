@@ -46,7 +46,7 @@ You can use the following commands to setup the project fast:
 
 If you implement a new injectable file, you have to run the following command to generate the necessary code:
 
-`fvm flutter packages pub run build_runner build`
+`fvm dart run build_runner build`
 
 Also, you can configure Android Studio to run this command automatically:
 
