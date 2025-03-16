@@ -9,10 +9,7 @@ import 'package:flutter/material.dart';
 
 class ContactButtons extends StatelessWidget {
   final bool isBigButtons;
-  const ContactButtons({
-    super.key,
-    this.isBigButtons = false,
-  });
+  const ContactButtons({super.key, this.isBigButtons = false});
 
   @override
   Widget build(BuildContext context) {
@@ -23,19 +20,20 @@ class ContactButtons extends StatelessWidget {
           child: PrimaryButton(
             isBigButton: isBigButtons,
             onPressed: () {
-              UrlLauncherUtil.openTelephone(Constants.phone);
+              UrlLauncherUtil.openWhatsapp(Constants.phone);
             },
-            label: Constants.shortPhone,
+            label: 'home.whatsapp'.tr(),
+            iconName: IconsName.whatsapp,
           ),
         ),
         BoxSpacer.h8(),
         IconPrimaryButton(
           isBigButton: isBigButtons,
-          tooltip: 'home.whatsapp_tooltip'.tr(args: [Constants.phone]),
+          tooltip: 'home.contact_number_tooltip'.tr(args: [Constants.phone]),
           onPressed: () {
-            UrlLauncherUtil.openWhatsapp(Constants.phone);
+            UrlLauncherUtil.openTelephone(Constants.phone);
           },
-          iconName: IconsName.whatsapp,
+          iconName: IconsName.phone,
         ),
       ],
     );

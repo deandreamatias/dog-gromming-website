@@ -10,6 +10,7 @@
     "appointment": "Marca tu cita",
     "semantic_logo": "Logo de la peluquería canina Mimos",
     "contact_number_tooltip": "Abrir marcador y llamar a {}",
+    "whatsapp": "WhatsApp",
     "whatsapp_tooltip": "Abrir WhatsApp y enviar mensaje a {}",
     "where": {
       "title": "Localización",
@@ -17,7 +18,8 @@
     },
     "when": {
       "title": "Horario",
-      "schedule": "De lunes a viernes de 10:00 a 14:00 y de 16:00 a 19:30"
+      "schedule_1": "De lunes a jueves de 10:00 a 14:00 y de 16:00 a 19:30",
+      "schedule_2": "Viernes de 10:00 a 17:30"
     },
     "contact": {
       "title": "Contacto",

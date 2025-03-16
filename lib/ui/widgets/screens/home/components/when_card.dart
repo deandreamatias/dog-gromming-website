@@ -16,19 +16,19 @@ class WhenCard extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: SelectionArea(
                 child: Column(
+                  spacing: 8,
                   children: [
                     TitleLText('home.when.title'.tr()),
-                    const BoxSpacer(
-                      horizontalSpacing: double.infinity,
-                      verticalSpacing: 8,
+                    BodyMText(
+                      'home.when.schedule_1'.tr(),
+                      textAlign: TextAlign.center,
                     ),
                     BodyMText(
-                      'home.when.schedule'.tr(),
+                      'home.when.schedule_2'.tr(),
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -40,13 +40,11 @@ class WhenCard extends StatelessWidget {
               flex: 2,
               child: SelectionArea(
                 child: Column(
+                  spacing: 8,
                   children: [
                     TitleLText('home.contact.title'.tr()),
-                    BoxSpacer.v8(),
                     BodyMText('home.contact.phone'.tr(args: [Constants.phone])),
-                    BoxSpacer.v12(),
                     BodyMText('home.contact.email'.tr(args: [Constants.email])),
-                    BoxSpacer.v12(),
                     Wrap(
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,

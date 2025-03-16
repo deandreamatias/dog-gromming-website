@@ -4,4 +4,5 @@ class IconsName {
   static const String instagram = 'instagram';
   static const String tiktok = 'tiktok';
   static const String heart = 'heart';
+  static const String phone = 'phone';
 }
