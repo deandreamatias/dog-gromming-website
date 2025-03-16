@@ -19,8 +19,6 @@ extension ResponsiveSizes on Sizes {
         return 1440;
       case Sizes.xl:
         return 1920;
-      default:
-        return 0;
     }
   }
 }

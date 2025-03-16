@@ -1,8 +1,7 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
 import 'dart:ui_web' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:web/web.dart';
 
 class Iframe extends StatefulWidget {
   final String url;
@@ -14,7 +13,7 @@ class Iframe extends StatefulWidget {
 
 class IframeState extends State<Iframe> {
   late Widget iframeWidget;
-  final IFrameElement iframeElement = IFrameElement();
+  final HTMLIFrameElement iframeElement = HTMLIFrameElement();
   @override
   void initState() {
     super.initState();
@@ -32,8 +31,6 @@ class IframeState extends State<Iframe> {
 
   @override
   Widget build(BuildContext context) {
-    return HtmlElementView(
-      viewType: widget.url,
-    );
+    return HtmlElementView(viewType: widget.url);
   }
 }
