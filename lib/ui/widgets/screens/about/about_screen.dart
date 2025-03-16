@@ -40,50 +40,53 @@ class AboutScreen extends StatelessWidget {
               // Hack to center the cards when the screen is large
               return Sizes.s.width > constraints.crossAxisExtent
                   ? SliverGrid.extent(
-                      crossAxisSpacing: Spacing.sp16,
-                      mainAxisSpacing: Spacing.sp16,
-                      maxCrossAxisExtent: 550,
-                      children: cards,
-                    )
+                    crossAxisSpacing: Spacing.sp16,
+                    mainAxisSpacing: Spacing.sp16,
+                    maxCrossAxisExtent: 550,
+                    children: cards,
+                  )
                   : SliverToBoxAdapter(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(
-                            child: ConstrainedBox(
-                              constraints: const BoxConstraints(
-                                maxWidth: 550,
-                                maxHeight: 300,
-                              ),
-                              child: cards.first,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              maxWidth: 550,
+                              maxHeight: 300,
                             ),
+                            child: cards.first,
                           ),
-                          BoxSpacer.h24(),
-                          Flexible(
-                            child: ConstrainedBox(
-                              constraints: const BoxConstraints(
-                                maxWidth: 550,
-                                maxHeight: 300,
-                              ),
-                              child: cards.last,
+                        ),
+                        BoxSpacer.h24(),
+                        Flexible(
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              maxWidth: 550,
+                              maxHeight: 300,
                             ),
+                            child: cards.last,
                           ),
-                        ],
-                      ),
-                    );
+                        ),
+                      ],
+                    ),
+                  );
             },
           ),
         ),
         SliverToBoxAdapter(child: BoxSpacer.v32()),
         SliverLayoutBuilder(
-          builder: (context, constraints) => Sizes.s.width <
-                  constraints.crossAxisExtent
-              ? const SliverFooter(
-                  child:
-                      Align(alignment: Alignment.bottomCenter, child: Footer()),
-                )
-              : const SliverToBoxAdapter(child: SizedBox()),
+          builder:
+              (context, constraints) =>
+                  Sizes.s.width < constraints.crossAxisExtent
+                      ? const SliverFooter(
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Footer(),
+                        ),
+                      )
+                      : const SliverToBoxAdapter(child: SizedBox()),
         ),
       ],
     );

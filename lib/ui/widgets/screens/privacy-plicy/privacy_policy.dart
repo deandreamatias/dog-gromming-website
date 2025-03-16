@@ -45,10 +45,10 @@ class PrivacyPolicy extends StatelessWidget {
                         BodyMText(
                           'privacy_policy.modify_date'.tr(
                             args: [
-                              _modifiedPrivacy
-                                  .toLocal()
-                                  .toString()
-                                  .replaceAll('00:00:00.000', ''),
+                              _modifiedPrivacy.toLocal().toString().replaceAll(
+                                '00:00:00.000',
+                                '',
+                              ),
                             ],
                           ),
                         ),

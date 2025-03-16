@@ -5,18 +5,11 @@ class BoxSpacer extends StatelessWidget {
   final double? horizontalSpacing;
   final double? verticalSpacing;
 
-  const BoxSpacer({
-    super.key,
-    this.horizontalSpacing,
-    this.verticalSpacing,
-  });
+  const BoxSpacer({super.key, this.horizontalSpacing, this.verticalSpacing});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: verticalSpacing,
-      width: horizontalSpacing,
-    );
+    return SizedBox(height: verticalSpacing, width: horizontalSpacing);
   }
 
   // Responsive spacers

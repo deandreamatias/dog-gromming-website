@@ -12,12 +12,13 @@ class SendgridDto {
   });
 
   Map<String, dynamic> toJson() => {
-        'from': from.toJson(),
-        'personalizations': personalizations.isEmpty
+    'from': from.toJson(),
+    'personalizations':
+        personalizations.isEmpty
             ? []
             : personalizations.map((x) => x.toJson()).toList(),
-        'template_id': templateId,
-      };
+    'template_id': templateId,
+  };
 }
 
 class SendgridEmail {
@@ -32,13 +33,10 @@ class SendgridPersonalization {
   final List<SendgridEmail> to;
   final ContactClientDto templateData;
 
-  const SendgridPersonalization({
-    required this.to,
-    required this.templateData,
-  });
+  const SendgridPersonalization({required this.to, required this.templateData});
 
   Map<String, dynamic> toJson() => {
-        'to': to.isEmpty ? [] : to.map((x) => x.toJson()).toList(),
-        'dynamic_template_data': templateData.toJson(),
-      };
+    'to': to.isEmpty ? [] : to.map((x) => x.toJson()).toList(),
+    'dynamic_template_data': templateData.toJson(),
+  };
 }

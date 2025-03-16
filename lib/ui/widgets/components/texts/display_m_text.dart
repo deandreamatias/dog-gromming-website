@@ -4,11 +4,7 @@ class DisplayMText extends StatelessWidget {
   final String label;
   final Color? color;
 
-  const DisplayMText(
-    this.label, {
-    super.key,
-    this.color,
-  });
+  const DisplayMText(this.label, {super.key, this.color});
 
   @override
   Widget build(BuildContext context) {

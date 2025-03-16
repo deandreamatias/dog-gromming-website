@@ -5,10 +5,7 @@ import 'package:injectable/injectable.dart';
 
 class ApiService extends DioRestService<MainError> {
   ApiService()
-      : super(
-          validCodes: [200, 201, 202, 204],
-          catchErrors: errorsHandler,
-        );
+    : super(validCodes: [200, 201, 202, 204], catchErrors: errorsHandler);
 }
 
 @module

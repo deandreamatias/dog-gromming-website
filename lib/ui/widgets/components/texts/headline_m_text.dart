@@ -4,11 +4,7 @@ class HeadlineMText extends StatelessWidget {
   final String label;
   final Color? color;
 
-  const HeadlineMText(
-    this.label, {
-    super.key,
-    this.color,
-  });
+  const HeadlineMText(this.label, {super.key, this.color});
 
   @override
   Widget build(BuildContext context) {

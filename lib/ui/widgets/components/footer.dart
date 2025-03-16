@@ -82,9 +82,7 @@ class Footer extends StatelessWidget {
               Padding(
                 padding: Insets.a8,
                 child: BodyMText(
-                  'footer.trademark'.tr(
-                    args: [DateTime.now().year.toString()],
-                  ),
+                  'footer.trademark'.tr(args: [DateTime.now().year.toString()]),
                 ),
               ),
             ],

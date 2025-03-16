@@ -6,8 +6,9 @@ import 'package:dog_gromming_website/ui/widgets/screens/services/services_screen
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-final GlobalKey<NavigatorState> _menuNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: 'menu');
+final GlobalKey<NavigatorState> _menuNavigatorKey = GlobalKey<NavigatorState>(
+  debugLabel: 'menu',
+);
 
 final menuNavigation = ShellRoute(
   navigatorKey: _menuNavigatorKey,

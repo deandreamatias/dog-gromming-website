@@ -14,9 +14,7 @@ class AnnouncementScreen extends StatelessWidget {
         color: AppColors.primary,
         child: Padding(
           padding: Insets.a16,
-          child: Center(
-            child: DisplayMText('coming_soon'.tr()),
-          ),
+          child: Center(child: DisplayMText('coming_soon'.tr())),
         ),
       ),
     );

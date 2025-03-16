@@ -10,10 +10,7 @@ import 'package:flutter/material.dart';
 class SocialNetworks extends StatelessWidget {
   final bool isCenter;
 
-  const SocialNetworks({
-    super.key,
-    this.isCenter = false,
-  });
+  const SocialNetworks({super.key, this.isCenter = false});
 
   @override
   Widget build(BuildContext context) {
@@ -22,32 +19,31 @@ class SocialNetworks extends StatelessWidget {
           isCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
       children: [
         IconButton(
-          tooltip: 'footer.social_networks_tooltip'
-              .tr(args: ['footer.facebook'.tr()]),
+          tooltip: 'footer.social_networks_tooltip'.tr(
+            args: ['footer.facebook'.tr()],
+          ),
           onPressed: () {
-            UrlLauncherUtil.openLink(
-              Uri.parse(Constants.facebookProfile),
-            );
+            UrlLauncherUtil.openLink(Uri.parse(Constants.facebookProfile));
           },
           icon: const SvgIcon(iconName: IconsName.facebook),
           color: AppColors.secondary,
         ),
         BoxSpacer.h4(),
         IconButton(
-          tooltip: 'footer.social_networks_tooltip'
-              .tr(args: ['footer.instagram'.tr()]),
+          tooltip: 'footer.social_networks_tooltip'.tr(
+            args: ['footer.instagram'.tr()],
+          ),
           onPressed: () {
-            UrlLauncherUtil.openLink(
-              Uri.parse(Constants.instagramProfile),
-            );
+            UrlLauncherUtil.openLink(Uri.parse(Constants.instagramProfile));
           },
           icon: const SvgIcon(iconName: IconsName.instagram),
           color: AppColors.secondary,
         ),
         BoxSpacer.h4(),
         IconButton(
-          tooltip: 'footer.social_networks_tooltip'
-              .tr(args: ['footer.whatsapp'.tr()]),
+          tooltip: 'footer.social_networks_tooltip'.tr(
+            args: ['footer.whatsapp'.tr()],
+          ),
           onPressed: () {
             UrlLauncherUtil.openWhatsapp(Constants.phone);
           },
@@ -56,12 +52,11 @@ class SocialNetworks extends StatelessWidget {
         ),
         BoxSpacer.h4(),
         IconButton(
-          tooltip: 'footer.social_networks_tooltip'
-              .tr(args: ['footer.tik_tok'.tr()]),
+          tooltip: 'footer.social_networks_tooltip'.tr(
+            args: ['footer.tik_tok'.tr()],
+          ),
           onPressed: () {
-            UrlLauncherUtil.openLink(
-              Uri.parse(Constants.tikTokProfile),
-            );
+            UrlLauncherUtil.openLink(Uri.parse(Constants.tikTokProfile));
           },
           icon: const SvgIcon(
             iconName: IconsName.tiktok,

@@ -9,10 +9,7 @@ import 'package:flutter/material.dart';
 class OutlinedCard extends StatelessWidget {
   final Widget child;
 
-  const OutlinedCard({
-    super.key,
-    required this.child,
-  });
+  const OutlinedCard({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -21,46 +18,37 @@ class OutlinedCard extends StatelessWidget {
         border: Border.all(color: AppColors.primary, width: 4),
         borderRadius: BorderTypes.borderRadius8,
       ),
-      child: Padding(
-        padding: Insets.v24 + Insets.h16,
-        child: child,
-      ),
+      child: Padding(padding: Insets.v24 + Insets.h16, child: child),
     );
   }
 
   factory OutlinedCard.text({
     required String title,
     required String description,
-  }) =>
-      OutlinedCard(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TitleLText(title),
-            BoxSpacer.v8(),
-            Expanded(
-              child: SingleChildScrollView(child: BodyMText(description)),
-            ),
-          ],
-        ),
-      );
+  }) => OutlinedCard(
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        TitleLText(title),
+        BoxSpacer.v8(),
+        Expanded(child: SingleChildScrollView(child: BodyMText(description))),
+      ],
+    ),
+  );
 
   factory OutlinedCard.logo({
     required Widget title,
     required String description,
-  }) =>
-      OutlinedCard(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            title,
-            BoxSpacer.v8(),
-            Expanded(
-              child: SingleChildScrollView(child: BodyMText(description)),
-            ),
-          ],
-        ),
-      );
+  }) => OutlinedCard(
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        title,
+        BoxSpacer.v8(),
+        Expanded(child: SingleChildScrollView(child: BodyMText(description))),
+      ],
+    ),
+  );
 }

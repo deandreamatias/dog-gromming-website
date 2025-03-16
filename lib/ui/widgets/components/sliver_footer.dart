@@ -24,29 +24,36 @@ class RenderSliverFooter extends RenderSliverSingleBoxAdapter {
         constraints.asBoxConstraints(minExtent: extent),
         parentUsesSize: true,
       );
-      childGrowthSize = constraints.axis == Axis.vertical
-          ? child!.size.height
-          : child!.size.width; // added
+      childGrowthSize =
+          constraints.axis == Axis.vertical
+              ? child!.size.height
+              : child!.size.width; // added
     }
-    final paintedChildSize =
-        calculatePaintOffset(constraints, from: 0.0, to: extent);
+    final paintedChildSize = calculatePaintOffset(
+      constraints,
+      from: 0.0,
+      to: extent,
+    );
     assert(
-        paintedChildSize.isFinite,
-        'The calculated paintedChildSize '
-        '$paintedChildSize for child $child is not finite.');
+      paintedChildSize.isFinite,
+      'The calculated paintedChildSize '
+      '$paintedChildSize for child $child is not finite.',
+    );
     assert(
-        paintedChildSize >= 0.0,
-        'The calculated paintedChildSize was '
-        '$paintedChildSize but is not greater than or equal to zero. '
-        'This can happen if the child is too big in which case it '
-        'should be sized down or if the SliverConstraints.scrollOffset '
-        'was not correct.');
+      paintedChildSize >= 0.0,
+      'The calculated paintedChildSize was '
+      '$paintedChildSize but is not greater than or equal to zero. '
+      'This can happen if the child is too big in which case it '
+      'should be sized down or if the SliverConstraints.scrollOffset '
+      'was not correct.',
+    );
     geometry = SliverGeometry(
       // used to be this : scrollExtent: constraints.viewportMainAxisExtent,
       scrollExtent: math.max(extent, childGrowthSize),
       paintExtent: paintedChildSize,
       maxPaintExtent: paintedChildSize,
-      hasVisualOverflow: extent > constraints.remainingPaintExtent ||
+      hasVisualOverflow:
+          extent > constraints.remainingPaintExtent ||
           constraints.scrollOffset > 0.0,
     );
     if (child != null) {

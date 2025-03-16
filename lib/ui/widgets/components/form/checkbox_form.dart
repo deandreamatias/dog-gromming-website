@@ -11,50 +11,50 @@ class CheckboxForm extends FormField<bool> {
     super.validator,
     super.initialValue,
   }) : super(
-          builder: (FormFieldState<bool> state) {
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Builder(
-                      builder: (context) {
-                        return Checkbox(
-                          value: state.value,
-                          onChanged: state.didChange,
-                          side: state.hasError
-                              ? BorderSide(
-                                  color: Theme.of(context).colorScheme.error,
-                                  width: 2,
-                                )
-                              : null,
-                        );
-                      },
-                    ),
-                    BoxSpacer.h8(),
-                    Expanded(
-                      child: BodyMText(title, textAlign: TextAlign.start),
-                    ),
-                  ],
-                ),
-                if (state.hasError)
-                  Builder(
-                    builder: (context) {
-                      return Padding(
-                        padding: Insets.h8,
-                        child: Text(
-                          state.errorText ?? '',
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    color: Theme.of(context).colorScheme.error,
-                                  ),
-                        ),
-                      );
-                    },
-                  ),
-              ],
-            );
-          },
-        );
+         builder: (FormFieldState<bool> state) {
+           return Column(
+             mainAxisSize: MainAxisSize.min,
+             crossAxisAlignment: CrossAxisAlignment.start,
+             children: [
+               Row(
+                 children: [
+                   Builder(
+                     builder: (context) {
+                       return Checkbox(
+                         value: state.value,
+                         onChanged: state.didChange,
+                         side:
+                             state.hasError
+                                 ? BorderSide(
+                                   color: Theme.of(context).colorScheme.error,
+                                   width: 2,
+                                 )
+                                 : null,
+                       );
+                     },
+                   ),
+                   BoxSpacer.h8(),
+                   Expanded(
+                     child: BodyMText(title, textAlign: TextAlign.start),
+                   ),
+                 ],
+               ),
+               if (state.hasError)
+                 Builder(
+                   builder: (context) {
+                     return Padding(
+                       padding: Insets.h8,
+                       child: Text(
+                         state.errorText ?? '',
+                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                           color: Theme.of(context).colorScheme.error,
+                         ),
+                       ),
+                     );
+                   },
+                 ),
+             ],
+           );
+         },
+       );
 }

@@ -29,18 +29,17 @@ class AppNavigationTopBar extends StatelessWidget {
         padding: Insets.a12,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: items.asMap().entries.map(
-            (entry) {
-              final item = entry.value;
-              final itemIndex = entry.key;
-              return _AppNavigationItemButton(
-                key: Key('top-bar-item-$itemIndex'),
-                selected: itemIndex == selectedIndex,
-                item: item,
-                onTap: () => onItemTapped?.call(itemIndex),
-              );
-            },
-          ).toList(),
+          children:
+              items.asMap().entries.map((entry) {
+                final item = entry.value;
+                final itemIndex = entry.key;
+                return _AppNavigationItemButton(
+                  key: Key('top-bar-item-$itemIndex'),
+                  selected: itemIndex == selectedIndex,
+                  item: item,
+                  onTap: () => onItemTapped?.call(itemIndex),
+                );
+              }).toList(),
         ),
       ),
     );

@@ -4,11 +4,7 @@ class LabelLText extends StatelessWidget {
   final String label;
   final Color? color;
 
-  const LabelLText(
-    this.label, {
-    super.key,
-    this.color,
-  });
+  const LabelLText(this.label, {super.key, this.color});
 
   @override
   Widget build(BuildContext context) {

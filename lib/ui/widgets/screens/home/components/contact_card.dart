@@ -57,9 +57,7 @@ class _ContactCardState extends State<ContactCard> {
       BoxSpacer.v16(),
       TextFormField(
         keyboardType: TextInputType.name,
-        decoration: InputDecoration(
-          hintText: 'home.contact_form.name'.tr(),
-        ),
+        decoration: InputDecoration(hintText: 'home.contact_form.name'.tr()),
         onSaved: (newValue) {
           name = newValue ?? '';
         },
@@ -102,9 +100,7 @@ class _ContactCardState extends State<ContactCard> {
         maxLines: null,
         minLines: 3,
         keyboardType: TextInputType.multiline,
-        decoration: InputDecoration(
-          hintText: 'home.contact_form.message'.tr(),
-        ),
+        decoration: InputDecoration(hintText: 'home.contact_form.message'.tr()),
         onSaved: (newValue) {
           message = newValue ?? '';
         },
@@ -188,31 +184,28 @@ class _ContactCardState extends State<ContactCard> {
                     children: [
                       const Flexible(child: SizedBox.shrink()),
                       Expanded(
-                        child: constraints.maxWidth > Sizes.xl.width
-                            ? Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      children: leftFormPart,
+                        child:
+                            constraints.maxWidth > Sizes.xl.width
+                                ? Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Expanded(
+                                      child: Column(children: leftFormPart),
                                     ),
-                                  ),
-                                  BoxSpacer.h16(),
-                                  Expanded(
-                                    child: Column(
-                                      children: rightFormPart,
+                                    BoxSpacer.h16(),
+                                    Expanded(
+                                      child: Column(children: rightFormPart),
                                     ),
-                                  ),
-                                ],
-                              )
-                            : Column(
-                                children: [
-                                  ...leftFormPart,
-                                  BoxSpacer.v16(),
-                                  ...rightFormPart,
-                                ],
-                              ),
+                                  ],
+                                )
+                                : Column(
+                                  children: [
+                                    ...leftFormPart,
+                                    BoxSpacer.v16(),
+                                    ...rightFormPart,
+                                  ],
+                                ),
                       ),
                       const Flexible(child: SizedBox.shrink()),
                     ],
@@ -248,9 +241,7 @@ class _DropdownPetSizeFormState extends State<_DropdownPetSizeForm> {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<int>(
-      decoration: InputDecoration(
-        hintText: 'home.contact_form.pet_size'.tr(),
-      ),
+      decoration: InputDecoration(hintText: 'home.contact_form.pet_size'.tr()),
       value: _selectedValue,
       onChanged: (value) {
         setState(() {
@@ -261,22 +252,10 @@ class _DropdownPetSizeFormState extends State<_DropdownPetSizeForm> {
         widget.onSaved?.call(_getLabel(newValue));
       },
       items: [
-        DropdownMenuItem(
-          value: 0,
-          child: Text(_getLabel(0)),
-        ),
-        DropdownMenuItem(
-          value: 1,
-          child: Text(_getLabel(1)),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text(_getLabel(2)),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text(_getLabel(3)),
-        ),
+        DropdownMenuItem(value: 0, child: Text(_getLabel(0))),
+        DropdownMenuItem(value: 1, child: Text(_getLabel(1))),
+        DropdownMenuItem(value: 2, child: Text(_getLabel(2))),
+        DropdownMenuItem(value: 3, child: Text(_getLabel(3))),
       ],
     );
   }

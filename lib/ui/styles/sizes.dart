@@ -1,10 +1,4 @@
-enum Sizes {
-  xs,
-  s,
-  m,
-  l,
-  xl,
-}
+enum Sizes { xs, s, m, l, xl }
 
 extension ResponsiveSizes on Sizes {
   double get width {

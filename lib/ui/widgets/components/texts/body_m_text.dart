@@ -5,12 +5,7 @@ class BodyMText extends StatelessWidget {
   final Color? color;
   final TextAlign? textAlign;
 
-  const BodyMText(
-    this.label, {
-    super.key,
-    this.color,
-    this.textAlign,
-  });
+  const BodyMText(this.label, {super.key, this.color, this.textAlign});
 
   @override
   Widget build(BuildContext context) {

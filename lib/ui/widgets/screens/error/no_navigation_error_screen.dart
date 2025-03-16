@@ -23,11 +23,9 @@ class NoNavigationErrorScreen extends StatelessWidget {
               DisplaySText('errors.no_navigation'.tr()),
               BoxSpacer.v16(),
               BodyLText(
-                GoRouter.of(context)
-                    .routeInformationProvider
-                    .value
-                    .uri
-                    .toString(),
+                GoRouter.of(
+                  context,
+                ).routeInformationProvider.value.uri.toString(),
               ),
               BoxSpacer.v16(),
               PrimaryButton(

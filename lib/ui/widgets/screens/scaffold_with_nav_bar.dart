@@ -11,39 +11,42 @@ import 'package:go_router/go_router.dart';
 class ScaffoldWithNavBar extends StatelessWidget {
   final Widget child;
 
-  const ScaffoldWithNavBar({
-    super.key,
-    required this.child,
-  });
+  const ScaffoldWithNavBar({super.key, required this.child});
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final isMedium = constraints.maxWidth < Sizes.s.width;
         return Scaffold(
-          bottomNavigationBar: isMedium
-              ? AppNavigationBottomBar(
-                  items: MenuNavigation.values
-                      .map((e) => AppNavigationItem(label: e.label.tr()))
-                      .toList(),
-                  selectedIndex: _calculateSelectedIndex(context),
-                  onItemTapped: (idx) => _onItemTapped(idx, context),
-                )
-              : null,
-          body: isMedium
-              ? child
-              : Column(
-                  children: [
-                    AppNavigationTopBar(
-                      items: MenuNavigation.values
-                          .map((e) => AppNavigationItem(label: e.label.tr()))
-                          .toList(),
-                      selectedIndex: _calculateSelectedIndex(context),
-                      onItemTapped: (idx) => _onItemTapped(idx, context),
-                    ),
-                    Expanded(child: child),
-                  ],
-                ),
+          bottomNavigationBar:
+              isMedium
+                  ? AppNavigationBottomBar(
+                    items:
+                        MenuNavigation.values
+                            .map((e) => AppNavigationItem(label: e.label.tr()))
+                            .toList(),
+                    selectedIndex: _calculateSelectedIndex(context),
+                    onItemTapped: (idx) => _onItemTapped(idx, context),
+                  )
+                  : null,
+          body:
+              isMedium
+                  ? child
+                  : Column(
+                    children: [
+                      AppNavigationTopBar(
+                        items:
+                            MenuNavigation.values
+                                .map(
+                                  (e) => AppNavigationItem(label: e.label.tr()),
+                                )
+                                .toList(),
+                        selectedIndex: _calculateSelectedIndex(context),
+                        onItemTapped: (idx) => _onItemTapped(idx, context),
+                      ),
+                      Expanded(child: child),
+                    ],
+                  ),
         );
       },
     );

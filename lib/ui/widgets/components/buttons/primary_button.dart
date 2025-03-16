@@ -34,14 +34,8 @@ class PrimaryButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           isBigButton
-              ? DisplaySText(
-                  label,
-                  color: AppColors.white,
-                )
-              : LabelLText(
-                  label,
-                  color: AppColors.white,
-                ),
+              ? DisplaySText(label, color: AppColors.white)
+              : LabelLText(label, color: AppColors.white),
           if (iconName.isNotEmpty) ...[
             BoxSpacer.h8(), // Add spacing between label and icon
             SvgIcon(

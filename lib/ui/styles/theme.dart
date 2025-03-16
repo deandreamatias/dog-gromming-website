@@ -10,9 +10,7 @@ final themeData = ThemeData(
       backgroundColor: WidgetStateProperty.all(AppColors.secondary),
       textStyle: WidgetStateProperty.all(TextStyles.labelLarge),
       shape: WidgetStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(56),
-        ),
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(56)),
       ),
     ),
   ),
@@ -30,12 +28,8 @@ final themeData = ThemeData(
     ),
   ),
   inputDecorationTheme: const InputDecorationTheme(
-    border: OutlineInputBorder(
-      borderRadius: BorderTypes.borderRadius8,
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderTypes.borderRadius8,
-    ),
+    border: OutlineInputBorder(borderRadius: BorderTypes.borderRadius8),
+    enabledBorder: OutlineInputBorder(borderRadius: BorderTypes.borderRadius8),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderTypes.borderRadius8,
       borderSide: BorderSide(color: AppColors.secondary, width: 2),
@@ -61,14 +55,19 @@ final themeData = ThemeData(
 );
 
 class BorderTypes {
-  static const BorderRadius borderRadius4 =
-      BorderRadius.all(Radius.circular(4));
-  static const BorderRadius borderRadius8 =
-      BorderRadius.all(Radius.circular(8));
-  static const BorderRadius borderRadius16 =
-      BorderRadius.all(Radius.circular(16));
-  static const BorderRadius borderRadius32 =
-      BorderRadius.all(Radius.circular(32));
-  static const BorderRadius borderRadiusTop32 =
-      BorderRadius.vertical(top: Radius.circular(32));
+  static const BorderRadius borderRadius4 = BorderRadius.all(
+    Radius.circular(4),
+  );
+  static const BorderRadius borderRadius8 = BorderRadius.all(
+    Radius.circular(8),
+  );
+  static const BorderRadius borderRadius16 = BorderRadius.all(
+    Radius.circular(16),
+  );
+  static const BorderRadius borderRadius32 = BorderRadius.all(
+    Radius.circular(32),
+  );
+  static const BorderRadius borderRadiusTop32 = BorderRadius.vertical(
+    top: Radius.circular(32),
+  );
 }

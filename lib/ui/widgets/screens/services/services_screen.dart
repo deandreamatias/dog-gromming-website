@@ -70,9 +70,7 @@ class ServicesScreen extends StatelessWidget {
               children: [
                 const _LoveIcon(),
                 BoxSpacer.h16(),
-                Flexible(
-                  child: HeadlineSText('services.footer'.tr()),
-                ),
+                Flexible(child: HeadlineSText('services.footer'.tr())),
                 BoxSpacer.h16(),
                 const _LoveIcon(),
               ],
@@ -81,13 +79,16 @@ class ServicesScreen extends StatelessWidget {
         ),
         SliverToBoxAdapter(child: BoxSpacer.v32()),
         SliverLayoutBuilder(
-          builder: (context, constraints) => Sizes.s.width <
-                  constraints.crossAxisExtent
-              ? const SliverFooter(
-                  child:
-                      Align(alignment: Alignment.bottomCenter, child: Footer()),
-                )
-              : const SliverToBoxAdapter(child: SizedBox()),
+          builder:
+              (context, constraints) =>
+                  Sizes.s.width < constraints.crossAxisExtent
+                      ? const SliverFooter(
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Footer(),
+                        ),
+                      )
+                      : const SliverToBoxAdapter(child: SizedBox()),
         ),
       ],
     );

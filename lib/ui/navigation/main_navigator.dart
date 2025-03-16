@@ -7,8 +7,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 
-final GlobalKey<NavigatorState> _rootNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: 'root');
+final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(
+  debugLabel: 'root',
+);
 
 class MainNavigator {
   final GoRouter router = GoRouter(
@@ -24,8 +25,9 @@ class MainNavigator {
     routes: <RouteBase>[
       GoRoute(
         path: Routes.announcement,
-        builder: (BuildContext context, GoRouterState state) =>
-            const AnnouncementScreen(),
+        builder:
+            (BuildContext context, GoRouterState state) =>
+                const AnnouncementScreen(),
       ),
       GoRoute(
         path: Routes.privacyPolicy,

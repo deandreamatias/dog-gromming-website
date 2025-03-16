@@ -36,22 +36,20 @@ class Logo extends StatelessWidget {
     double? height,
     double? width,
     required String semanticLabel,
-  }) =>
-      Logo(
-        height: height,
-        width: width,
-        semanticLabel: semanticLabel,
-        imageName: 'text_logo',
-      );
+  }) => Logo(
+    height: height,
+    width: width,
+    semanticLabel: semanticLabel,
+    imageName: 'text_logo',
+  );
 
   factory Logo.circle({
     required double radius,
     required String semanticLabel,
-  }) =>
-      Logo(
-        height: radius * 2,
-        width: radius * 2,
-        semanticLabel: semanticLabel,
-        imageName: 'logo',
-      );
+  }) => Logo(
+    height: radius * 2,
+    width: radius * 2,
+    semanticLabel: semanticLabel,
+    imageName: 'logo',
+  );
 }

@@ -50,11 +50,11 @@ class DioRestService<V> {
     int sendTimeout = 15000,
     this.validCodes = const [200],
     this.headers,
-  })  : _sendTimeout = sendTimeout,
-        _connectTimeout = connectTimeout,
-        _receiveTimeout = receiveTimeout,
-        _interceptors = interceptors,
-        _catchErrors = catchErrors {
+  }) : _sendTimeout = sendTimeout,
+       _connectTimeout = connectTimeout,
+       _receiveTimeout = receiveTimeout,
+       _interceptors = interceptors,
+       _catchErrors = catchErrors {
     _initClient();
   }
 
@@ -75,19 +75,14 @@ class DioRestService<V> {
     _dio = initDio;
   }
 
-  Future<Either<V, T?>> get<T>(
-    Uri uri, {
-    Map<String, dynamic>? headers,
-  }) async {
-    return _tryCatch(
-      () async {
-        final response = await _dio.getUri<T?>(
-          uri,
-          options: Options(headers: headers),
-        );
-        return Future.value(response.data);
-      },
-    );
+  Future<Either<V, T?>> get<T>(Uri uri, {Map<String, dynamic>? headers}) async {
+    return _tryCatch(() async {
+      final response = await _dio.getUri<T?>(
+        uri,
+        options: Options(headers: headers),
+      );
+      return Future.value(response.data);
+    });
   }
 
   Future<Either<V, T?>> post<T>(
@@ -95,16 +90,14 @@ class DioRestService<V> {
     Object? data,
     Map<String, dynamic>? headers,
   }) async {
-    return _tryCatch(
-      () async {
-        final response = await _dio.postUri<T?>(
-          uri,
-          data: data,
-          options: Options(headers: headers),
-        );
-        return Future.value(response.data);
-      },
-    );
+    return _tryCatch(() async {
+      final response = await _dio.postUri<T?>(
+        uri,
+        data: data,
+        options: Options(headers: headers),
+      );
+      return Future.value(response.data);
+    });
   }
 
   Future<Either<V, T?>> _tryCatch<T>(Future<T?> Function() function) async {

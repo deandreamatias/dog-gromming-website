@@ -14,10 +14,12 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetBindings);
 
   LicenseRegistry.addLicense(() async* {
-    final fredokaLicense =
-        await rootBundle.loadString('assets/licenses/comfortaa-OFL.txt');
-    final comfortaaLicense =
-        await rootBundle.loadString('assets/licenses/fredoka-OFL.txt');
+    final fredokaLicense = await rootBundle.loadString(
+      'assets/licenses/comfortaa-OFL.txt',
+    );
+    final comfortaaLicense = await rootBundle.loadString(
+      'assets/licenses/fredoka-OFL.txt',
+    );
 
     yield LicenseEntryWithLineBreaks(['google_fonts'], fredokaLicense);
     yield LicenseEntryWithLineBreaks(['google_fonts'], comfortaaLicense);
@@ -26,11 +28,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
-      supportedLocales: const [
-        Locale('en'),
-        Locale('es'),
-        Locale('pt'),
-      ],
+      supportedLocales: const [Locale('en'), Locale('es'), Locale('pt')],
       path: 'assets/translations',
       useOnlyLangCode: true,
       fallbackLocale: const Locale('es'),

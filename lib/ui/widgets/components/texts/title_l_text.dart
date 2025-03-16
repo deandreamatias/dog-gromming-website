@@ -4,11 +4,7 @@ class TitleLText extends StatelessWidget {
   final String label;
   final Color? color;
 
-  const TitleLText(
-    this.label, {
-    super.key,
-    this.color,
-  });
+  const TitleLText(this.label, {super.key, this.color});
 
   @override
   Widget build(BuildContext context) {
