@@ -42,7 +42,7 @@ class SmallWelcomeBody extends StatelessWidget {
         padding: Insets.a16,
         child: Column(
           children: [
-            BodyMText('home.appointment'.tr()),
+            BodyMText('home.appointment'.tr(), textAlign: .center),
             BoxSpacer.v8(),
             const ContactButtons(),
           ],

@@ -93,6 +93,7 @@ class _WhereWhenSection extends StatelessWidget {
     return maxWidth < Sizes.m.width
         ? GridView.extent(
             shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             crossAxisSpacing: Spacing.sp16,
             mainAxisSpacing: Spacing.sp16,
             maxCrossAxisExtent: 700,
