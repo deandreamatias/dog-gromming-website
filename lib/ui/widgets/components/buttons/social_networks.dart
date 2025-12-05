@@ -15,8 +15,9 @@ class SocialNetworks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment:
-          isCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
+      mainAxisAlignment: isCenter
+          ? MainAxisAlignment.center
+          : MainAxisAlignment.start,
       children: [
         IconButton(
           tooltip: 'footer.social_networks_tooltip'.tr(

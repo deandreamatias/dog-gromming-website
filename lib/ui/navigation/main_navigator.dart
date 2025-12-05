@@ -25,9 +25,8 @@ class MainNavigator {
     routes: <RouteBase>[
       GoRoute(
         path: Routes.announcement,
-        builder:
-            (BuildContext context, GoRouterState state) =>
-                const AnnouncementScreen(),
+        builder: (BuildContext context, GoRouterState state) =>
+            const AnnouncementScreen(),
       ),
       GoRoute(
         path: Routes.privacyPolicy,

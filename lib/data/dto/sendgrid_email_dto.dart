@@ -13,10 +13,9 @@ class SendgridDto {
 
   Map<String, dynamic> toJson() => {
     'from': from.toJson(),
-    'personalizations':
-        personalizations.isEmpty
-            ? []
-            : personalizations.map((x) => x.toJson()).toList(),
+    'personalizations': personalizations.isEmpty
+        ? []
+        : personalizations.map((x) => x.toJson()).toList(),
     'template_id': templateId,
   };
 }

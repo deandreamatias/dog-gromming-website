@@ -184,28 +184,27 @@ class _ContactCardState extends State<ContactCard> {
                     children: [
                       const Flexible(child: SizedBox.shrink()),
                       Expanded(
-                        child:
-                            constraints.maxWidth > Sizes.xl.width
-                                ? Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Expanded(
-                                      child: Column(children: leftFormPart),
-                                    ),
-                                    BoxSpacer.h16(),
-                                    Expanded(
-                                      child: Column(children: rightFormPart),
-                                    ),
-                                  ],
-                                )
-                                : Column(
-                                  children: [
-                                    ...leftFormPart,
-                                    BoxSpacer.v16(),
-                                    ...rightFormPart,
-                                  ],
-                                ),
+                        child: constraints.maxWidth > Sizes.xl.width
+                            ? Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Expanded(
+                                    child: Column(children: leftFormPart),
+                                  ),
+                                  BoxSpacer.h16(),
+                                  Expanded(
+                                    child: Column(children: rightFormPart),
+                                  ),
+                                ],
+                              )
+                            : Column(
+                                children: [
+                                  ...leftFormPart,
+                                  BoxSpacer.v16(),
+                                  ...rightFormPart,
+                                ],
+                              ),
                       ),
                       const Flexible(child: SizedBox.shrink()),
                     ],

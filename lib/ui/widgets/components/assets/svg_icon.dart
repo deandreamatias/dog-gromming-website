@@ -21,8 +21,9 @@ class SvgIcon extends StatelessWidget {
       'assets/icons/$iconName.svg',
       width: width,
       height: height,
-      colorFilter:
-          color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
+      colorFilter: color != null
+          ? ColorFilter.mode(color!, BlendMode.srcIn)
+          : null,
       fit: BoxFit.cover,
     );
   }

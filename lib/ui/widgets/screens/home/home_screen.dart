@@ -38,17 +38,17 @@ class _HomeScreenState extends State<HomeScreen> {
             builder: (context, constraints) {
               return constraints.crossAxisExtent > Sizes.m.width
                   ? SliverToBoxAdapter(
-                    child: BigWelcomeBoard(
-                      maxWidth: constraints.crossAxisExtent,
-                      child: const BigWelcomeBody(),
-                    ),
-                  )
+                      child: BigWelcomeBoard(
+                        maxWidth: constraints.crossAxisExtent,
+                        child: const BigWelcomeBody(),
+                      ),
+                    )
                   : SliverToBoxAdapter(
-                    child: SmallWelcomeBoard(
-                      maxWidth: constraints.crossAxisExtent,
-                      child: const SmallWelcomeBody(),
-                    ),
-                  );
+                      child: SmallWelcomeBoard(
+                        maxWidth: constraints.crossAxisExtent,
+                        child: const SmallWelcomeBody(),
+                      ),
+                    );
             },
           ),
         ),
@@ -56,12 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SliverPadding(
           padding: Insets.h16,
           sliver: SliverLayoutBuilder(
-            builder:
-                (context, constraints) => SliverToBoxAdapter(
-                  child: _WhereWhenSection(
-                    maxWidth: constraints.crossAxisExtent,
-                  ),
-                ),
+            builder: (context, constraints) => SliverToBoxAdapter(
+              child: _WhereWhenSection(maxWidth: constraints.crossAxisExtent),
+            ),
           ),
         ),
         // TODO: Temporal disable until implement new send email
@@ -72,16 +69,15 @@ class _HomeScreenState extends State<HomeScreen> {
         // ),
         SliverToBoxAdapter(child: BoxSpacer.v8()),
         SliverLayoutBuilder(
-          builder:
-              (context, constraints) =>
-                  Sizes.s.width < constraints.crossAxisExtent
-                      ? const SliverFooter(
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Footer(),
-                        ),
-                      )
-                      : const SliverToBoxAdapter(child: SizedBox()),
+          builder: (context, constraints) =>
+              Sizes.s.width < constraints.crossAxisExtent
+              ? const SliverFooter(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Footer(),
+                  ),
+                )
+              : const SliverToBoxAdapter(child: SizedBox()),
         ),
       ],
     );
@@ -96,31 +92,31 @@ class _WhereWhenSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return maxWidth < Sizes.m.width
         ? GridView.extent(
-          shrinkWrap: true,
-          crossAxisSpacing: Spacing.sp16,
-          mainAxisSpacing: Spacing.sp16,
-          maxCrossAxisExtent: 700,
-          childAspectRatio: _getAspecRatio(maxWidth),
-          children: const [WhereCard(), WhenCard()],
-        )
+            shrinkWrap: true,
+            crossAxisSpacing: Spacing.sp16,
+            mainAxisSpacing: Spacing.sp16,
+            maxCrossAxisExtent: 700,
+            childAspectRatio: _getAspecRatio(maxWidth),
+            children: const [WhereCard(), WhenCard()],
+          )
         : Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 24,
-          children: [
-            Expanded(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxHeight: 400),
-                child: const WhereCard(),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 24,
+            children: [
+              Expanded(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxHeight: 400),
+                  child: const WhereCard(),
+                ),
               ),
-            ),
-            Expanded(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxHeight: 400),
-                child: const WhenCard(),
+              Expanded(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxHeight: 400),
+                  child: const WhenCard(),
+                ),
               ),
-            ),
-          ],
-        );
+            ],
+          );
   }
 
   double _getAspecRatio(double maxWidth) {

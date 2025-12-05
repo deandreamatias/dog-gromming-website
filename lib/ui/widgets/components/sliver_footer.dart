@@ -24,10 +24,9 @@ class RenderSliverFooter extends RenderSliverSingleBoxAdapter {
         constraints.asBoxConstraints(minExtent: extent),
         parentUsesSize: true,
       );
-      childGrowthSize =
-          constraints.axis == Axis.vertical
-              ? child!.size.height
-              : child!.size.width; // added
+      childGrowthSize = constraints.axis == Axis.vertical
+          ? child!.size.height
+          : child!.size.width; // added
     }
     final paintedChildSize = calculatePaintOffset(
       constraints,

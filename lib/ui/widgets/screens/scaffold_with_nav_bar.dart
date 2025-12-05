@@ -18,35 +18,29 @@ class ScaffoldWithNavBar extends StatelessWidget {
       builder: (context, constraints) {
         final isMedium = constraints.maxWidth < Sizes.s.width;
         return Scaffold(
-          bottomNavigationBar:
-              isMedium
-                  ? AppNavigationBottomBar(
-                    items:
-                        MenuNavigation.values
-                            .map((e) => AppNavigationItem(label: e.label.tr()))
-                            .toList(),
-                    selectedIndex: _calculateSelectedIndex(context),
-                    onItemTapped: (idx) => _onItemTapped(idx, context),
-                  )
-                  : null,
-          body:
-              isMedium
-                  ? child
-                  : Column(
-                    children: [
-                      AppNavigationTopBar(
-                        items:
-                            MenuNavigation.values
-                                .map(
-                                  (e) => AppNavigationItem(label: e.label.tr()),
-                                )
-                                .toList(),
-                        selectedIndex: _calculateSelectedIndex(context),
-                        onItemTapped: (idx) => _onItemTapped(idx, context),
-                      ),
-                      Expanded(child: child),
-                    ],
-                  ),
+          bottomNavigationBar: isMedium
+              ? AppNavigationBottomBar(
+                  items: MenuNavigation.values
+                      .map((e) => AppNavigationItem(label: e.label.tr()))
+                      .toList(),
+                  selectedIndex: _calculateSelectedIndex(context),
+                  onItemTapped: (idx) => _onItemTapped(idx, context),
+                )
+              : null,
+          body: isMedium
+              ? child
+              : Column(
+                  children: [
+                    AppNavigationTopBar(
+                      items: MenuNavigation.values
+                          .map((e) => AppNavigationItem(label: e.label.tr()))
+                          .toList(),
+                      selectedIndex: _calculateSelectedIndex(context),
+                      onItemTapped: (idx) => _onItemTapped(idx, context),
+                    ),
+                    Expanded(child: child),
+                  ],
+                ),
         );
       },
     );

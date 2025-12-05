@@ -91,16 +91,15 @@ class _ServicesScreenState extends State<ServicesScreen> {
         ),
         SliverToBoxAdapter(child: BoxSpacer.v32()),
         SliverLayoutBuilder(
-          builder:
-              (context, constraints) =>
-                  Sizes.s.width < constraints.crossAxisExtent
-                      ? const SliverFooter(
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Footer(),
-                        ),
-                      )
-                      : const SliverToBoxAdapter(child: SizedBox()),
+          builder: (context, constraints) =>
+              Sizes.s.width < constraints.crossAxisExtent
+              ? const SliverFooter(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Footer(),
+                  ),
+                )
+              : const SliverToBoxAdapter(child: SizedBox()),
         ),
       ],
     );

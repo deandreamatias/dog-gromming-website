@@ -21,8 +21,9 @@ class SvgImage extends StatelessWidget {
       'assets/images/$imageName.svg',
       width: width,
       height: height,
-      colorFilter:
-          color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
+      colorFilter: color != null
+          ? ColorFilter.mode(color!, BlendMode.srcIn)
+          : null,
     );
   }
 }

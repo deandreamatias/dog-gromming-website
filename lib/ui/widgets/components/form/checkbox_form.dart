@@ -23,13 +23,12 @@ class CheckboxForm extends FormField<bool> {
                        return Checkbox(
                          value: state.value,
                          onChanged: state.didChange,
-                         side:
-                             state.hasError
-                                 ? BorderSide(
-                                   color: Theme.of(context).colorScheme.error,
-                                   width: 2,
-                                 )
-                                 : null,
+                         side: state.hasError
+                             ? BorderSide(
+                                 color: Theme.of(context).colorScheme.error,
+                                 width: 2,
+                               )
+                             : null,
                        );
                      },
                    ),

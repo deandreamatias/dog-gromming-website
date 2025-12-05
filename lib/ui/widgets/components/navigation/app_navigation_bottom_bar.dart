@@ -29,17 +29,16 @@ class AppNavigationBottomBar extends StatelessWidget {
         padding: Insets.a4,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:
-              items.asMap().entries.map((entry) {
-                final item = entry.value;
-                final itemIndex = entry.key;
-                return _AppNavigationItemButton(
-                  key: Key('bottom-bar-item-$itemIndex'),
-                  selected: itemIndex == selectedIndex,
-                  item: item,
-                  onTap: () => onItemTapped?.call(itemIndex),
-                );
-              }).toList(),
+          children: items.asMap().entries.map((entry) {
+            final item = entry.value;
+            final itemIndex = entry.key;
+            return _AppNavigationItemButton(
+              key: Key('bottom-bar-item-$itemIndex'),
+              selected: itemIndex == selectedIndex,
+              item: item,
+              onTap: () => onItemTapped?.call(itemIndex),
+            );
+          }).toList(),
         ),
       ),
     );
