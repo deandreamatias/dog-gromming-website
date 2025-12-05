@@ -242,7 +242,7 @@ class _DropdownPetSizeFormState extends State<_DropdownPetSizeForm> {
   Widget build(BuildContext context) {
     return DropdownButtonFormField<int>(
       decoration: InputDecoration(hintText: 'home.contact_form.pet_size'.tr()),
-      value: _selectedValue,
+      initialValue: _selectedValue,
       onChanged: (value) {
         setState(() {
           _selectedValue = value;

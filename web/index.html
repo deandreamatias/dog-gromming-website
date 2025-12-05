@@ -36,13 +36,29 @@
   <!-- open protocol graph meta -->
   <meta property="og:title" content="Peluquería canina Mimos">
   <meta property="og:description" content="Mimos | La peluquería canina que mima tu mascota con diferentes servicios como baño, corte, stripping y ozonoterapia">
-  <meta property="og:image" content="https://peluqueriacaninamimos.com/icons/favicon-32x32.png">
+  <meta property="og:image" content="https://peluqueriacaninamimos.com/icons/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Peluquería canina Mimos">
   <meta property="og:site_name" content="peluqueriacaninamimos.com">
   <meta property="og:url" content="https://peluqueriacaninamimos.com">
   <meta property="og:locale" content="es_Es"/>
   <meta property="og:locale:alternate" content="en_US"/>
   <meta property="og:locale:alternate" content="pt_BR"/>
   <meta property="og:type" content="website">
+
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Peluquería canina Mimos">
+  <meta name="twitter:description" content="Mimos | La peluquería canina que mima tu mascota con diferentes servicios como baño, corte, stripping y ozonoterapia">
+  <meta name="twitter:image" content="https://peluqueriacaninamimos.com/icons/og-image.png">
+
+  <!-- Canonical and hreflang links -->
+  <link rel="canonical" href="https://peluqueriacaninamimos.com/es/home">
+  <link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/home">
+  <link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/home">
+  <link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/home">
+  <link rel="alternate" hreflang="x-default" href="https://peluqueriacaninamimos.com/es/home">
 
   <title>Peluquería canina Mimos</title>
   <style id="splash-screen-style">
@@ -121,18 +137,21 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "PetStore",
+      "@type": ["LocalBusiness", "PetGrooming"],
       "name": "Mimos",
+      "description": "Peluquería canina especializada en baño, corte, stripping y ozonoterapia",
+      "image": "https://peluqueriacaninamimos.com/icons/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Isaac Peral 5, bajo derecha",
         "addressLocality": "Quart de Poblet",
-        "addressRegion": "",
-        "postalCode": "46930"
+        "addressRegion": "Valencia",
+        "postalCode": "46930",
+        "addressCountry": "ES"
       },
       "email": "contacto@peluqueriacaninamimos.com",
-      "telePhone": "+34654477396",
-      "url": "peluqueriacaninamimos.com",
+      "telephone": "+34654477396",
+      "url": "https://peluqueriacaninamimos.com",
       "paymentAccepted": [ "cash", "credit card" ],
       "openingHours": "Mo,Tu,We,Th,Fr 10:00-14:00 16:00-19:30",
       "openingHoursSpecification": [ {
@@ -163,7 +182,19 @@
         "latitude": "39.48",
         "longitude": "-0.44"
       },
-      "priceRange":"$"
+      "priceRange":"$$"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://peluqueriacaninamimos.com/es/home"
+      }]
     }
     </script>
 

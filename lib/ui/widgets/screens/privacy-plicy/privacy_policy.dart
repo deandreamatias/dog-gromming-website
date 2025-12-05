@@ -1,6 +1,7 @@
 import 'package:dog_gromming_website/env/constants.dart';
 import 'package:dog_gromming_website/ui/styles/app_colors.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
+import 'package:dog_gromming_website/ui/utils/seo_util.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/loading_circle.dart';
 import 'package:dog_gromming_website/ui/widgets/components/texts/body_m_text.dart';
@@ -12,8 +13,19 @@ import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 final _modifiedPrivacy = DateTime(2023, 09, 17);
 
-class PrivacyPolicy extends StatelessWidget {
+class PrivacyPolicy extends StatefulWidget {
   const PrivacyPolicy({super.key});
+
+  @override
+  State<PrivacyPolicy> createState() => _PrivacyPolicyState();
+}
+
+class _PrivacyPolicyState extends State<PrivacyPolicy> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    SeoUtil.updatePrivacyPolicyPageSeo(context);
+  }
 
   @override
   Widget build(BuildContext context) {

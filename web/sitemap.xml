@@ -2,12 +2,119 @@
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- Spanish (default) URLs -->
 <url>
-  <loc>https://peluqueriacaninamimos.com/</loc>
-  <lastmod>2023-07-26T22:07:49+00:00</lastmod>
+  <loc>https://peluqueriacaninamimos.com/es/home</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/home" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/home" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/home" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/es/services</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/services" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/services" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/services" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/es/about</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/about" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/about" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/about" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/es/privacy-policy</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.3</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/privacy-policy" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/privacy-policy" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/privacy-policy" />
+</url>
+
+<!-- English URLs -->
+<url>
+  <loc>https://peluqueriacaninamimos.com/en/home</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/home" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/home" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/home" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/en/services</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/services" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/services" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/services" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/en/about</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/about" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/about" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/about" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/en/privacy-policy</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.3</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/privacy-policy" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/privacy-policy" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/privacy-policy" />
+</url>
+
+<!-- Portuguese URLs -->
+<url>
+  <loc>https://peluqueriacaninamimos.com/pt/home</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/home" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/home" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/home" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/pt/services</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/services" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/services" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/services" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/pt/about</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/about" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/about" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/about" />
+</url>
+
+<url>
+  <loc>https://peluqueriacaninamimos.com/pt/privacy-policy</loc>
+  <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  <priority>0.3</priority>
+  <xhtml:link rel="alternate" hreflang="es" href="https://peluqueriacaninamimos.com/es/privacy-policy" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://peluqueriacaninamimos.com/en/privacy-policy" />
+  <xhtml:link rel="alternate" hreflang="pt" href="https://peluqueriacaninamimos.com/pt/privacy-policy" />
 </url>
 
 </urlset>

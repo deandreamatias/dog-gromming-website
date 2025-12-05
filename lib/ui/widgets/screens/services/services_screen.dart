@@ -3,6 +3,7 @@ import 'package:dog_gromming_website/ui/styles/icons_name.dart';
 import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
+import 'package:dog_gromming_website/ui/utils/seo_util.dart';
 import 'package:dog_gromming_website/ui/widgets/components/assets/svg_icon.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/cards/outlined_card.dart';
@@ -12,8 +13,19 @@ import 'package:dog_gromming_website/ui/widgets/components/texts/headline_s_text
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class ServicesScreen extends StatelessWidget {
+class ServicesScreen extends StatefulWidget {
   const ServicesScreen({super.key});
+
+  @override
+  State<ServicesScreen> createState() => _ServicesScreenState();
+}
+
+class _ServicesScreenState extends State<ServicesScreen> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    SeoUtil.updateServicesPageSeo(context);
+  }
 
   @override
   Widget build(BuildContext context) {

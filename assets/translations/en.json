@@ -1,5 +1,9 @@
 {
   "coming_soon": "Coming soon",
+  "business": {
+    "name": "Mimos dog grooming",
+    "location": "Quart de Poblet, Valencia"
+  },
   "menu": { 
     "home": "home",
     "about": "about",
@@ -7,7 +11,7 @@
     "gallery": "gallery"
   },
   "home": {
-    "appointment": "Make an appointment",
+    "appointment": "Make an appointment in Quart de Poblet, Valencia",
     "semantic_logo": "Logo of pet grooming salon Mimos",
     "contact_number_tooltip": "Open dialer and call to {}",
     "whatsapp": "WhatsApp",
@@ -114,5 +118,23 @@
     "expired_session": "Sesión expirada",
     "unknown": "Error desconocido",
     "no_navigation": "The page you are trying to access does not exist. Please return to the home page."
+  },
+  "seo": {
+    "home": {
+      "title": "@:business.name - @:business.location",
+      "description": "@:business.name in @:business.location. Bath, cut, stripping and ozone therapy services for your pet. Book your appointment!"
+    },
+    "services": {
+      "title": "Our Services - @:business.name",
+      "description": "Discover our dog grooming services: bath, commercial cut, scissor cut, stripping, bath and grooming, and ozone therapy in Quart de Poblet."
+    },
+    "about": {
+      "title": "About Us - @:business.name",
+      "description": "Meet Mimos, your trusted dog grooming in @:business.location. Ana Julia and her team take care of your pet with professionalism and love."
+    },
+    "privacy_policy": {
+      "title": "Privacy Policy - @:business.name",
+      "description": "Privacy and data protection policy of @:business.name. Information about the processing of your personal data."
+    }
   }
 }

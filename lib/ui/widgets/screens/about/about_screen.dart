@@ -1,6 +1,7 @@
 import 'package:dog_gromming_website/ui/styles/insets.dart';
 import 'package:dog_gromming_website/ui/styles/sizes.dart';
 import 'package:dog_gromming_website/ui/styles/spacing.dart';
+import 'package:dog_gromming_website/ui/utils/seo_util.dart';
 import 'package:dog_gromming_website/ui/widgets/components/box_spacer.dart';
 import 'package:dog_gromming_website/ui/widgets/components/cards/outlined_card.dart';
 import 'package:dog_gromming_website/ui/widgets/components/footer.dart';
@@ -9,8 +10,19 @@ import 'package:dog_gromming_website/ui/widgets/components/sliver_footer.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 
-class AboutScreen extends StatelessWidget {
+class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
+
+  @override
+  State<AboutScreen> createState() => _AboutScreenState();
+}
+
+class _AboutScreenState extends State<AboutScreen> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    SeoUtil.updateAboutPageSeo(context);
+  }
 
   @override
   Widget build(BuildContext context) {

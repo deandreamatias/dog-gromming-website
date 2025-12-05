@@ -1,5 +1,9 @@
 {
   "coming_soon": "Em breve",
+  "business": {
+    "name": "Mimos petshop canino",
+    "location": "Quart de Poblet, Valência"
+  },
   "menu": {
     "home": "inicio",
     "about": "sobre",
@@ -7,7 +11,7 @@
     "gallery": "galeria"
   },
   "home": {
-    "appointment": "Marque um horário",
+    "appointment": "Marque um horário em Quart de Poblet, Valência",
     "semantic_logo": "Logo da peluquería canina Mimos",
     "contact_number_tooltip": "Abrir discador e ligar a {}",
     "whatsapp": "WhatsApp",
@@ -112,5 +116,23 @@
     "expired_session": "Sesión expirada",
     "unknown": "Error desconocido",
     "no_navigation": "A página que você está tentando acessar não existe. Volte para a página inicial."
+  },
+  "seo": {
+    "home": {
+      "title": "@:business.name - @:business.location",
+      "description": "@:business.name em @:business.location. Serviços de banho, corte, stripping e ozonioterapia para seu pet. Agende sua consulta!"
+    },
+    "services": {
+      "title": "Nossos Serviços - @:business.name",
+      "description": "Descubra nossos serviços de banho e tosa: banho, corte comercial, corte com tesoura, stripping, banho e tosa, e ozonioterapia em Quart de Poblet."
+    },
+    "about": {
+      "title": "Sobre Nós - @:business.name",
+      "description": "Conheça Mimos, seu petshop canino de confiança em @:business.location. Ana Julia e sua equipe cuidam do seu pet com profissionalismo e carinho."
+    },
+    "privacy_policy": {
+      "title": "Política de Privacidade - @:business.name",
+      "description": "Política de privacidade e proteção de dados da @:business.name. Informações sobre o tratamento dos seus dados pessoais."
+    }
   }
 }
