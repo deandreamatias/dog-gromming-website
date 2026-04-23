@@ -27,10 +27,6 @@ class WhenCard extends StatelessWidget {
                       'home.when.schedule_1'.tr(),
                       textAlign: TextAlign.center,
                     ),
-                    BodyMText(
-                      'home.when.schedule_2'.tr(),
-                      textAlign: TextAlign.center,
-                    ),
                   ],
                 ),
               ),

@@ -22,9 +22,7 @@
     },
     "when": {
       "title": "Opening hours",
-      "schedule_1": "Monday to Thursday from 10:00 to 14:00 and from 16:00 to 19:30",
-      "schedule_2": "Friday from 10:00 to 17:30"
-
+      "schedule_1": "Monday to Friday from 10:00 to 14:00 and from 16:00 to 19:30"
     },
     "contact": {
       "title": "Contact",
