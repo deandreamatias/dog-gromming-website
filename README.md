@@ -1,5 +1,8 @@
 # Dog grooming website
 
+[![Codeberg](https://img.shields.io/badge/Codeberg-2185D0?logo=Codeberg&logoColor=white)](https://codeberg.org/deandreamatias/dog-gromming-website)
+[![Paypal donate](https://img.shields.io/badge/paypal-donate-blue)](https://paypal.me/deandreamatias)
+
 ## Introduction
 
 A dog grooming website created for [Peluquería canina Mimos](https://maps.app.goo.gl/yRpdAmdiYiBv6Pqc9).
