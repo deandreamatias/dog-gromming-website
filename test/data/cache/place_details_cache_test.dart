@@ -4,7 +4,6 @@ import 'package:dog_gromming_website/domain/models/opening_hours.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  
   const languageCode = 'es';
 
   final sampleBody = <String, dynamic>{
@@ -60,8 +59,9 @@ void main() {
       final stored = cache.read(languageCode)!;
       final entry = PlaceDetailsCacheEntry(
         openingHours: stored.openingHours,
-        cachedAt: DateTime.now()
-            .subtract(PlaceDetailsCache.ttl + const Duration(seconds: 1)),
+        cachedAt: DateTime.now().subtract(
+          PlaceDetailsCache.ttl + const Duration(seconds: 1),
+        ),
       );
 
       expect(cache.isFresh(entry), isFalse);

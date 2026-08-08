@@ -114,17 +114,17 @@ void main() {
     expect(api.calls, 0);
   });
 
-test('refreshes stale cache in the background', () async {
-      storeStale();
+  test('refreshes stale cache in the background', () async {
+    storeStale();
 
-      final result = await datasource.getPlaceDetails(languageCode: languageCode);
+    final result = await datasource.getPlaceDetails(languageCode: languageCode);
 
-      expect(result.isRight, isTrue);
+    expect(result.isRight, isTrue);
 
-      await Future<void>.delayed(const Duration(milliseconds: 50));
-      expect(api.calls, 1);
-      expect(store.read(cacheKey), isNotNull);
-    });
+    await Future<void>.delayed(const Duration(milliseconds: 50));
+    expect(api.calls, 1);
+    expect(store.read(cacheKey), isNotNull);
+  });
 
   test('serves stale cache when the network fails', () async {
     storeStale();
