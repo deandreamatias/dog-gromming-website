@@ -9,6 +9,9 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:dog_gromming_website/data/cache/cache_store.dart' as _i1042;
+import 'package:dog_gromming_website/data/cache/place_details_cache.dart'
+    as _i16;
 import 'package:dog_gromming_website/data/datasources/local/default_local_datasource.dart'
     as _i533;
 import 'package:dog_gromming_website/data/datasources/local/local_data_source.dart'
@@ -40,12 +43,17 @@ extension GetItInjectableX on _i174.GetIt {
     final apiServiceModule = _$ApiServiceModule();
     gh.singleton<_i374.Env>(() => diModule.env);
     gh.singleton<_i1025.MainNavigator>(() => diModule.navigator);
+    gh.singleton<_i1042.CacheStore>(() => diModule.cacheStore);
     gh.lazySingleton<_i578.ApiService>(() => apiServiceModule.httpClient);
     gh.factory<_i692.LocalDataSource>(() => _i533.DefaultLocalDataSource());
+    gh.factory<_i16.PlaceDetailsCache>(
+      () => _i16.PlaceDetailsCache(gh<_i1042.CacheStore>()),
+    );
     gh.factory<_i670.RemoteDatasource>(
       () => _i987.DefaultRemoteDatasource(
         gh<_i578.ApiService>(),
         gh<_i374.Env>(),
+        gh<_i16.PlaceDetailsCache>(),
       ),
     );
     gh.factory<_i824.GetPlaceDetailsUseCase>(

@@ -1,3 +1,5 @@
+import 'package:dog_gromming_website/data/cache/cache_store.dart';
+import 'package:dog_gromming_website/data/cache/local_storage_cache_store.dart';
 import 'package:dog_gromming_website/di/di.config.dart';
 import 'package:dog_gromming_website/env/env.dart';
 import 'package:dog_gromming_website/ui/navigation/main_navigator.dart';
@@ -20,4 +22,7 @@ abstract class DiModule {
 
   @Singleton()
   MainNavigator get navigator => MainNavigator();
+
+  @Singleton()
+  CacheStore get cacheStore => LocalStorageCacheStore();
 }

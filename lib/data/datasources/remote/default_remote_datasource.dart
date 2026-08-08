@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:dog_gromming_website/data/cache/place_details_cache.dart';
 import 'package:dog_gromming_website/data/datasources/remote/remote_datasource.dart';
 import 'package:dog_gromming_website/data/dto/contact_client_dto.dart';
 import 'package:dog_gromming_website/data/dto/place_details_dto.dart';
@@ -15,13 +18,39 @@ import 'package:injectable/injectable.dart';
 class DefaultRemoteDatasource implements RemoteDatasource {
   final ApiService _apiService;
   final Env _env;
+  final PlaceDetailsCache _cache;
 
-  const DefaultRemoteDatasource(this._apiService, this._env);
+  final Map<String, Future<Either<MainError, OpeningHours>>> _inFlight =
+      <String, Future<Either<MainError, OpeningHours>>>{};
+
+  DefaultRemoteDatasource(this._apiService, this._env, this._cache);
 
   @override
   Future<Either<MainError, OpeningHours>> getPlaceDetails({
     required String languageCode,
   }) async {
+    final cached = _cache.read(languageCode);
+    if (cached == null) return _fetch(languageCode);
+
+    if (_cache.isFresh(cached)) {
+      return Right(cached.openingHours);
+    }
+
+    unawaited(_fetch(languageCode));
+    return Right(cached.openingHours);
+  }
+
+  Future<Either<MainError, OpeningHours>> _fetch(String languageCode) {
+    final existing = _inFlight[languageCode];
+    if (existing != null) return existing;
+
+    final future = _doFetch(languageCode);
+    _inFlight[languageCode] = future;
+    future.whenComplete(() => _inFlight.remove(languageCode));
+    return future;
+  }
+
+  Future<Either<MainError, OpeningHours>> _doFetch(String languageCode) async {
     final uri = Uri.https(
       'places.googleapis.com',
       '/v1/places/${Constants.mapPlaceId}',
@@ -36,7 +65,14 @@ class DefaultRemoteDatasource implements RemoteDatasource {
     if (result.isLeft) return Left(result.left);
     final data = result.right;
     if (data == null || data.isEmpty) return const Left(UnknowApiError());
-    return Right(PlaceDetailsDto.fromJson(data).openingHours);
+
+    try {
+      final openingHours = PlaceDetailsDto.fromJson(data).openingHours;
+      _cache.write(languageCode, data);
+      return Right(openingHours);
+    } catch (_) {
+      return const Left(UnknowApiError());
+    }
   }
 
   @override
