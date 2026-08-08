@@ -19,6 +19,8 @@ import 'package:dog_gromming_website/data/datasources/remote/remote_datasource.d
     as _i670;
 import 'package:dog_gromming_website/data/services/api_service.dart' as _i578;
 import 'package:dog_gromming_website/di/di.dart' as _i915;
+import 'package:dog_gromming_website/domain/use_cases/get_place_details_use_case.dart'
+    as _i824;
 import 'package:dog_gromming_website/domain/use_cases/send_email_use_case.dart'
     as _i1023;
 import 'package:dog_gromming_website/env/env.dart' as _i374;
@@ -45,6 +47,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i578.ApiService>(),
         gh<_i374.Env>(),
       ),
+    );
+    gh.factory<_i824.GetPlaceDetailsUseCase>(
+      () => _i824.GetPlaceDetailsUseCase(gh<_i670.RemoteDatasource>()),
     );
     gh.factory<_i1023.SendEmailUseCase>(
       () => _i1023.SendEmailUseCase(gh<_i670.RemoteDatasource>()),

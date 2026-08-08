@@ -22,6 +22,18 @@
     },
     "when": {
       "title": "Horário",
+      "open": "Aberto agora",
+      "closed": "Fechado",
+      "closed_temporarily": "Fechado temporariamente",
+      "closed_permanently": "Fechado permanentemente",
+      "closed_on": "Fechado em {}",
+      "sunday": "Domingo",
+      "monday": "Segunda-feira",
+      "tuesday": "Terça-feira",
+      "wednesday": "Quarta-feira",
+      "thursday": "Quinta-feira",
+      "friday": "Sexta-feira",
+      "saturday": "Sábado",
       "schedule_1": "De segunda a sexta das 10:00 às 14:00 e das 16:00 às 19:30"
     },
     "contact": {

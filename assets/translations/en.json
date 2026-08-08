@@ -22,6 +22,18 @@
     },
     "when": {
       "title": "Opening hours",
+      "open": "Open now",
+      "closed": "Closed",
+      "closed_temporarily": "Temporarily closed",
+      "closed_permanently": "Permanently closed",
+      "closed_on": "Closed on {}",
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
       "schedule_1": "Monday to Friday from 10:00 to 14:00 and from 16:00 to 19:30"
     },
     "contact": {

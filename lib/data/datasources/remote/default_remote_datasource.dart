@@ -1,9 +1,11 @@
 import 'package:dog_gromming_website/data/datasources/remote/remote_datasource.dart';
 import 'package:dog_gromming_website/data/dto/contact_client_dto.dart';
+import 'package:dog_gromming_website/data/dto/place_details_dto.dart';
 import 'package:dog_gromming_website/data/dto/sendgrid_email_dto.dart';
 import 'package:dog_gromming_website/data/services/api_service.dart';
 import 'package:dog_gromming_website/domain/models/contact_client.dart';
 import 'package:dog_gromming_website/domain/models/errors.dart';
+import 'package:dog_gromming_website/domain/models/opening_hours.dart';
 import 'package:dog_gromming_website/env/constants.dart';
 import 'package:dog_gromming_website/env/env.dart';
 import 'package:either_dart/either.dart';
@@ -17,22 +19,24 @@ class DefaultRemoteDatasource implements RemoteDatasource {
   const DefaultRemoteDatasource(this._apiService, this._env);
 
   @override
-  Future<Either<MainError, List<String>>> getPlaceDetails() async {
-    const mapsUrl = 'https://maps.googleapis.com/maps/api/place/details/json';
-
-    final uri = Uri.parse(mapsUrl)
-      ..queryParameters.addAll({
-        'place_id': Constants.mapPlaceId,
-        'fields':
-            ' current_opening_hours,opening_hours,secondary_opening_hours',
+  Future<Either<MainError, OpeningHours>> getPlaceDetails({
+    required String languageCode,
+  }) async {
+    final uri = Uri.https(
+      'places.googleapis.com',
+      '/v1/places/${Constants.mapPlaceId}',
+      <String, String>{
+        'fields': 'currentOpeningHours,regularOpeningHours,businessStatus',
+        'languageCode': languageCode,
         'key': _env.googleMapsApiKey,
-      });
+      },
+    );
 
     final result = await _apiService.get<Map<String, dynamic>>(uri);
-    return result.either<MainError, List<String>>(
-      (left) => left,
-      (right) => [],
-    );
+    if (result.isLeft) return Left(result.left);
+    final data = result.right;
+    if (data == null || data.isEmpty) return const Left(UnknowApiError());
+    return Right(PlaceDetailsDto.fromJson(data).openingHours);
   }
 
   @override
