@@ -74,6 +74,13 @@ jobs:
       with:
         name: web-app
         path: build/web
+    - name: Deploy Cloud Functions
+      uses: w9jds/firebase-action@v13
+      with:
+        args: deploy --only functions
+      env:
+        GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PELUQUERIA_MIMOS }}
+        FIREBASE_PROJECT_ID: peluqueria-mimos
     - name: HTML/CSS/JS Minifier
       uses: docker://devatherock/minify-js:2.0.0
       with:
