@@ -2,15 +2,13 @@ abstract class Env {
   final String googleMapsApiKey;
   final String packageName;
   final String appName;
-  final String sendgridApiKey;
-  final String sendgridTemplateId;
+  final String sendEmailFunctionUrl;
 
   const Env({
     required this.googleMapsApiKey,
     required this.packageName,
     required this.appName,
-    required this.sendgridApiKey,
-    required this.sendgridTemplateId,
+    required this.sendEmailFunctionUrl,
   });
 }
 
@@ -26,9 +24,6 @@ class EnvConfig implements Env {
   String get appName => const String.fromEnvironment('APP_NAME');
 
   @override
-  String get sendgridApiKey => const String.fromEnvironment('SENDGRID_API_KEY');
-
-  @override
-  String get sendgridTemplateId =>
-      const String.fromEnvironment('SENDGRID_TEMPLATE_ID');
+  String get sendEmailFunctionUrl =>
+      const String.fromEnvironment('SEND_EMAIL_FUNCTION_URL');
 }

@@ -7,6 +7,8 @@ class ContactClientDto {
   final bool whatsappCheckbox;
   final String petSize;
   final String message;
+  final bool privacyPolicyCheckbox;
+  final String websiteHp;
 
   const ContactClientDto({
     required this.contactMethod,
@@ -15,6 +17,8 @@ class ContactClientDto {
     this.whatsappCheckbox = false,
     this.petSize = '',
     this.message = '',
+    required this.privacyPolicyCheckbox,
+    this.websiteHp = '',
   });
 
   Map<String, dynamic> toJson() {
@@ -25,6 +29,8 @@ class ContactClientDto {
       'whatsappCheckbox': whatsappCheckbox,
       'petSize': petSize,
       'message': message,
+      'privacyPolicyCheckbox': privacyPolicyCheckbox,
+      'websiteHp': websiteHp,
     };
   }
 
@@ -36,6 +42,8 @@ class ContactClientDto {
       whatsappCheckbox: contactClient.whatsappCheckbox,
       petSize: contactClient.petSize,
       message: contactClient.message,
+      privacyPolicyCheckbox: contactClient.privacyPolicyCheckbox,
+      websiteHp: contactClient.websiteHp,
     );
   }
 }

@@ -8,9 +8,15 @@ class ValidatorsUtil {
     return _email.hasMatch(str.toLowerCase());
   }
 
-  /// check if the string [str] is a number
-  static bool isNumber(String str) {
-    return num.tryParse(str) != null;
+  /// check if the string [str] is a phone number (E.164-ish)
+  ///
+  /// Separators (spaces, dashes, dots, parens) are ignored, then the string
+  /// must be an optional `+` followed by 6 to 15 digits.
+  static final RegExp _phone = RegExp(r'^\+?\d{6,15}$');
+
+  static bool isPhone(String str) {
+    final normalized = str.replaceAll(RegExp(r'[\s().\-]'), '');
+    return _phone.hasMatch(normalized);
   }
 
   /// check if the string [str] is empty

@@ -38,10 +38,7 @@ class _FakeEnv implements Env {
   String get packageName => 'test';
 
   @override
-  String get sendgridApiKey => 'test';
-
-  @override
-  String get sendgridTemplateId => 'test';
+  String get sendEmailFunctionUrl => 'https://test.com/send-email';
 }
 
 void main() {

@@ -4,7 +4,6 @@ import 'package:dog_gromming_website/data/cache/place_details_cache.dart';
 import 'package:dog_gromming_website/data/datasources/remote/remote_datasource.dart';
 import 'package:dog_gromming_website/data/dto/contact_client_dto.dart';
 import 'package:dog_gromming_website/data/dto/place_details_dto.dart';
-import 'package:dog_gromming_website/data/dto/sendgrid_email_dto.dart';
 import 'package:dog_gromming_website/data/services/api_service.dart';
 import 'package:dog_gromming_website/domain/models/contact_client.dart';
 import 'package:dog_gromming_website/domain/models/errors.dart';
@@ -79,31 +78,19 @@ class DefaultRemoteDatasource implements RemoteDatasource {
   Future<Either<MainError, bool>> sendEmail({
     required ContactClient contactClient,
   }) async {
-    final uri = Uri.parse('https://api.sendgrid.com/v3/mail/send');
+    final uri = Uri.parse(_env.sendEmailFunctionUrl);
 
-    final data = SendgridDto(
-      from: const SendgridEmail(email: Constants.email),
-      personalizations: [
-        SendgridPersonalization(
-          to: const [SendgridEmail(email: Constants.email)],
-          templateData: ContactClientDto.fromDomain(contactClient),
-        ),
-      ],
-      templateId: _env.sendgridTemplateId,
+    final result = await _apiService.post<Map<String, dynamic>>(
+      uri,
+      data: ContactClientDto.fromDomain(contactClient).toJson(),
+      headers: const {'Content-Type': 'application/json'},
     );
 
-    try {
-      _apiService.post(
-        uri,
-        data: data.toJson(),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ${_env.sendgridApiKey}',
-        },
-      );
-      return const Right(true);
-    } catch (e) {
+    if (result.isLeft) return Left(result.left);
+    final data = result.right;
+    if (data == null || data['success'] != true) {
       return const Left(UnknowApiError());
     }
+    return const Right(true);
   }
 }

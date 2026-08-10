@@ -6,6 +6,7 @@ class ContactClient {
   final String petSize;
   final String message;
   final bool privacyPolicyCheckbox;
+  final String websiteHp;
 
   const ContactClient({
     required this.contactMethod,
@@ -15,6 +16,7 @@ class ContactClient {
     this.petSize = '',
     this.message = '',
     required this.privacyPolicyCheckbox,
+    this.websiteHp = '',
   });
 
   bool get isValid =>
@@ -22,6 +24,6 @@ class ContactClient {
 
   @override
   String toString() {
-    return '''ContactClient(contactMethod: $contactMethod, name: $name, petName: $petName, whatsappCheckbox: $whatsappCheckbox, petSize: $petSize, message: $message, privacyPolicyCheckbox: $privacyPolicyCheckbox)''';
+    return '''ContactClient(contactMethod: $contactMethod, name: $name, petName: $petName, whatsappCheckbox: $whatsappCheckbox, petSize: $petSize, message: $message, privacyPolicyCheckbox: $privacyPolicyCheckbox, websiteHp: $websiteHp)''';
   }
 }

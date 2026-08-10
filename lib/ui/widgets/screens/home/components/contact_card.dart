@@ -30,10 +30,18 @@ class _ContactCardState extends State<ContactCard> {
   String petSize = '';
   String message = '';
   bool privacyPolicyCheckbox = false;
+  final TextEditingController _honeypotController = TextEditingController();
+
+  @override
+  void dispose() {
+    _honeypotController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final List<Widget> leftFormPart = [
+      _HoneypotField(controller: _honeypotController),
       TextFormField(
         decoration: InputDecoration(
           hintText: 'home.contact_form.contact_method'.tr(),
@@ -48,8 +56,7 @@ class _ContactCardState extends State<ContactCard> {
           }
 
           // Verify is email or (phone) number
-          return ValidatorsUtil.isEmail(value!) ||
-                  ValidatorsUtil.isNumber(value)
+          return ValidatorsUtil.isEmail(value!) || ValidatorsUtil.isPhone(value)
               ? null
               : 'home.contact_form.contact_method_error'.tr();
         },
@@ -128,6 +135,16 @@ class _ContactCardState extends State<ContactCard> {
           onPressed: () async {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
+              if (_honeypotController.text.isNotEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('home.contact_form.success'.tr()),
+                    duration: const Duration(seconds: 6),
+                  ),
+                );
+                _formKey.currentState?.reset();
+                return;
+              }
               final contactClient = ContactClient(
                 contactMethod: contactMethod,
                 name: name,
@@ -136,6 +153,7 @@ class _ContactCardState extends State<ContactCard> {
                 petSize: petSize,
                 message: message,
                 privacyPolicyCheckbox: privacyPolicyCheckbox,
+                websiteHp: _honeypotController.text,
               );
               final useCase = getIt<SendEmailUseCase>();
               useCase(contactClient: contactClient).then((value) {
@@ -232,6 +250,35 @@ class _DropdownPetSizeForm extends StatefulWidget {
 
   @override
   State<_DropdownPetSizeForm> createState() => _DropdownPetSizeFormState();
+}
+
+class _HoneypotField extends StatelessWidget {
+  final TextEditingController controller;
+
+  const _HoneypotField({required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return Offstage(
+      child: Opacity(
+        opacity: 0.0,
+        child: ExcludeFocus(
+          child: Semantics(
+            hidden: true,
+            child: TextField(
+              controller: controller,
+              enableSuggestions: false,
+              autocorrect: false,
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Website',
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _DropdownPetSizeFormState extends State<_DropdownPetSizeForm> {
