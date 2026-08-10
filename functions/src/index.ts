@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { onRequest } from 'firebase-functions/v2/https';
+import { setGlobalOptions } from 'firebase-functions/v2';
 import { logger } from 'firebase-functions';
 import { Resend } from 'resend';
 import {
@@ -9,6 +10,8 @@ import {
   parseAndValidateContact,
 } from './utils/sanitize';
 import { cleanupExpired, isAllowed } from './utils/rate_limiter';
+
+setGlobalOptions({ region: 'europe-southwest1' });
 
 // Keep the compiled limiter buckets tidy between invocations.
 cleanupExpired();
