@@ -70,3 +70,33 @@ To run the application in each environment, you can use the following commands:
 - prod: `flutter run --flavor prod --dart-define-from-file=.env/prod.json`
 
 Also, you can configure your IDE to run the application in each environment.
+
+## Firebase Functions
+
+The contact form email is sent by a Cloud Function (`sendEmail` in `functions/`) that reads its Resend API key from Cloud Secret Manager, so the key is never bundled in the web client.
+
+### One-time setup: create the secret
+
+1. Install and log in to the [Firebase CLI](https://firebase.google.com/docs/cli):
+   `firebase login`
+2. From the repo root, set the secret value (prompts for input):
+   `firebase functions:secrets:set RESEND_API_KEY`
+3. The function already references it via the `secrets` option
+   (`functions/src/index.ts`), so no code change is needed. Redeploy it once
+   for the change to take effect:
+   `firebase deploy --only functions`
+
+After deploying, copy the function URL printed by the CLI into
+`SEND_EMAIL_FUNCTION_URL` in your `.env/*.json` files.
+
+### Local development with the emulator
+
+Point the emulator at a local secret value instead of Secret Manager:
+
+1. Create `functions/.secret.local` (already gitignored):
+   `RESEND_API_KEY=your_key`
+2. Start the emulator normally: `firebase emulators:start`
+
+Useful CLI commands: `firebase functions:secrets:access RESEND_API_KEY` to read the value, `firebase functions:secrets:get RESEND_API_KEY` for versions, `firebase functions:secrets:prune` to clean up unreferenced secrets.
+
+For more, see: https://firebase.google.com/docs/functions/config-env#secret-manager
