@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Setup Flutter
       uses: kuhnroyal/flutter-fvm-config-action/setup@v3
       with:
@@ -26,13 +26,25 @@ jobs:
         echo $ENV_PROD_BASE64 | base64 -di > .env/prod.json
     - name: Setup project
       run: sh setup.sh
+    - name: Setup Node
+      uses: actions/setup-node@v7
+      with:
+        node-version: 22
+        cache: 'npm'
+        cache-dependency-path: functions/package-lock.json
+    - name: Install functions dependencies
+      run: npm --prefix functions ci
+    - name: Build functions
+      run: npm --prefix functions run build
+    - name: Audit functions dependencies
+      run: npm --prefix functions audit
     - name: Verify formated files
       run: dart format . --set-exit-if-changed
     - name: Analyze code
       run: flutter analyze
     - name: Build web
       run: flutter build web --dart-define-from-file=.env/prod.json
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: web-app
         path: build/web/
@@ -45,13 +57,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
-      uses: actions/checkout@v4
-    - uses: actions/download-artifact@v4
+      uses: actions/checkout@v7
+    - uses: actions/download-artifact@v8
       with:
         name: web-app
         path: build/web
     - name: HTML/CSS/JS Minifier
-      uses: docker://devatherock/minify-js:2.0.0
+      uses: docker://devatherock/minify-js:3
       with:
         directory: 'build/web'
         add_suffix: false
@@ -69,20 +81,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configure enviroment
-      uses: actions/checkout@v4
-    - uses: actions/download-artifact@v4
+      uses: actions/checkout@v7
+    - uses: actions/download-artifact@v8
       with:
         name: web-app
         path: build/web
     - name: Deploy Cloud Functions
-      uses: w9jds/firebase-action@v13
+      uses: w9jds/firebase-action@v15
       with:
         args: deploy --only functions
       env:
         GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PELUQUERIA_MIMOS }}
         FIREBASE_PROJECT_ID: peluqueria-mimos
     - name: HTML/CSS/JS Minifier
-      uses: docker://devatherock/minify-js:2.0.0
+      uses: docker://devatherock/minify-js:3
       with:
         directory: 'build/web'
         add_suffix: false
