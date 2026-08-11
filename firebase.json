@@ -1,9 +1,6 @@
 {
   "functions": {
-    "source": "functions",
-    "predeploy": [
-      "npm --prefix functions run build"
-    ]
+    "source": "functions"
   },
   "hosting": {
     "public": "build/web/",

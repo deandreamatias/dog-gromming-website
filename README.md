@@ -81,7 +81,10 @@ The contact form email is sent by a Cloud Function (`sendEmail` in `functions/`)
    `firebase login`
 2. From the repo root, set the secret value (prompts for input):
    `firebase functions:secrets:set RESEND_API_KEY`
-3. The function already references it via the `secrets` option
+3. Build the functions once before deploying (the CI pipeline deploys the
+   prebuilt output, but there is no automatic build predeploy hook):
+   `npm --prefix functions run build`
+4. The function already references it via the `secrets` option
    (`functions/src/index.ts`), so no code change is needed. Redeploy it once
    for the change to take effect:
    `firebase deploy --only functions`
