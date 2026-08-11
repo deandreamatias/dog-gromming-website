@@ -87,7 +87,7 @@ jobs:
         name: web-app
         path: build/web
     - name: Deploy Cloud Functions
-      uses: w9jds/firebase-action@v15
+      uses: w9jds/firebase-action@v15.26.0
       with:
         args: deploy --only functions
       env:
