@@ -7,10 +7,10 @@ permissions:
 
 jobs:
   build:
-    name: Build and test
+    name: Build Flutter web
     runs-on: ubuntu-latest
     steps:
-    - name: Configure enviroment
+    - name: Configure environment
       uses: actions/checkout@v7
     - name: Setup Flutter
       uses: kuhnroyal/flutter-fvm-config-action/setup@v3
@@ -42,7 +42,7 @@ jobs:
     name: Build functions
     runs-on: ubuntu-latest
     steps:
-    - name: Configure enviroment
+    - name: Configure environment
       uses: actions/checkout@v7
     - name: Setup Node
       uses: actions/setup-node@v7
@@ -59,7 +59,7 @@ jobs:
     - uses: actions/upload-artifact@v7
       with:
         name: functions-app
-        path: functions/lib/
+        path: functions/
         retention-days: 1
 
   preview:
@@ -68,7 +68,7 @@ jobs:
     name: Deploy preview web
     runs-on: ubuntu-latest
     steps:
-    - name: Configure enviroment
+    - name: Configure environment
       uses: actions/checkout@v7
     - uses: actions/download-artifact@v8
       with:
@@ -92,7 +92,7 @@ jobs:
     name: Deploy web
     runs-on: ubuntu-latest
     steps:
-    - name: Configure enviroment
+    - name: Configure environment
       uses: actions/checkout@v7
     - uses: actions/download-artifact@v8
       with:
@@ -101,7 +101,7 @@ jobs:
     - uses: actions/download-artifact@v8
       with:
         name: functions-app
-        path: functions/lib
+        path: functions
     - name: Deploy Cloud Functions
       uses: w9jds/firebase-action@v15.26.0
       with:
