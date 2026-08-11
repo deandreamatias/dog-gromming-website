@@ -56,11 +56,6 @@ jobs:
       run: npm --prefix functions run build
     - name: Audit functions dependencies
       run: npm --prefix functions audit
-    - uses: actions/upload-artifact@v7
-      with:
-        name: functions-app
-        path: functions/
-        retention-days: 1
 
   preview:
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -98,10 +93,14 @@ jobs:
       with:
         name: web-app
         path: build/web
-    - uses: actions/download-artifact@v8
+    - name: Setup Node
+      uses: actions/setup-node@v7
       with:
-        name: functions-app
-        path: functions
+        node-version: 22
+        cache: 'npm'
+        cache-dependency-path: functions/package-lock.json
+    - name: Install functions dependencies
+      run: npm --prefix functions ci
     - name: Deploy Cloud Functions
       uses: w9jds/firebase-action@v15.26.0
       with:
